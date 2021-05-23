@@ -35,6 +35,7 @@ set sidescroll=1                " smoother sideways scrolling
 set smarttab                    " tab setting aware <Tab> key
 set ttyfast                     " indicates that our connection is fast
 set viminfo+=!                  " save global variables across sessions
+set updatetime=4000
 
 :nnoremap <space>e :CocCommand explorer<CR> "open coc explorer
 
@@ -52,10 +53,10 @@ nnoremap <leader><Down> :resize -5<CR>
 nnoremap <leader>rp :resize 100<CR>
 
 " Navigate windows with <Ctrl-hjkl> instead of <Ctrl-w> followed by hjkl.
-noremap <c-h> <c-w><c-h>
-noremap <c-j> <c-w><c-j>
-noremap <c-k> <c-w><c-k>
-noremap <c-l> <c-w><c-l>
+noremap <leader>h <c-w><c-h>
+noremap <leader>j <c-w><c-j>
+noremap <leader>k <c-w><c-k>
+noremap <leader>l <c-w><c-l>
 
 " Immediately add a closing quotes or braces in insert mode.
 inoremap ' ''<esc>i
@@ -68,10 +69,10 @@ inoremap [ []<esc>i
 nnoremap <SPACE> <Nop>
 nmap <Space> <Leader>
 
-inoremap jj <esc>              " map jj to esc
-inoremap <silent><c-s> <c-o>:update<cr> " save file with Ctrl+s
-map <leader>l $                     " move to the end of the current line 
-map <leader>h ^                     " move to the beginning of the current line
+inoremap <nowait> jj <esc> " map jj to esc
+inoremap <silent> <c-s> <c-o>:update<cr> " save file with Ctrl+s
+" map <leader>l $                     " move to the end of the current line 
+" map <leader>h ^                     " move to the beginning of the current line
 
 
 
@@ -117,3 +118,7 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_theme='bubblegum'
+
+" autosave
+let g:auto_save = 1
+let g:auto_save_events = ["InsertLeave", "TextChanged", "TextChangedI", "CursorHold", "CursorHoldI", "CompleteDone"]
