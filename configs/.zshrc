@@ -200,3 +200,9 @@ alias res-src="cd /sda1/source_repo/rescript; nohup code /sda1/source_repo/rescr
 
 alias nvimconfig="subl $HOME/.config/nvim/init.vim"
 alias cd-nvimplugin="cd /home/nnt/.local/share/nvim/site/pack/coc/start"
+
+alias kittyconfig="subl ~/.config/kitty/kitty.conf"
+alias ktheme-reset="kitty @set-colors -a -c --reset"
+alias ktheme="cd ~/.config/kitty/themes && fzf --preview 'head -n 40 {} && kitty @set-colors -a -c {}'; cd -"
+
+alias fzfp="fzf --preview 'head -n 40 {}'"
