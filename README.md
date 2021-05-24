@@ -2,10 +2,12 @@
 
 ### Configs
 - [NeoVim](init.vim)
+- [coc.vim](coc-settings.json)
 - [VS Code Settings](vscode_settings.json)
 - [VS Code KeyBindings](vscode_keybindings.json)
 - [Kitty Terminal](kitty.conf)
 - [Oh My Z!](.zshrc)
+  
 
 ### Shortcuts
 - [NeoVim](vim_keys.md)

@@ -85,6 +85,9 @@
 | `:tablast`            | Go to last tab                  |
 | `:tabn    `           | Go to next tab                  |
 | `:tabp    `           | Go to previous tab              |
+| `g` `t`                | Next tab                        |
+| `g` `T`                | Prior tab                       |
+| `nnn` `g` `t`           | Numbered Tab                     |
 
 ### Editing
 

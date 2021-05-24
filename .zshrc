@@ -170,6 +170,9 @@ alias cdres="cd /sda1/rescript-lab; ls"
 # MyNotes
 alias mynotes="nohup typora /sda1/MyNotes &!"
 
+# open folders, projects, workspaces
+alias dfiles="code dotfiles.code-workspace"
+
 # kitty
 autoload -Uz compinit
 compinit
@@ -205,4 +208,9 @@ alias kittyconfig="subl ~/.config/kitty/kitty.conf"
 alias ktheme-reset="kitty @set-colors -a -c --reset"
 alias ktheme="cd ~/.config/kitty/themes && fzf --preview 'head -n 40 {} && kitty @set-colors -a -c {}'; cd -"
 
-alias fzfp="fzf --preview 'head -n 40 {}'"
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULTS_OPS="--extended"
+alias fz=fzf
+alias fzp="fzf --preview 'head -n 40 {}'"
+complete -F _fzf_path_completion -o default -o bashdefault ll

@@ -36,8 +36,10 @@ set smarttab                    " tab setting aware <Tab> key
 set ttyfast                     " indicates that our connection is fast
 set viminfo+=!                  " save global variables across sessions
 set updatetime=4000
+set modifiable
+set buftype: " "
 
-:nnoremap <space>e :CocCommand explorer<CR> "open coc explorer
+" :nnoremap <space>e :CocCommand explorer<CR> "open coc explorer
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -122,3 +124,20 @@ let g:airline_theme='bubblegum'
 " autosave
 let g:auto_save = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged", "TextChangedI", "CursorHold", "CursorHoldI", "CompleteDone"]
+
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
+" NERDTree
+let NERDTreeMinimalUI=1 " remove top help line
+autocmd VimEnter * NERDTree | wincmd p
+" Exit Vim if NERDTree is the only window left.
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+" Open the existing NERDTree on each new tab.
+autocmd BufWinEnter * silent NERDTreeMirror
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+nnoremap <leader>e :NERDTreeToggle<CR>
+
+" FZF Vim
+" set rtp+=/usr/bin/fzf
