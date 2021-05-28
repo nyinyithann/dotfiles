@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
@@ -11,7 +18,9 @@ export ZSH="/Users/jazz/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="agnoster"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -87,7 +96,7 @@ source /Users/jazz/.zprofile
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -108,6 +117,8 @@ source /Users/jazz/.zprofile
 # alias zshconfig="mate ~/.zshrc"
 
 # kitty
+autoload -Uz compinit
+compinit
 alias ktheme-reset="kitty @set-colors -a -c --reset"
 alias ktheme="cd ~/.config/kitty/kitty-themes && fzf --preview 'head -n 40 {} && kitty @set-colors -a -c {}'; cd -"
 
@@ -117,3 +128,29 @@ export FZF_DEFAULTS_OPS="--extended"
 alias fz=fzf
 alias fzp="fzf --preview 'head -n 40 {}'"
 complete -F _fzf_path_completion -o default -o bashdefault ll
+
+# opam configuration
+test -r /Users/jazz/.opam/opam-init/init.zsh && . /Users/jazz/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+# alias
+alias vim="nvim"
+alias vi="nvim"
+alias sy='systemctl'
+alias git='LANG=en_US.UTF-8 git'
+alias github="git config --local user.name 'nyinyithann'; git config --local user.email 'nyinyithann@gmail.com'"
+alias dir="ls -ld */"
+alias dirs="dirs -v"
+alias cls="clear"
+alias copy="pbcopy"
+alias zshconfig="code ~/.zshrc"
+alias ohmyzsh="code ~/.oh-my-zsh"
+alias szsh="source ~/.zshrc"
+alias cls-hist="history -c"
+
+export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+alias dfiles="code ~/my/dotfiles/dotfiles.code-workspace"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+alias cd-vimplugins="cd ~/.local/share/nvim/site/pack/jazz/start"

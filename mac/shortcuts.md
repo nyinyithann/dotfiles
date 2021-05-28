@@ -1,4 +1,4 @@
-## fzf
+## terminal fzf
 - `ctrl + r` history
 - `ctrl + t` current directory
 - `alt + c`  
@@ -6,12 +6,9 @@
 
 ## vim.fzf
 - `FZF` search command
-- `Files` search files
+- `Files` or `shift + f` search files
 - `Rg` regx search
 - `BLines` 
-- `Lines`
+- `Lines` or `ctrl + f`
 - `Ag`
 - `Buffers`
-
-## Ubuntu
-- `cat /etc/*release` ubuntu info
