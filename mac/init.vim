@@ -49,6 +49,14 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 " Resize
 nnoremap <leader><Right> :vertical resize +5<CR>
 nnoremap <leader><Left> :vertical resize -5<CR>
@@ -78,17 +86,12 @@ inoremap <silent> <c-s> <c-o>:update<cr> " save file with Ctrl+s
 " map <leader>l $                     " move to the end of the current line 
 " map <leader>h ^                     " move to the beginning of the current line
 
+" Dracula Theme
+packadd! dracula
+syntax enable
+" colorscheme dracula
 
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
-
-let g:gruvbox_contrast_dark = 'hard'
+"let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
 
@@ -132,9 +135,11 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 " NERDTree
 let NERDTreeMinimalUI=1 " remove top help line
 autocmd VimEnter * NERDTree | wincmd p
+
 " Exit Vim if NERDTree is the only window left.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
-    \ quit | endif
+" autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+"    \ quit | endif
+
 " Open the existing NERDTree on each new tab.
 autocmd BufWinEnter * silent NERDTreeMirror
 let g:NERDTreeDirArrowExpandable = '▸'
@@ -145,3 +150,15 @@ nnoremap <leader>e :NERDTreeToggle<CR>
 set rtp+=/usr/bin/fzf
 nnoremap <silent> <C-f> :Lines<CR>
 nnoremap <silent> <S-F> :Files<CR>
+
+
+" ReScript
+autocmd FileType rescript nnoremap <silent> <buffer> <localleader>r :RescriptFormat<CR>
+autocmd FileType rescript nnoremap <silent> <buffer> <localleader>t :RescriptTypeHint<CR>
+autocmd FileType rescript nnoremap <silent> <buffer> <localleader>b :RescriptBuild<CR>
+autocmd FileType rescript nnoremap <silent> <buffer> gd :RescriptJumpToDefinition<CR>
+" Hooking up the ReScript autocomplete function
+set omnifunc=rescript#Complete
+" When preview is enabled, omnicomplete will display additional
+" information for a selected item
+set completeopt+=preview

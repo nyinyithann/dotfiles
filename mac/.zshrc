@@ -146,6 +146,7 @@ alias zshconfig="code ~/.zshrc"
 alias ohmyzsh="code ~/.oh-my-zsh"
 alias szsh="source ~/.zshrc"
 alias cls-hist="history -c"
+alias fsi="dotnet fsi"
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 alias dfiles="code ~/my/dotfiles/dotfiles.code-workspace"
@@ -153,4 +154,8 @@ alias dfiles="code ~/my/dotfiles/dotfiles.code-workspace"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# Open Folders
 alias cd-vimplugins="cd ~/.local/share/nvim/site/pack/jazz/start"
+
+# Open Repos
+alias mynotes="nohup /Applications/Joplin.app/Contents/MacOS/Joplin ~/my/mynotes &!"
