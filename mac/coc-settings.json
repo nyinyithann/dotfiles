@@ -12,5 +12,15 @@
       "filetypes": ["rescript"],
       "rootPatterns": ["bsconfig.json"]
     }
-  }
+  },
+
+  "coc.preferences.formatOnSaveFiletypes": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "rescript"
+  ],
+  "tsserver.formatOnType": true,
+  "coc.preferences.formatOnType": true
 }

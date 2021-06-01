@@ -37,18 +37,70 @@ set sidescroll=1                " smoother sideways scrolling
 set smarttab                    " tab setting aware <Tab> key
 set ttyfast                     " indicates that our connection is fast
 set viminfo+=!                  " save global variables across sessions
-set updatetime=4000
 set modifiable
 set buftype: " "
 set nofoldenable
-" :nnoremap <space>e :CocCommand explorer<CR> "open coc explorer
+
+" coc.vim related config
+" TextEdit might fail if hidden is not set
+set hidden
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=1500
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> g[ <Plug>(coc-diagnostic-prev)
+nmap <silent> g] <Plug>(coc-diagnostic-next)
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
+
+" Add `:Fold` command to fold current buffer.
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" Add `:OR` command for organize imports of the current buffer.
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+" Mappings for CoCList
+" Show all diagnostics.
+nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions.
+nnoremap <silent><nowait> <space>x  :<C-u>CocList extensions<cr>
+" Show commands.
+nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document.
+nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols.
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+" nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+" nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list.
+nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
     execute 'h '.expand('<cword>')
@@ -81,7 +133,7 @@ inoremap [ []<esc>i
 nnoremap <SPACE> <Nop>
 nmap <Space> <Leader>
 
-inoremap <nowait> jj <esc> " map jj to esc
+inoremap <nowait> jk <esc> " map jk to esc
 inoremap <silent> <c-s> <c-o>:update<cr> " save file with Ctrl+s
 " map <leader>l $                     " move to the end of the current line 
 " map <leader>h ^                     " move to the beginning of the current line
@@ -124,11 +176,11 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
-let g:airline_theme='wombat'
+let g:airline_theme='serene'
 
 " autosave
 let g:auto_save = 1
-let g:auto_save_events = ["InsertLeave", "TextChanged", "TextChangedI", "CursorHold", "CursorHoldI", "CompleteDone"]
+let g:auto_save_events = [ "CursorHold", "CursorHoldI" ]
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
@@ -146,6 +198,7 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 nnoremap <leader>e :NERDTreeToggle<CR>
 
+
 " FZF Vim
 set rtp+=/usr/bin/fzf
 nnoremap <silent> <C-f> :Lines<CR>
@@ -162,3 +215,7 @@ set omnifunc=rescript#Complete
 " When preview is enabled, omnicomplete will display additional
 " information for a selected item
 set completeopt+=preview
+
+" vim-commentary
+autocmd FileType apache setlocal commentstring=#\ %s
+
