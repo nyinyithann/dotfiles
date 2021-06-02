@@ -53,7 +53,7 @@ set cmdheight=2
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=1500
+set updatetime=10000
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -133,11 +133,14 @@ inoremap [ []<esc>i
 nnoremap <SPACE> <Nop>
 nmap <Space> <Leader>
 
-inoremap <nowait> jk <esc> " map jk to esc
-inoremap <silent> <c-s> <c-o>:update<cr> " save file with Ctrl+s
-" map <leader>l $                     " move to the end of the current line 
-" map <leader>h ^                     " move to the beginning of the current line
 
+" map jk to esc
+inoremap <nowait> jk <esc>
+" save with ctrl + s
+inoremap <silent> <C-S> :update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <C-O>:update<CR>
+ 
 " Dracula Theme
 packadd! dracula
 syntax enable
@@ -178,14 +181,26 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_theme='serene'
 
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+
 " autosave
 let g:auto_save = 1
 let g:auto_save_events = [ "CursorHold", "CursorHoldI" ]
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
+" Insert a new line without leaving normal mode
+nnoremap <C-o> o<Esc>0"_D
+nnoremap <C-O> O<Esc>0"_D
+
+
 " NERDTree
 let NERDTreeMinimalUI=1 " remove top help line
+let NERDTreeShowHidden=1
 autocmd VimEnter * NERDTree | wincmd p
 
 " Exit Vim if NERDTree is the only window left.
@@ -218,4 +233,30 @@ set completeopt+=preview
 
 " vim-commentary
 autocmd FileType apache setlocal commentstring=#\ %s
+
+" To open a new empty buffer
+" This replaces :tabnew which I used to bind to this mapping
+nmap <leader>T :enew<cr>
+
+" Move to the next buffer
+nmap <leader>ll :bnext<CR>
+
+" Move to the previous buffer
+nmap <leader>hh :bprevious<CR>
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nmap <leader>bq :bp <BAR> bd #<CR>
+
+" Show all open buffers and their status
+nmap <leader>ls :ls<CR>
+
+" NERDTreeProject
+nmap <leader>np :NERDTreeProjectLoadFromCWD<CR> 
+
+" vim-workspace
+let g:workspace_create_new_tabs = 0
+nnoremap <leader>tw :ToggleWorkspace<CR>
+let g:workspace_autosave = 0
+let g:workspace_session_name = 'project_workspace.vim'
 
