@@ -1,3 +1,14 @@
+# Tips & Tricks
+#### Delete in Insert Mode
+- `<C-h>`  delete back one character (backspace)
+- `<C-w>`  delete back one word
+- `<C-u>`  delete back to start of line
+- `<C-k>`  delete forward to end of line
+
+#### Paste text while in insert mode
+- `<C-r>0` or `<C-r><C-p>0` for fixing indentation issues 
+
+
 ## Navigation
 - `ctrl + o` go prev
 - `ctrl + i` go next
