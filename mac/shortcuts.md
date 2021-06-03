@@ -15,6 +15,12 @@
 - `:m+1` or `Alt + j` (custom cmd) move down
 - `:m-2` or `Alt + k` (custom cmd) move up
 
+## Others
+- `Shift + s` insert mode at the right indentation
+- `Ctrl + w =` make windows same size
+- `%` go to matching brace
+- `=G` fix indentation
+
 ## Navigation
 - `ctrl + o` go prev
 - `ctrl + i` go next

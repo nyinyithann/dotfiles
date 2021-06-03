@@ -7,12 +7,13 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +17 mac/shortcuts.md
-badd +342 mac/init.vim
-badd +12 README.md
+badd +1 mac/shortcuts.md
+badd +275 mac/init.vim
+badd +18 README.md
+badd +3 mac/karabiner.json
 argglobal
 %argdel
-edit mac/init.vim
+edit mac/shortcuts.md
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -48,12 +49,12 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 369 - ((61 * winheight(0) + 31) / 62)
+let s:l = 18 - ((17 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-369
-normal! 065|
+18
+normal! 0
 wincmd w
 2wincmd w
 exe 'vert 1resize ' . ((&columns * 31 + 67) / 134)
