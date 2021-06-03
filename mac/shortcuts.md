@@ -1,6 +1,6 @@
 ## navigation
 `ctrl+o` go prev
-`ctrl+i` go next
+`:MarkdownPreviewctrl+i` go next
 `ciw` delete word
 `ci(` or `ci[` or `ci{` delete anything berween (), {}, []
 `cit` delete anthing between tag
@@ -48,8 +48,8 @@ p: go to parent
 P: go to root
 K: go to first child
 J: go to last child
-<C-­k>: go to prev sibling
-<C-­j>: go to next sibling
+<C-k>: go to prev sibling
+<C-j>: go to next sibling
 
 ### Tree Filtering
 I: hidden files (off)
@@ -61,12 +61,6 @@ B: bookmarks (off)
 q: Close the NERDTree window
 A: Zoom (maxim­ize­-mi­nimize) the NERDTree window
 ?: toggle help
-
-## NERDTree-Project
-`:NERDTreeProjectSave <name>` Create a project from the current nerdtree with
-`:NERDTreeProjectLoad <name>` Load a project with
-`:NERDTreeProjectLoadFromCWD` Load a project from the current CWD
-`:NERDTreeProjectRm <name>` Delete a project with
 
 ## coc.vim
 `gd` definition
