@@ -3,8 +3,6 @@
 " --------------------------------------------------------
 let autoload_plug_path = stdpath('config') . '/plugged'
 call plug#begin(autoload_plug_path)
-  " Plug 'https://github.com/iamcco/markdown-preview.nvim.git'
-  "
   Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
@@ -143,16 +141,16 @@ nmap <Space> <Leader>
 " map jk to esc
 inoremap <nowait> jk <esc>
 " save with ctrl + s
-inoremap <silent> <C-S> :update<CR>
+noremap <silent> <C-S> :update<CR>
 vnoremap <silent> <C-S> <C-C>:update<CR>
 inoremap <silent> <C-S> <C-O>:update<CR>
- 
+
 " Dracula Theme
 packadd! dracula
 syntax enable
 " colorscheme dracula
 
-"let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 set background=dark
 
@@ -200,8 +198,8 @@ let g:auto_save_events = [ "CursorHold", "CursorHoldI" ]
 autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Insert a new line without leaving normal mode
-nnoremap <C-o> o<Esc>0"_D
-nnoremap <C-O> O<Esc>0"_D
+nnoremap <leader>no o<Esc>0"_D
+nnoremap <leader>nO O<Esc>0"_D
 
 
 " NERDTree
@@ -264,7 +262,7 @@ nnoremap <leader>tw :ToggleWorkspace<CR>
 let g:workspace_autosave = 0
 let g:workspace_session_name = 'project_workspace.vim'
 
-" markdown preview 
+" markdown preview
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
 let g:mkdp_auto_start = 0
@@ -356,4 +354,16 @@ let g:mkdp_page_title = '「${name}」'
 " these filetypes will have MarkdownPreview... commands
 let g:mkdp_filetypes = ['markdown']
 
+" BufOnly
+command! BufOnly silent! execute "%bd|e#|bd#"
 
+" move lines
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
+
+"Remove all trailing whitespace by pressing F5
+nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>

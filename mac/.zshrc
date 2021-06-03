@@ -131,7 +131,8 @@ alias ktheme="cd ~/.config/kitty/kitty-themes && fzf --preview 'head -n 40 {} &&
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULTS_OPS="--extended"
 alias fz=fzf
-alias fzp="fzf --preview 'head -n 40 {}'"
+alias fzp="fzf --preview 'bat --color=always --style=numbers --line-range=:500   {}'"
+# alias fzp="fzf --preview 'head -n 40 {}'"
 complete -F _fzf_path_completion -o default -o bashdefault ll
 
 # opam configuration

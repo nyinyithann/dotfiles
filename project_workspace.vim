@@ -7,13 +7,17 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +2 mac/shortcuts.md
-badd +5 mac/init.vim
+badd +17 mac/shortcuts.md
+badd +342 mac/init.vim
 badd +12 README.md
 argglobal
 %argdel
 edit mac/init.vim
 set splitbelow splitright
+wincmd _ | wincmd |
+vsplit
+1wincmd h
+wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -21,6 +25,20 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
+exe 'vert 1resize ' . ((&columns * 31 + 67) / 134)
+exe 'vert 2resize ' . ((&columns * 102 + 67) / 134)
+argglobal
+enew
+file NERD_tree_1
+setlocal fdm=manual
+setlocal fde=0
+setlocal fmr={{{,}}}
+setlocal fdi=#
+setlocal fdl=0
+setlocal fml=1
+setlocal fdn=20
+setlocal nofen
+wincmd w
 argglobal
 setlocal fdm=indent
 setlocal fde=0
@@ -30,12 +48,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 4 - ((3 * winheight(0) + 31) / 62)
+let s:l = 369 - ((61 * winheight(0) + 31) / 62)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-4
-normal! 040|
+369
+normal! 065|
+wincmd w
+2wincmd w
+exe 'vert 1resize ' . ((&columns * 31 + 67) / 134)
+exe 'vert 2resize ' . ((&columns * 102 + 67) / 134)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

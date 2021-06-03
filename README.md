@@ -9,7 +9,7 @@
 - [zshrc](./mac/.zshrc)
 - [zprofile](./mac/.zprofile)
 - [karabiner](./mac/karabiner.json)
-- [kitty](./mac/kitty.conf) 
+- [kitty](./mac/kitty.conf)
 
 ### Shortcuts
 - [shortcuts](./mac/shortcuts.md)
@@ -23,9 +23,8 @@
 - [VS Code KeyBindings](./ubuntu/vscode_keybindings.json)
 - [Kitty Terminal](./ubuntu/kitty.conf)
 - [Oh My Z!](./ubuntu/.zshrc)
-  
+
 
 ### Shortcuts
 - [NeoVim](./ubuntu/vim_keys.md)
 - [VS Code Vim Mode](./ubuntu/vscode_vim_mode.md)
-  

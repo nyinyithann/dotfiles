@@ -6,8 +6,14 @@
 - `<C-k>`  delete forward to end of line
 
 #### Paste text while in insert mode
-- `<C-r>0` or `<C-r><C-p>0` for fixing indentation issues 
+- `<C-r>0` or `<C-r><C-p>0` for fixing indentation issues
 
+### Close all buffers but this
+- `:BufOnly` (custom command) or `:%bd|e#`
+
+### Move line up or down
+- `:m+1` or `Alt + j` (custom cmd) move down
+- `:m-2` or `Alt + k` (custom cmd) move up
 
 ## Navigation
 - `ctrl + o` go prev
@@ -16,8 +22,8 @@
 - `ci(` or `ci[` or `ci{` delete anything berween (), {}, []
 - `cit` delete anthing between tag
 - `viw` select a word and go into visual mode
-- `=` go back to normal mode from visual mode 
-- `:line-number` go to the line 
+- `=` go back to normal mode from visual mode
+- `:line-number` go to the line
 - `/search` search
 
 ## coc.vim
@@ -46,14 +52,14 @@
 ## terminal fzf
 - `ctrl + r` history
 - `ctrl + t` current directory
-- `alt + c`  
+- `alt + c`
 - `<<cmd>>` + `ctrl + t` pipe cmd to fz current directory
 
 ## vim.fzf
 - `FZF` search command
 - `Files` or `shift + f` search files
 - `Rg` regx search
-- `BLines` 
+- `BLines`
 - `Lines` or `ctrl + f`
 - `Ag`
 - `Buffers`
