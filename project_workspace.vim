@@ -7,13 +7,14 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 mac/shortcuts.md
+badd +18 mac/shortcuts.md
 badd +275 mac/init.vim
 badd +18 README.md
 badd +3 mac/karabiner.json
+badd +1 mac/kitty.conf
 argglobal
 %argdel
-edit mac/shortcuts.md
+edit mac/kitty.conf
 set splitbelow splitright
 wincmd _ | wincmd |
 vsplit
@@ -26,8 +27,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 67) / 134)
-exe 'vert 2resize ' . ((&columns * 102 + 67) / 134)
+exe 'vert 1resize ' . ((&columns * 31 + 63) / 127)
+exe 'vert 2resize ' . ((&columns * 95 + 63) / 127)
 argglobal
 enew
 file NERD_tree_1
@@ -49,16 +50,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 18 - ((17 * winheight(0) + 31) / 62)
+let s:l = 84 - ((26 * winheight(0) + 27) / 54)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-18
-normal! 0
+84
+normal! 030|
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 67) / 134)
-exe 'vert 2resize ' . ((&columns * 102 + 67) / 134)
+exe 'vert 1resize ' . ((&columns * 31 + 63) / 127)
+exe 'vert 2resize ' . ((&columns * 95 + 63) / 127)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

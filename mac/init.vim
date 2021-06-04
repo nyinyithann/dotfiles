@@ -148,11 +148,16 @@ inoremap <silent> <C-S> <C-O>:update<CR>
 " Dracula Theme
 packadd! dracula
 syntax enable
-" colorscheme dracula
 
 let g:gruvbox_contrast_dark = 'hard'
-colorscheme gruvbox
 set background=dark
+
+ colorscheme gruvbox
+" colorscheme dracula
+" colorscheme atom-dark
+" colorscheme atom-dark-256
+" colorscheme molokai
+" colorscheme onehalfdark
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -222,7 +227,7 @@ nnoremap <leader>e :NERDTreeToggle<CR>
 set rtp+=/usr/bin/fzf
 nnoremap <silent> <C-f> :Lines<CR>
 nnoremap <silent> <S-F> :Files<CR>
-
+nnoremap <silent> <C-b> :Buffers<CR>
 
 " ReScript
 autocmd FileType rescript nnoremap <silent> <buffer> <localleader>r :RescriptFormat<CR>

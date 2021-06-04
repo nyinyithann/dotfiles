@@ -66,9 +66,9 @@
 - `Files` or `shift + f` search files
 - `Rg` regx search
 - `BLines`
-- `Lines` or `ctrl + f`
+- `Lines` or `ctrl + f` search current opening file
 - `Ag`
-- `Buffers`
+- `Buffers` `ctrl + b` search buffers
 
 ### NERDTree - Files
 - `o`: open in prev window
