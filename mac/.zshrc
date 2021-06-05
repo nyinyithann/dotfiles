@@ -165,3 +165,6 @@ alias cd-vimplugins="cd ~/.local/share/nvim/site/pack/jazz/start"
 
 # Open Repos
 alias mynotes="nohup /Applications/Joplin.app/Contents/MacOS/Joplin ~/my/mynotes &!"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

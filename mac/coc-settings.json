@@ -19,7 +19,9 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "rescript"
+    "rescript",
+    "ocaml",
+    "reason"
   ],
   "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true
