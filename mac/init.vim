@@ -125,6 +125,11 @@ noremap <leader>h <c-w><c-h>
 noremap <leader>j <c-w><c-j>
 noremap <leader>k <c-w><c-k>
 noremap <leader>l <c-w><c-l>
+tnoremap <A-h> <c-\><c-n><c-w>h
+tnoremap <A-j> <c-\><c-n><c-w>j
+tnoremap <A-k> <c-\><c-n><c-w>k
+tnoremap <A-l> <c-\><c-n><c-w>l
+
 
 " Immediately add a closing quotes or braces in insert mode.
 inoremap ' ''<esc>i
@@ -245,7 +250,7 @@ autocmd FileType apache setlocal commentstring=#\ %s
 
 " To open a new empty buffer
 " This replaces :tabnew which I used to bind to this mapping
-nmap <leader>T :enew<cr>
+nmap <leader>T :new<cr>
 
 " Move to the next buffer
 nmap <leader>ll :bnext<CR>

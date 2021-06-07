@@ -11,7 +11,7 @@ badd +18 mac/shortcuts.md
 badd +275 mac/init.vim
 badd +18 README.md
 badd +3 mac/karabiner.json
-badd +1 mac/kitty.conf
+badd +61 mac/kitty.conf
 argglobal
 %argdel
 edit mac/kitty.conf
@@ -27,8 +27,8 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 63) / 127)
-exe 'vert 2resize ' . ((&columns * 95 + 63) / 127)
+exe 'vert 1resize ' . ((&columns * 31 + 54) / 108)
+exe 'vert 2resize ' . ((&columns * 76 + 54) / 108)
 argglobal
 enew
 file NERD_tree_1
@@ -50,16 +50,15 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 84 - ((26 * winheight(0) + 27) / 54)
+let s:l = 61 - ((5 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-84
-normal! 030|
+61
+normal! 0
 wincmd w
-2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 63) / 127)
-exe 'vert 2resize ' . ((&columns * 95 + 63) / 127)
+exe 'vert 1resize ' . ((&columns * 31 + 54) / 108)
+exe 'vert 2resize ' . ((&columns * 76 + 54) / 108)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
