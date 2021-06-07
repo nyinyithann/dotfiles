@@ -3,7 +3,7 @@
 " --------------------------------------------------------
 let autoload_plug_path = stdpath('config') . '/plugged'
 call plug#begin(autoload_plug_path)
-  Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
 
 set undofile
@@ -11,7 +11,7 @@ set undofile
 " Set up persistent undo across all files.
 set undofile
 if !isdirectory(expand("$HOME/.config/nvim/undodir"))
-  call mkdir(expand("$HOME/.config/nvim/undodir"), "p")
+    call mkdir(expand("$HOME/.config/nvim/undodir"), "p")
 endif
 set undodir=$HOME/.config/nvim/undodir
 
@@ -76,7 +76,7 @@ nmap <silent> g] <Plug>(coc-diagnostic-next)
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
+nmap <space>rn <Plug>(coc-rename)
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
 
@@ -106,11 +106,11 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    else
+        call CocAction('doHover')
+    endif
 endfunction
 
 " Resize
@@ -125,10 +125,17 @@ noremap <leader>h <c-w><c-h>
 noremap <leader>j <c-w><c-j>
 noremap <leader>k <c-w><c-k>
 noremap <leader>l <c-w><c-l>
-tnoremap <A-h> <c-\><c-n><c-w>h
-tnoremap <A-j> <c-\><c-n><c-w>j
-tnoremap <A-k> <c-\><c-n><c-w>k
-tnoremap <A-l> <c-\><c-n><c-w>l
+" Terminal Mode mappings
+if has('nvim')
+    highlight! link TermCursor Cursor
+    highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
+    tnoremap <Esc> <c-\><c-n>
+    tnoremap <C-v><Esc> <Esc>
+    tnoremap <A-h> <c-\><c-n><c-w>h
+    tnoremap <A-j> <c-\><c-n><c-w>j
+    tnoremap <A-k> <c-\><c-n><c-w>k
+    tnoremap <A-l> <c-\><c-n><c-w>l
+endif
 
 
 " Immediately add a closing quotes or braces in insert mode.
@@ -157,7 +164,7 @@ syntax enable
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
- colorscheme gruvbox
+colorscheme gruvbox
 " colorscheme dracula
 " colorscheme atom-dark
 " colorscheme atom-dark-256
@@ -332,18 +339,18 @@ let g:mkdp_browserfunc = ''
 " content_editable: if enable content editable for preview page, default: v:false
 " disable_filename: if disable filename header for preview page, default: 0
 let g:mkdp_preview_options = {
-    \ 'mkit': {},
-    \ 'katex': {},
-    \ 'uml': {},
-    \ 'maid': {},
-    \ 'disable_sync_scroll': 0,
-    \ 'sync_scroll_type': 'middle',
-    \ 'hide_yaml_meta': 1,
-    \ 'sequence_diagrams': {},
-    \ 'flowchart_diagrams': {},
-    \ 'content_editable': v:false,
-    \ 'disable_filename': 0
-    \ }
+            \ 'mkit': {},
+            \ 'katex': {},
+            \ 'uml': {},
+            \ 'maid': {},
+            \ 'disable_sync_scroll': 0,
+            \ 'sync_scroll_type': 'middle',
+            \ 'hide_yaml_meta': 1,
+            \ 'sequence_diagrams': {},
+            \ 'flowchart_diagrams': {},
+            \ 'content_editable': v:false,
+            \ 'disable_filename': 0
+            \ }
 
 " use a custom markdown style must be absolute path
 " like '/Users/username/markdown.css' or expand('~/markdown.css')
