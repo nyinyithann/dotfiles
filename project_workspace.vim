@@ -7,13 +7,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +80 mac/shortcuts.md
-badd +127 mac/init.vim
-badd +18 README.md
-badd +3 mac/karabiner.json
-badd +61 mac/kitty.conf
-badd +1 mac/iterm_keys.md
-badd +0 term://.//16489:/bin/zsh
+badd +1 mac/init.vim
 argglobal
 %argdel
 edit mac/init.vim
@@ -22,10 +16,6 @@ wincmd _ | wincmd |
 vsplit
 1wincmd h
 wincmd w
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
@@ -33,14 +23,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 73) / 147)
-exe '2resize ' . ((&lines * 29 + 31) / 62)
-exe 'vert 2resize ' . ((&columns * 115 + 73) / 147)
-exe '3resize ' . ((&lines * 28 + 31) / 62)
-exe 'vert 3resize ' . ((&columns * 115 + 73) / 147)
+exe 'vert 1resize ' . ((&columns * 31 + 135) / 271)
+exe 'vert 2resize ' . ((&columns * 239 + 135) / 271)
 argglobal
 enew
-file NERD_tree_1
+file NERD_tree_2
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -51,7 +38,6 @@ setlocal fdn=20
 setlocal nofen
 wincmd w
 argglobal
-if bufexists("term://.//16489:/bin/zsh") | buffer term://.//16489:/bin/zsh | else | edit term://.//16489:/bin/zsh | endif
 setlocal fdm=indent
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -60,35 +46,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 9 - ((8 * winheight(0) + 14) / 29)
+let s:l = 212 - ((29 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-9
-normal! 03|
-wincmd w
-argglobal
-setlocal fdm=indent
-setlocal fde=0
-setlocal fmr={{{,}}}
-setlocal fdi=#
-setlocal fdl=0
-setlocal fml=1
-setlocal fdn=20
-setlocal nofen
-let s:l = 132 - ((16 * winheight(0) + 14) / 28)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-132
-normal! 04|
+212
+normal! 019|
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 73) / 147)
-exe '2resize ' . ((&lines * 29 + 31) / 62)
-exe 'vert 2resize ' . ((&columns * 115 + 73) / 147)
-exe '3resize ' . ((&lines * 28 + 31) / 62)
-exe 'vert 3resize ' . ((&columns * 115 + 73) / 147)
+exe 'vert 1resize ' . ((&columns * 31 + 135) / 271)
+exe 'vert 2resize ' . ((&columns * 239 + 135) / 271)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf

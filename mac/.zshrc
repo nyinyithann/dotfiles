@@ -153,6 +153,8 @@ alias ohmyzsh="code ~/.oh-my-zsh"
 alias szsh="source ~/.zshrc"
 alias cls-hist="history -c"
 alias fsi="dotnet fsi"
+alias dt="dune test"
+alias db="dune build"
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 alias dfiles="code ~/my/dotfiles/dotfiles.code-workspace"

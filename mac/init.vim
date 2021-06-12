@@ -209,7 +209,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 
 " autosave
-let g:auto_save = 1
+let g:auto_save = 0
 let g:auto_save_events = [ "CursorHold", "CursorHoldI" ]
 
 autocmd FileType json syntax match Comment +\/\/.\+$+
