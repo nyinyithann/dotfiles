@@ -44,6 +44,8 @@ set viminfo+=!                  " save global variables across sessions
 set modifiable
 set buftype: " "
 set nofoldenable
+set noshowcmd
+set noruler
 
 " coc.vim related config
 " TextEdit might fail if hidden is not set

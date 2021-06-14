@@ -7,7 +7,8 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 mac/init.vim
+badd +214 mac/init.vim
+badd +0 NERD_tree_2
 argglobal
 %argdel
 edit mac/init.vim
@@ -23,11 +24,11 @@ set winminheight=0
 set winheight=1
 set winminwidth=0
 set winwidth=1
-exe 'vert 1resize ' . ((&columns * 31 + 135) / 271)
-exe 'vert 2resize ' . ((&columns * 239 + 135) / 271)
+exe 'vert 1resize ' . ((&columns * 31 + 78) / 156)
+exe 'vert 2resize ' . ((&columns * 124 + 78) / 156)
 argglobal
 enew
-file NERD_tree_2
+file NERD_tree_1
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -46,16 +47,16 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 212 - ((29 * winheight(0) + 30) / 60)
+let s:l = 48 - ((30 * winheight(0) + 29) / 58)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-212
-normal! 019|
+48
+normal! 011|
 wincmd w
 2wincmd w
-exe 'vert 1resize ' . ((&columns * 31 + 135) / 271)
-exe 'vert 2resize ' . ((&columns * 239 + 135) / 271)
+exe 'vert 1resize ' . ((&columns * 31 + 78) / 156)
+exe 'vert 2resize ' . ((&columns * 124 + 78) / 156)
 tabnext 1
 if exists('s:wipebuf') && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
   silent exe 'bwipe ' . s:wipebuf
