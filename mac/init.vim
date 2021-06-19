@@ -26,7 +26,7 @@ set backspace=2            " Fix backspace behavior on most terminals.
 set foldmethod=indent           " Indentation-based folding.
 set wildmenu                    " Enable enhanced tab autocomplete.
 set wildmode=list:longest,full  " Complete till longest string, then open menu.
-set hlsearch                    " Highlight search results.
+set nohlsearch                    " Dont Highlight search results.
 set incsearch                   " Search as you type.
 set number
 set clipboard=unnamed,unnamedplus  " Copy into system (*, +) registers.
@@ -63,17 +63,16 @@ set updatetime=10000
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
-
+set signcolumn=yes
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-" Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> g[ <Plug>(coc-diagnostic-prev)
-nmap <silent> g] <Plug>(coc-diagnostic-next)
+nmap <silent> gl <Plug>(coc-diagnostic-prev)
+nmap <silent> gn <Plug>(coc-diagnostic-next)
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
@@ -114,6 +113,13 @@ function! s:show_documentation()
         call CocAction('doHover')
     endif
 endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
 
 " Resize
 nnoremap <leader><Right> :vertical resize +5<CR>
@@ -166,12 +172,12 @@ syntax enable
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
-colorscheme gruvbox
+" colorscheme gruvbox
 " colorscheme dracula
 " colorscheme atom-dark
 " colorscheme atom-dark-256
 " colorscheme molokai
-" colorscheme onehalfdark
+ colorscheme onehalfdark
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -246,19 +252,19 @@ nnoremap <silent> <C-b> :Buffers<CR>
 " ReScript
 autocmd FileType rescript nnoremap <silent> <buffer> <localleader>r :RescriptFormat<CR>
 autocmd FileType rescript nnoremap <silent> <buffer> <localleader>t :RescriptTypeHint<CR>
-autocmd FileType rescript nnoremap <silent> <buffer> <localleader>b :RescriptBuild<CR>
+" autocmd FileType rescript nnoremap <silent> <buffer> <localleader>b :RescriptBuild<CR>
 autocmd FileType rescript nnoremap <silent> <buffer> gd :RescriptJumpToDefinition<CR>
 " Hooking up the ReScript autocomplete function
 set omnifunc=rescript#Complete
 " When preview is enabled, omnicomplete will display additional
 " information for a selected item
 set completeopt+=preview
+" noremap <C-space> <C-x><C-o>
 
 " vim-commentary
 autocmd FileType apache setlocal commentstring=#\ %s
 
 " To open a new empty buffer
-" This replaces :tabnew which I used to bind to this mapping
 nmap <leader>T :new<cr>
 
 " Move to the next buffer
