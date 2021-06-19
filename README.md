@@ -28,3 +28,8 @@
 ### Shortcuts
 - [NeoVim](./ubuntu/vim_keys.md)
 - [VS Code Vim Mode](./ubuntu/vscode_vim_mode.md)
+
+### Screenshots of My NeoVim
+
+<img src="screenshots/ss1.png" alt="seq logo" width="500">
+<img src="screenshots/ss2.png" alt="seq logo" width="500">

@@ -172,12 +172,12 @@ syntax enable
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
-" colorscheme gruvbox
+colorscheme gruvbox
 " colorscheme dracula
 " colorscheme atom-dark
 " colorscheme atom-dark-256
 " colorscheme molokai
- colorscheme onehalfdark
+"colorscheme onehalfdark
 
 " air-line
 let g:airline_powerline_fonts = 1

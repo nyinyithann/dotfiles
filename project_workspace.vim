@@ -7,7 +7,7 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +123 mac/init.vim
+badd +1 mac/init.vim
 argglobal
 %argdel
 edit mac/init.vim
@@ -27,7 +27,6 @@ exe 'vert 1resize ' . ((&columns * 31 + 68) / 136)
 exe 'vert 2resize ' . ((&columns * 104 + 68) / 136)
 argglobal
 enew
-file NERD_tree_1
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -46,11 +45,11 @@ setlocal fdl=0
 setlocal fml=1
 setlocal fdn=20
 setlocal nofen
-let s:l = 180 - ((30 * winheight(0) + 25) / 51)
+let s:l = 175 - ((25 * winheight(0) + 25) / 51)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-180
+175
 normal! 0
 wincmd w
 2wincmd w
