@@ -47,6 +47,9 @@ set nofoldenable
 set noshowcmd
 set noruler
 
+let g:autoclose_on = 0
+let g:AutoPairs = {}
+
 " coc.vim related config
 " TextEdit might fail if hidden is not set
 set hidden
@@ -290,7 +293,7 @@ let g:workspace_session_name = 'project_workspace.vim'
 " markdown preview
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
-let g:mkdp_auto_start = 0
+let g:mkdp_auto_start = 1 
 
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer
@@ -392,3 +395,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+
+

@@ -5,6 +5,11 @@
 - `<C-u>`  delete back to start of line
 - `<C-k>`  delete forward to end of line
 
+### Surround (vim-sandwich)
+- `sa{motion/textobject}{addition}` e.g. `saiw(` makes foo to (foo)
+- `sdb or sd{deletion}` e.g. `sdb` or `sd(` makes (foo) to foo.
+- `srb{addition}` e.g. `sr("` makes (foo) to "foo".
+
 #### Paste text while in insert mode
 - `<C-r>0` or `<C-r><C-p>0` for fixing indentation issues
 
