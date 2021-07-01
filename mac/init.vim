@@ -150,11 +150,14 @@ endif
 
 
 " Immediately add a closing quotes or braces in insert mode.
-inoremap ' ''<esc>i
-inoremap " ""<esc>i
-inoremap ( ()<esc>i
-inoremap { {}<esc>i
-inoremap [ []<esc>i
+" To escape, press ctrl + v before typing the mapped char
+" inoremap ' ''<esc>i
+" inoremap " ""<esc>i
+" inoremap ( ()<esc>i
+" inoremap { {}<esc>i
+" inoremap [ []<esc>i
+" inoremap {<CR> {<CR>}<ESC>O
+" inoremap {;<CR> {<CR>};<ESC>O
 
 " map Space Bar to Leader
 nnoremap <SPACE> <Nop>
