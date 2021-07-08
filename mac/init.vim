@@ -4,6 +4,7 @@
 let autoload_plug_path = stdpath('config') . '/plugged'
 call plug#begin(autoload_plug_path)
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 call plug#end()
 
 set undofile
@@ -400,4 +401,5 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 
-
+" nvim-window
+map <silent> <leader>w :lua require('nvim-window').pick()<CR>
