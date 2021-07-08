@@ -7,14 +7,13 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 call plug#end()
 
-set undofile
 
 " Set up persistent undo across all files.
-set undofile
-if !isdirectory(expand("$HOME/.config/nvim/undodir"))
-    call mkdir(expand("$HOME/.config/nvim/undodir"), "p")
-endif
-set undodir=$HOME/.config/nvim/undodir
+" set undofile
+" if !isdirectory(expand("$HOME/.config/nvim/undodir"))
+"     call mkdir(expand("$HOME/.config/nvim/undodir"), "p")
+" endif
+" set undodir=$HOME/.config/nvim/undodir
 
 syntax on                  " Enable syntax highlighting.
 filetype plugin indent on  " Enable file type based indentation.
