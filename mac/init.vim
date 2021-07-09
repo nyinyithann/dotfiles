@@ -5,6 +5,7 @@ let autoload_plug_path = stdpath('config') . '/plugged'
 call plug#begin(autoload_plug_path)
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
+Plug 'voldikss/vim-floaterm'
 call plug#end()
 
 
@@ -402,3 +403,7 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " nvim-window
 map <silent> <leader>w :lua require('nvim-window').pick()<CR>
+
+" floaterm
+let g:floaterm_keymap_new = '<Leader>fn'
+let g:floaterm_keymap_toggle = '<Leader>ft'
