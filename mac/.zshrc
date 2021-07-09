@@ -170,3 +170,5 @@ alias mynotes="nohup /Applications/Joplin.app/Contents/MacOS/Joplin ~/my/mynotes
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+
+source /Users/jazz/.config/broot/launcher/bash/br
