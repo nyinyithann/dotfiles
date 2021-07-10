@@ -36,10 +36,10 @@ set display=lastline,msgsep     " display more message text
 set encoding=utf-8              " set default encoding
 set langnoremap                 " helps avoid mappings breaking
 set laststatus=2                " always display a status line
-set ruler                       " display current line # in a corner
-set showcmd                     " show last command in the status line
+" set ruler                       " display current line # in a corner
+" set showcmd                     " show last command in the status line
 set sidescroll=1                " smoother sideways scrolling
-set smarttab                    " tab setting aware <Tab> key
+" set smarttab                    " tab setting aware <Tab> key
 set ttyfast                     " indicates that our connection is fast
 set viminfo+=!                  " save global variables across sessions
 set modifiable
@@ -47,6 +47,7 @@ set buftype: " "
 set nofoldenable
 set noshowcmd
 set noruler
+set nohid
 
 let g:autoclose_on = 0
 let g:AutoPairs = {}
@@ -133,10 +134,11 @@ nnoremap <leader><Down> :resize -5<CR>
 nnoremap <leader>rp :resize 100<CR>
 
 " Navigate windows with <space-hjkl> instead of <Ctrl-w> followed by hjkl.
-noremap <leader>h <c-w><c-h>
-noremap <leader>j <c-w><c-j>
-noremap <leader>k <c-w><c-k>
-noremap <leader>l <c-w><c-l>
+noremap <silent><leader>h <c-w><c-h>
+noremap <silent><leader>j <c-w><c-j>
+noremap <silent><leader>k <c-w><c-k>
+noremap <silent><leader>l <c-w><c-l>
+
 " Terminal Mode mappings
 if has('nvim')
     highlight! link TermCursor Cursor
@@ -184,10 +186,14 @@ colorscheme gruvbox
 " colorscheme atom-dark
 " colorscheme atom-dark-256
 " colorscheme molokai
-"colorscheme onehalfdark
+" colorscheme onehalfdark
 
 " air-line
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
