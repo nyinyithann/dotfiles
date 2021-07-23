@@ -6,6 +6,9 @@ call plug#begin(autoload_plug_path)
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 Plug 'voldikss/vim-floaterm'
+Plug 'jordwalke/vim-reasonml'
+Plug 'scrooloose/syntastic'
+Plug 'lifepillar/vim-mucomplete'
 call plug#end()
 
 
@@ -413,3 +416,20 @@ map <silent> <leader>w :lua require('nvim-window').pick()<CR>
 " floaterm
 let g:floaterm_keymap_new = '<Leader>fn'
 let g:floaterm_keymap_toggle = '<Leader>ft'
+
+" reasonml
+autocmd FileType reason nnoremap <silent> <buffer> <localleader>r :ReasonPrettyPrint<CR> 
+
+" reason air-line
+let g:airline_extensions = ['esy', 'reason']
+let g:reasonml_project_airline=1
+let g:reasonml_syntastic_airline=1
+let g:reasonml_clean_project_airline=1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline_powerline_fonts = 1
+let g:airline_skip_empty_sections = 1
+
+" mucomplete
+let g:mucomplete#can_complete = {}
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#chains = {'default': ['omni']}
