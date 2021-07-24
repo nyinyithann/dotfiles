@@ -174,3 +174,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 
 source /Users/jazz/.config/broot/launcher/bash/br
+
+# weather 
+alias we="curl http://wttr.in"
+alias weather="curl http://wttr.in"
