@@ -1,0 +1,262 @@
+{
+  "peacock.favoriteColors": [
+    {
+      "name": "Angular Red",
+      "value": "#b52e31"
+    },
+    {
+      "name": "Auth0 Orange",
+      "value": "#eb5424"
+    },
+    {
+      "name": "Azure Blue",
+      "value": "#007fff"
+    },
+    {
+      "name": "C# Purple",
+      "value": "#68217A"
+    },
+    {
+      "name": "Gatsby Purple",
+      "value": "#639"
+    },
+    {
+      "name": "Go Cyan",
+      "value": "#5dc9e2"
+    },
+    {
+      "name": "Java Blue-Gray",
+      "value": "#557c9b"
+    },
+    {
+      "name": "JavaScript Yellow",
+      "value": "#f9e64f"
+    },
+    {
+      "name": "Mandalorian Blue",
+      "value": "#1857a4"
+    },
+    {
+      "name": "Node Green",
+      "value": "#215732"
+    },
+    {
+      "name": "React Blue",
+      "value": "#00b3e6"
+    },
+    {
+      "name": "Something Different",
+      "value": "#832561"
+    },
+    {
+      "name": "Vue Green",
+      "value": "#42b883"
+    },
+    {
+      "name": "OCaml Orange",
+      "value": "#f2870b"
+    },
+    {
+      "name": "dotfiles",
+      "value": "#686b69"
+    },
+    { "name": "rescript", "value": "#d23f3f" }
+  ],
+  "svn.enableProposedApi": "none",
+  "workbench.sideBar.location": "left",
+  "editor.fontLigatures": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono','CaskaydiaCove Nerd Font','MesloLGS NF', 'Cascadia Mono PL'",
+  "sync.gist": "c2b1fc61834b73cd0cb1d4e1903664e1",
+  "files.autoSave": "afterDelay",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "reason.diagnostics.tools": [
+    "merlin"
+    //"bsb"
+  ],
+  "reason.path.ocamlmerlin": "/home/nnt/.opam/4.11.1/bin/ocamlmerlin",
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "remote.WSL.debug": true,
+  "terminal.integrated.fontWeight": "600",
+  "explorer.confirmDragAndDrop": false,
+  "go.formatTool": "goimports",
+  "python.languageServer": "Pylance",
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
+  "FSharp.useSdkScripts": true,
+  "java.configuration.checkProjectSettingsExclusions": false,
+  "[ocaml]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "ocamllabs.ocaml-platform",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.donotShowInfoMsg": true,
+  "explorer.confirmDelete": false,
+  "terminal.integrated.cursorStyle": "underline",
+
+  "editor.codeLensFontFamily": "'FiraCode Nerd Font Mono'",
+  "editor.codeLensFontSize": 12,
+  "editor.mouseWheelZoom": true,
+  "kite.showWelcomeNotificationOnStartup": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[fsharp]": {
+    "editor.defaultFormatter": "Ionide.Ionide-fsharp"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "Wscats.qf"
+  },
+  "editor.minimap.enabled": false,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "python.insidersChannel": "daily",
+  "peacock.affectAccentBorders": true,
+  "peacock.affectStatusAndTitleBorders": true,
+  "prettier.singleQuote": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.jsxBracketSameLine": true,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  },
+  "csharp.referencesCodeLens.enabled": false,
+  "editor.renderIndentGuides": false,
+
+  "editor.formatOnSave": true,
+  "liveServer.settings.host": "localhost",
+  "liveServer.settings.port": 5010,
+  "liveServer.settings.proxy": {
+    "enable": true,
+    "baseUri": "/fetch",
+    "proxyUri": "http://localhost:5000/api"
+  },
+  "editor.formatOnPaste": true,
+  "editor.fontFamily": "'FiraMono Nerd Font', 'YaHei Consolas Hybrid', 'Ubuntu Mono', 'Noto Mono', 'DejaVu Sans Mono'",
+  "editor.fontWeight": "300",
+
+  "material-icon-theme.saturation": 1,
+  "oneDarkPro.italic": false,
+  "material-icon-theme.folders.color": "#42a5f5",
+  "material-icon-theme.activeIconPack": "react_redux",
+  "emmet.excludeLanguages": ["markdown"],
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "debug.console.fontSize": 146,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true,
+    "source.organizeImports": true
+  },
+  "eslint.validate": ["javascript"],
+  "material-icon-theme.opacity": 0.7,
+  "material-icon-theme.showUpdateMessage": true,
+  "material-icon-theme.files.associations": {},
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "scss.lint.unknownAtRules": "ignore",
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false,
+  "editor.lineHeight": 20,
+  "terminal.explorerKind": "external",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": [">"],
+      "after": [">", "g", "v"]
+    },
+    {
+      "before": ["<"],
+      "after": ["<", "g", "v"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": [":nohl"]
+    },
+    {
+      "before": ["<tab>"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<S-tab>"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "f"],
+      "commands": ["revealInExplorer"]
+    },
+    {
+      "before": ["<leader>", "h"],
+      "after": ["_"]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "after": ["$"]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-d>": false,
+    "<C-c>": false,
+    "<C-x>": false,
+    "<C-v>": false,
+    "<C-z>": false,
+    "<C-y>": false,
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "terminal.integrated.cursorBlinking": true,
+  "ocaml-formatter.profile": "janestreet",
+  "editor.accessibilitySupport": "off",
+  "terminal.integrated.lineHeight": 1,
+  "terminal.integrated.fontSize": 12,
+  "workbench.iconTheme": "material-icon-theme"
+}

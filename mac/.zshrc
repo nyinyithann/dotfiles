@@ -153,10 +153,14 @@ alias ohmyzsh="code ~/.oh-my-zsh"
 alias szsh="source ~/.zshrc"
 alias cls-hist="history -c"
 alias fsi="dotnet fsi"
+
+# ocaml related
 alias dut="dune test"
 alias dub="dune build"
 alias duc="dune clean"
 alias duem="dune exec ./main.exe"
+alias eb="esy build"
+alias nes="npx esy start"
 
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 alias dfiles="code ~/my/dotfiles/dotfiles.code-workspace"
@@ -178,3 +182,8 @@ source /Users/jazz/.config/broot/launcher/bash/br
 # weather 
 alias we="curl http://wttr.in"
 alias weather="curl http://wttr.in"
+
+# elasticsearch
+alias elastic="/usr/local/Cellar/elasticsearch-full/7.13.4/bin/elasticsearch"
+alias kibana="/usr/local/Cellar/kibana-full/7.13.4/bin/kibana"
+alias elastic_config="cd /usr/local/etc/elasticsearch"
