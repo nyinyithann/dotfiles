@@ -1,6 +1,23 @@
+env:
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 80
+    lines: 24
+
+  padding:
+    x: 2
+    y: 2
+
+live_config_reload: true
+
 font:
   normal:
     family: FiraMono Nerd Font Mono
     style: Regular
 
-  size: 13
+  size: 12.5
+
+cursor:
+  style: Underline

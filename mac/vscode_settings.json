@@ -258,5 +258,6 @@
   "editor.accessibilitySupport": "off",
   "terminal.integrated.lineHeight": 1,
   "terminal.integrated.fontSize": 12,
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "redhat.telemetry.enabled": true
 }

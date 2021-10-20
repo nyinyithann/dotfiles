@@ -1,15 +1,40 @@
 " Plugin Dirctory ~/.local/share/nvim/site/pack/jazz/start
 " --------------------------------------------------------
 " --------------------------------------------------------
+
+" /Users/jazz/.config/nvim/plugged
 let autoload_plug_path = stdpath('config') . '/plugged'
+set nocompatible
+
 call plug#begin(autoload_plug_path)
+Plug 'preservim/nerdtree'
+Plug 'xuyuanp/nerdtree-git-plugin'
+Plug 'scrooloose/nerdtree-project-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'morhetz/gruvbox'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 Plug 'voldikss/vim-floaterm'
+Plug 'reasonml-editor/vim-reason-plus'
+Plug 'sheerun/vim-polyglot'
+Plug 'mattn/emmet-vim'
+Plug 'tomasr/molokai'
+Plug 'mtikekar/nvim-send-to-term'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug '907th/vim-auto-save'
+Plug 'joom/vim-commentary'
+Plug 'ryanoasis/vim-devicons'
+Plug 'machakann/vim-sandwich'
+Plug 'thaerkh/vim-workspace'
+Plug 'rescript-lang/vim-rescript'
 " Plug 'jordwalke/vim-reasonml'
 " Plug 'scrooloose/syntastic'
 " Plug 'lifepillar/vim-mucomplete'
-Plug 'reasonml-editor/vim-reason-plus'
 call plug#end()
 
 
@@ -112,6 +137,11 @@ nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
 " nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" coc-css scss
+autocmd FileType scss setl iskeyword+=@-@
+" To get correct comment highlighting in coc-settings.json
+autocmd FileType json syntax match Comment +\/\/.\+$+
 
 " Use K to show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -307,7 +337,7 @@ let g:workspace_session_name = 'project_workspace.vim'
 " markdown preview
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
-let g:mkdp_auto_start = 1 
+let g:mkdp_auto_start = 1
 
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer
@@ -419,7 +449,7 @@ let g:floaterm_keymap_new = '<Leader>fn'
 let g:floaterm_keymap_toggle = '<Leader>ft'
 
 " " reasonml
-" autocmd FileType reason nnoremap <silent> <buffer> <localleader>r :ReasonPrettyPrint<CR> 
+" autocmd FileType reason nnoremap <silent> <buffer> <localleader>r :ReasonPrettyPrint<CR>
 
 " " reason air-line
 " let g:airline_extensions = ['esy', 'reason']

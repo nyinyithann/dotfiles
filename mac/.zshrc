@@ -187,3 +187,5 @@ alias weather="curl http://wttr.in"
 alias elastic="/usr/local/Cellar/elasticsearch-full/7.13.4/bin/elasticsearch"
 alias kibana="/usr/local/Cellar/kibana-full/7.13.4/bin/kibana"
 alias elastic_config="cd /usr/local/etc/elasticsearch"
+alias logstash="/usr/local/Cellar/logstash/7.13.4/bin/logstash"
+if [ -e /Users/jazz/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jazz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
