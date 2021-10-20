@@ -21,15 +21,10 @@
     }
   },
 
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "javascriptreact",
-    "typescript",
-    "typescriptreact",
-    "rescript",
-    "ocaml",
-    "reason"
-  ],
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
   "tsserver.formatOnType": true,
-  "coc.preferences.formatOnType": true
+  "coc.preferences.formatOnType": true,
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•"
 }

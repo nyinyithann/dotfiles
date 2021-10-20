@@ -32,6 +32,17 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'machakann/vim-sandwich'
 Plug 'thaerkh/vim-workspace'
 Plug 'rescript-lang/vim-rescript'
+Plug 'easymotion/vim-easymotion'
+
+" Typescript syntax highlighting
+Plug 'HerringtonDarkholme/yats.vim'
+" ReactJS JSX syntax highlighting
+Plug 'mxw/vim-jsx'
+" Syntax highlighting for javascript libraries
+Plug 'othree/javascript-libraries-syntax.vim'
+" Improved syntax highlighting and indentation
+Plug 'othree/yajs.vim'
+
 " Plug 'jordwalke/vim-reasonml'
 " Plug 'scrooloose/syntastic'
 " Plug 'lifepillar/vim-mucomplete'
@@ -77,6 +88,9 @@ set nofoldenable
 set noshowcmd
 set noruler
 set nohid
+set autoread
+set ignorecase
+set smartcase
 
 let g:autoclose_on = 0
 let g:AutoPairs = {}
@@ -130,7 +144,7 @@ nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 " Find symbol of current document.
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I symbols<cr>
+nnoremap <silent><nowait> <space>s  :<C-u>CocList -I -N --top symbols<cr>
 " Do default action for next item.
 " nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 " Do default action for previous item.
@@ -217,10 +231,7 @@ set background=dark
 
 colorscheme gruvbox
 " colorscheme dracula
-" colorscheme atom-dark
-" colorscheme atom-dark-256
 " colorscheme molokai
-" colorscheme onehalfdark
 
 " air-line
 let g:airline_powerline_fonts = 1
@@ -440,7 +451,6 @@ vnoremap <A-k> :m '<-2<CR>gv=gv
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-
 " nvim-window
 map <silent> <leader>w :lua require('nvim-window').pick()<CR>
 
@@ -448,6 +458,9 @@ map <silent> <leader>w :lua require('nvim-window').pick()<CR>
 let g:floaterm_keymap_new = '<Leader>fn'
 let g:floaterm_keymap_toggle = '<Leader>ft'
 
+" easy-motion
+" <leader>w - Easy-motion highlights first word letters bi-directionally
+map <leader>m <Plug>(easymotion-bd-w)
 " " reasonml
 " autocmd FileType reason nnoremap <silent> <buffer> <localleader>r :ReasonPrettyPrint<CR>
 
