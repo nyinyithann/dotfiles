@@ -33,7 +33,7 @@ Plug 'machakann/vim-sandwich'
 Plug 'thaerkh/vim-workspace'
 Plug 'rescript-lang/vim-rescript'
 Plug 'easymotion/vim-easymotion'
-
+Plug 'jiangmiao/auto-pairs'
 " Typescript syntax highlighting
 Plug 'HerringtonDarkholme/yats.vim'
 " ReactJS JSX syntax highlighting
@@ -42,7 +42,8 @@ Plug 'mxw/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
 " Improved syntax highlighting and indentation
 Plug 'othree/yajs.vim'
-
+Plug 'SirVer/ultisnips'
+Plug 'mlaursen/vim-react-snippets'
 " Plug 'jordwalke/vim-reasonml'
 " Plug 'scrooloose/syntastic'
 " Plug 'lifepillar/vim-mucomplete'
@@ -76,7 +77,7 @@ set display=lastline,msgsep     " display more message text
 set encoding=utf-8              " set default encoding
 set langnoremap                 " helps avoid mappings breaking
 set laststatus=2                " always display a status line
-" set ruler                       " display current line # in a corner
+set ruler                       " display current line # in a corner
 " set showcmd                     " show last command in the status line
 set sidescroll=1                " smoother sideways scrolling
 " set smarttab                    " tab setting aware <Tab> key
@@ -93,7 +94,8 @@ set ignorecase
 set smartcase
 
 let g:autoclose_on = 0
-let g:AutoPairs = {}
+" turn the following on to disable AutoPairs
+" let g:AutoPairs = {}
 
 " coc.vim related config
 " TextEdit might fail if hidden is not set
@@ -353,7 +355,7 @@ let g:mkdp_auto_start = 1
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer
 " default: 1
-let g:mkdp_auto_close = 1
+let g:mkdp_auto_close = 0
 
 " set to 1, the vim will refresh markdown when save the buffer or
 " leave from insert mode, default 0 is auto refresh markdown as you edit or
