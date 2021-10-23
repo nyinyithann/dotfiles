@@ -104,11 +104,11 @@ source /Users/jazz/.zprofile
 export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+  export EDITOR='nvim'
+else
+  export EDITOR='nvim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -189,3 +189,6 @@ alias kibana="/usr/local/Cellar/kibana-full/7.13.4/bin/kibana"
 alias elastic_config="cd /usr/local/etc/elasticsearch"
 alias logstash="/usr/local/Cellar/logstash/7.13.4/bin/logstash"
 if [ -e /Users/jazz/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jazz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+# tmuxinator
+alias mux=tmuxinator

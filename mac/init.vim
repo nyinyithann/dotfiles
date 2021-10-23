@@ -44,9 +44,11 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
+Plug 'christoomey/vim-tmux-navigator'
 " Plug 'jordwalke/vim-reasonml'
 " Plug 'scrooloose/syntastic'
 " Plug 'lifepillar/vim-mucomplete'
+
 call plug#end()
 
 
@@ -292,7 +294,7 @@ nnoremap <leader>nO O<Esc>0"_D
 let NERDTreeMinimalUI=1 " remove top help line
 let NERDTreeShowHidden=1
 autocmd VimEnter * NERDTree | wincmd p
-
+autocmd BufEnter * lcd %:p:h
 " Exit Vim if NERDTree is the only window left.
 " autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
 "    \ quit | endif
