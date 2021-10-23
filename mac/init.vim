@@ -231,6 +231,7 @@ syntax enable
 let g:gruvbox_contrast_dark = 'hard'
 set background=dark
 
+set termguicolors
 colorscheme gruvbox
 " colorscheme dracula
 " colorscheme molokai
@@ -305,8 +306,8 @@ nnoremap <leader>e :NERDTreeToggle<CR>
 
 " FZF Vim
 set rtp+=/usr/bin/fzf
-nnoremap <silent> <C-f> :Lines<CR>
-nnoremap <silent> <S-F> :Files<CR>
+nnoremap <silent> <C-l> :Lines<CR>
+nnoremap <silent> <C-F> :Files<CR>
 nnoremap <silent> <C-b> :Buffers<CR>
 
 " ReScript
@@ -355,13 +356,13 @@ let g:mkdp_auto_start = 1
 " set to 1, the nvim will auto close current preview window when change
 " from markdown buffer to another buffer
 " default: 1
-let g:mkdp_auto_close = 0
+let g:mkdp_auto_close = 1
 
 " set to 1, the vim will refresh markdown when save the buffer or
 " leave from insert mode, default 0 is auto refresh markdown as you edit or
 " move the cursor
 " default: 0
-let g:mkdp_refresh_slow = 0
+let g:mkdp_refresh_slow = 1
 
 " set to 1, the MarkdownPreview command can be use for all files,
 " by default it can be use in markdown file
