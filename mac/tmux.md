@@ -47,12 +47,15 @@
 
 - new horizontal pane
   <br/> `Ctrl + b, %`
+  <br/> `Ctrl + b, |` my key binding
 - new vertical pane
   <br/> `Ctrl + b, "`
+  <br/> `Ctrl + b, -` my key binding
 - cycle through panes
   <br/> `Ctrl + b, o`
 - moving between panes
   <br/> `Ctrl + b, Arrow Keys` press `Ctrl + b` and then Arrow Keys to resize pane
+  <br/> `Ctrl + b, h,j,k,l` press `Ctrl + b, H,J,K,L` to resize pane (My Key binding)
 - cycle through layouts
   <br/> `Ctrl + b, space`
 - close pane
