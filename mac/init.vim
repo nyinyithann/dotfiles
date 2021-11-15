@@ -308,9 +308,9 @@ nnoremap <leader>e :NERDTreeToggle<CR>
 
 " FZF Vim
 set rtp+=/usr/bin/fzf
-nnoremap <silent> <C-l> :Lines<CR>
-nnoremap <silent> <C-F> :Files<CR>
-nnoremap <silent> <C-b> :Buffers<CR>
+nnoremap <silent> <leader>fl :Lines<CR>
+nnoremap <silent> <leader>ff :Files<CR>
+nnoremap <silent> <leader>fb :Buffers<CR>
 
 " ReScript
 autocmd FileType rescript nnoremap <silent> <buffer> <localleader>r :RescriptFormat<CR>
