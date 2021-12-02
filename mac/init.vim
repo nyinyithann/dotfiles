@@ -46,6 +46,7 @@ Plug 'SirVer/ultisnips'
 Plug 'mlaursen/vim-react-snippets'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'matze/vim-move'
+Plug 'rrethy/vim-illuminate'
 " Plug 'jordwalke/vim-reasonml'
 " Plug 'scrooloose/syntastic'
 " Plug 'lifepillar/vim-mucomplete'
@@ -448,7 +449,7 @@ command! BufOnly silent! execute "%bd|e#|bd#"
 
 " move lines (vim-moves)
 " S-k S-j
-let g:move_key_modifier = 'S'
+let g:move_key_modifier = 'A'
 
 "Remove all trailing whitespace by pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
@@ -466,7 +467,11 @@ map <leader>m <Plug>(easymotion-bd-w)
 " " reasonml
 " autocmd FileType reason nnoremap <silent> <buffer> <localleader>r :ReasonPrettyPrint<CR>
 
-" " reason air-line
+" vim-illuminate
+"" Time in milliseconds (default 0)
+let g:Illuminate_delay = 100
+
+" reason air-line
 " let g:airline_extensions = ['esy', 'reason']
 " let g:reasonml_project_airline=1
 " let g:reasonml_syntastic_airline=1
