@@ -19,7 +19,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 Plug 'https://gitlab.com/yorickpeterse/nvim-window.git'
 Plug 'voldikss/vim-floaterm'
-Plug 'reasonml-editor/vim-reason-plus'
 Plug 'sheerun/vim-polyglot'
 Plug 'mattn/emmet-vim'
 Plug 'tomasr/molokai'
@@ -47,19 +46,13 @@ Plug 'mlaursen/vim-react-snippets'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'matze/vim-move'
 Plug 'rrethy/vim-illuminate'
-" Plug 'jordwalke/vim-reasonml'
-" Plug 'scrooloose/syntastic'
-" Plug 'lifepillar/vim-mucomplete'
+Plug 'machakann/vim-highlightedyank'
+Plug 'Luxed/ayu-vim'
+Plug 'Yggdroot/indentLine'
+Plug 'farmergreg/vim-lastplace'
+Plug 'liuchengxu/vista.vim'
 
 call plug#end()
-
-
-" Set up persistent undo across all files.
-" set undofile
-" if !isdirectory(expand("$HOME/.config/nvim/undodir"))
-"     call mkdir(expand("$HOME/.config/nvim/undodir"), "p")
-" endif
-" set undodir=$HOME/.config/nvim/undodir
 
 syntax on                  " Enable syntax highlighting.
 filetype plugin indent on  " Enable file type based indentation.
@@ -69,7 +62,6 @@ set expandtab              " Expand tabs to spaces. Essential in Python.
 set tabstop=4              " Number of spaces tab is counted for.
 set shiftwidth=4           " Number of spaces to use for autoindent.
 set backspace=2            " Fix backspace behavior on most terminals.
-set foldmethod=indent           " Indentation-based folding.
 set wildmenu                    " Enable enhanced tab autocomplete.
 set wildmode=list:longest,full  " Complete till longest string, then open menu.
 set nohlsearch                    " Dont Highlight search results.
@@ -96,12 +88,16 @@ set nohid
 set autoread
 set ignorecase
 set smartcase
+set cursorline
+
+set foldmethod=indent
+autocmd FileType javascript setlocal foldmethod=marker
+nmap <leader>z za
 
 let g:autoclose_on = 0
 " turn the following on to disable AutoPairs
 " let g:AutoPairs = {}
 
-" coc.vim related config
 " TextEdit might fail if hidden is not set
 set hidden
 " Some servers have issues with backup files, see #649.
@@ -119,6 +115,16 @@ set updatetime=10000
 set shortmess+=c
 set signcolumn=yes
 
+"******************** COC VIM *****************************
+"" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+if has("nvim-0.5.0") || has("patch-8.1.1564")
+  " Recently vim can merge signcolumn and number column into one
+  set signcolumn=number
+else
+  set signcolumn=yes
+endif
+
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gt <Plug>(coc-type-definition)
@@ -129,6 +135,9 @@ nmap <silent> gl <Plug>(coc-diagnostic-prev)
 nmap <silent> gn <Plug>(coc-diagnostic-next)
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Run the Code Lens action on the current line.
+nmap <leader>cl  <Plug>(coc-codelens-action)
 
 " Symbol renaming.
 nmap <space>rn <Plug>(coc-rename)
@@ -151,10 +160,6 @@ nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
 nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
 nnoremap <silent><nowait> <space>s  :<C-u>CocList -I -N --top symbols<cr>
-" Do default action for next item.
-" nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-" nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
@@ -179,6 +184,7 @@ if has('nvim')
 else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
+"***********************End COC********************************
 
 " Resize
 nnoremap <leader><Right> :vertical resize +5<CR>
@@ -188,10 +194,10 @@ nnoremap <leader><Down> :resize -5<CR>
 nnoremap <leader>rp :resize 100<CR>
 
 " Navigate windows with <space-hjkl> instead of <Ctrl-w> followed by hjkl.
-noremap <silent><leader>h <c-w><c-h>
-noremap <silent><leader>j <c-w><c-j>
-noremap <silent><leader>k <c-w><c-k>
-noremap <silent><leader>l <c-w><c-l>
+noremap <nowait><leader>h <c-w><c-h>
+noremap <nowait><leader>j <c-w><c-j>
+noremap <nowait><leader>k <c-w><c-k>
+noremap <nowait><leader>l <c-w><c-l>
 
 " Terminal Mode mappings
 if has('nvim')
@@ -232,11 +238,18 @@ inoremap <silent> <C-S> <C-O>:update<CR>
 packadd! dracula
 syntax enable
 
-let g:gruvbox_contrast_dark = 'hard'
-set background=dark
-
 set termguicolors
+set background=dark
+" set background=light
+
+let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
+
+" let g:ayucolor="mirage" " for mirage version of theme
+let g:ayucolor="dark"   " for dark version of theme
+" NOTE: g:ayucolor will default to 'dark' when not set. 
+colorscheme ayu
+
 " colorscheme dracula
 " colorscheme molokai
 
@@ -333,17 +346,17 @@ autocmd FileType apache setlocal commentstring=#\ %s
 nmap <leader>T :new<cr>
 
 " Move to the next buffer
-nmap <leader>ll :bnext<CR>
+nmap <leader>bn :bnext<CR>
 
 " Move to the previous buffer
-nmap <leader>hh :bprevious<CR>
+nmap <leader>bp :bprevious<CR>
 
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
 nmap <leader>bq :bp <BAR> bd #<CR>
 
 " Show all open buffers and their status
-nmap <leader>ls :ls<CR>
+nmap <leader>bl :ls<CR>
 
 
 " vim-workspace
@@ -464,23 +477,68 @@ let g:floaterm_keymap_toggle = '<Leader>ft'
 " easy-motion
 " <leader>w - Easy-motion highlights first word letters bi-directionally
 map <leader>m <Plug>(easymotion-bd-w)
-" " reasonml
-" autocmd FileType reason nnoremap <silent> <buffer> <localleader>r :ReasonPrettyPrint<CR>
 
 " vim-illuminate
 "" Time in milliseconds (default 0)
 let g:Illuminate_delay = 100
 
-" reason air-line
-" let g:airline_extensions = ['esy', 'reason']
-" let g:reasonml_project_airline=1
-" let g:reasonml_syntastic_airline=1
-" let g:reasonml_clean_project_airline=1
-" let g:airline#extensions#whitespace#enabled = 0
-" let g:airline_powerline_fonts = 1
-" let g:airline_skip_empty_sections = 1
+" vim-highlightedyank
+let g:highlightedyank_highlight_duration = 1000
 
-" " mucomplete
-" let g:mucomplete#can_complete = {}
-" let g:mucomplete#enable_auto_at_startup = 1
-" let g:mucomplete#chains = {'default': ['omni']}
+" IndentLine {{
+let g:indentLine_char = '┆'
+let g:indentLine_first_char = '┆'
+let g:indentLine_showFirstIndentLevel = 1
+let g:indentLine_setColors = 0
+" }}
+
+" Vista {{
+function! NearestMethodOrFunction() abort
+  return get(b:, 'vista_nearest_method_or_function', '')
+endfunction
+
+set statusline+=%{NearestMethodOrFunction()}
+
+" By default vista.vim never run if you don't call it explicitly.
+"
+" If you want to show the nearest function in your statusline automatically,
+" you can add the following line to your vimrc
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
+" How each level is indented and what to prepend.
+" This could make the display more compact or more spacious.
+" e.g., more compact: ["▸ ", ""]
+" Note: this option only works for the kind renderer, not the tree renderer.
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+
+" Executive used when opening vista sidebar without specifying it.
+" See all the avaliable executives via `:echo g:vista#executives`.
+let g:vista_default_executive = 'ctags'
+
+" Set the executive for some filetypes explicitly. Use the explicit executive
+" instead of the default one for these filetypes when using `:Vista` without
+" specifying the executive.
+let g:vista_executive_for = {
+  \ 'cpp': 'vim_lsp',
+  \ 'php': 'vim_lsp',
+  \ }
+
+" Declare the command including the executable and options used to generate ctags output
+" for some certain filetypes.The file path will be appened to your custom command.
+" For example:
+let g:vista_ctags_cmd = {
+      \ 'haskell': 'hasktags -x -o - -c',
+      \ }
+
+" To enable fzf's preview window set g:vista_fzf_preview.
+" The elements of g:vista_fzf_preview will be passed as arguments to fzf#vim#with_preview()
+" For example:
+let g:vista_fzf_preview = ['right:50%']
+" Ensure you have installed some decent font to show these pretty symbols, then you can enable icon for the kind.
+let g:vista#renderer#enable_icon = 1
+
+" The default icons can't be suitable for all the filetypes, you can extend it as you wish.
+let g:vista#renderer#icons = {
+\   "function": "\uf794",
+\   "variable": "\uf71b",
+\  }
+" }}
