@@ -1,6 +1,7 @@
 {
   "languageserver": {
     "ocaml-lsp": {
+      "enable": true,
       "command": "opam",
       "args": ["config", "exec", "--", "ocamllsp"],
       "filetypes": ["ocaml", "reason"]
@@ -20,15 +21,29 @@
       "rootPatterns": ["bsconfig.json"]
     }
   },
-
+  "tailwindCSS.headwind.runOnSave": false,
+  "tailwindCSS.jsLanguages": [
+    "javascript",
+    "javascriptreact",
+    "reason",
+    "typescriptreact",
+    "rescript"
+  ],
   "coc.preferences.formatOnSaveFiletypes": ["*"],
-  "tsserver.formatOnType": true,
   "coc.preferences.formatOnType": true,
+  "tsserver.formatOnType": true,
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "css.validate": false,
   "less.validate": false,
   "scss.validate": false,
-  "wxss.validate": false
+  "wxss.validate": false,
+
+  "list.normalMappings": {
+    "<C-c>": "do:exit"
+  },
+  "list.insertMappings": {
+    "<C-c>": "do:exit"
+  }
 }
