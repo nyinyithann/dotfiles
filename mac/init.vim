@@ -29,7 +29,6 @@ Plug '907th/vim-auto-save'
 Plug 'joom/vim-commentary'
 Plug 'ryanoasis/vim-devicons'
 Plug 'machakann/vim-sandwich'
-Plug 'thaerkh/vim-workspace'
 Plug 'rescript-lang/vim-rescript'
 Plug 'easymotion/vim-easymotion'
 Plug 'jiangmiao/auto-pairs'
@@ -327,17 +326,18 @@ nnoremap <silent> <leader>fl :Lines<CR>
 nnoremap <silent> <leader>ff :Files<CR>
 nnoremap <silent> <leader>fb :Buffers<CR>
 
-" ReScript
-autocmd FileType rescript nnoremap <silent> <buffer> <localleader>r :RescriptFormat<CR>
-autocmd FileType rescript nnoremap <silent> <buffer> <localleader>t :RescriptTypeHint<CR>
-" autocmd FileType rescript nnoremap <silent> <buffer> <localleader>b :RescriptBuild<CR>
-autocmd FileType rescript nnoremap <silent> <buffer> gd :RescriptJumpToDefinition<CR>
-" Hooking up the ReScript autocomplete function
-set omnifunc=rescript#Complete
-" When preview is enabled, omnicomplete will display additional
-" information for a selected item
-set completeopt+=preview
-" noremap <C-space> <C-x><C-o>
+" ReScript {{
+    autocmd FileType rescript nnoremap <silent> <buffer> <localleader>r :RescriptFormat<CR>
+    autocmd FileType rescript nnoremap <silent> <buffer> <localleader>t :RescriptTypeHint<CR>
+    " autocmd FileType rescript nnoremap <silent> <buffer> <localleader>b :RescriptBuild<CR>
+    autocmd FileType rescript nnoremap <silent> <buffer> gd :RescriptJumpToDefinition<CR>
+    " Hooking up the ReScript autocomplete function
+    set omnifunc=rescript#Complete
+    " When preview is enabled, omnicomplete will display additional
+    " information for a selected item
+    set completeopt+=preview
+    " noremap <C-space> <C-x><C-o>
+"}}
 
 " vim-commentary
 autocmd FileType apache setlocal commentstring=#\ %s
@@ -357,13 +357,6 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 
 " Show all open buffers and their status
 nmap <leader>bl :ls<CR>
-
-
-" vim-workspace
-let g:workspace_create_new_tabs = 0
-nnoremap <leader>tw :ToggleWorkspace<CR>
-let g:workspace_autosave = 0
-let g:workspace_session_name = 'project_workspace.vim'
 
 " markdown preview
 " set to 1, nvim will open the preview window after entering the markdown buffer
