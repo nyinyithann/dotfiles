@@ -33,7 +33,7 @@ Plug 'mxw/vim-jsx'                                " ReactJS JSX syntax highlight
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/yajs.vim'                            " Improved syntax highlighting and indentation
 Plug 'SirVer/ultisnips'
-Plug 'mlaursen/vim-react-snippets'
+Plug 'honza/vim-snippets'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'matze/vim-move'
 Plug 'rrethy/vim-illuminate'
@@ -53,7 +53,7 @@ set shiftwidth=4                   " Number of spaces to use for autoindent.
 set backspace=2                    " Fix backspace behavior on most terminals.
 set wildmenu                       " Enable enhanced tab autocomplete.
 set wildmode=list:longest,full     " Complete till longest string, then open menu.
-set nohlsearch                     " Dont Highlight search results.
+set nohlsearch                       " Dont Highlight search results.
 set incsearch                      " Search as you type.
 set number
 set clipboard=unnamed,unnamedplus  " Copy into system (*, +) registers.
@@ -76,7 +76,10 @@ set autoread
 set ignorecase
 set smartcase
 set cursorline
+set splitright
+set nowrap
 let g:autoclose_on = 0
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.egg-info,.git,.svn,.hg,.bzr,.env,node_modules,.sass-cache
 " turn the following on to disable AutoPairs
 " let g:AutoPairs = {}
 " TextEdit might fail if hidden is not set
@@ -88,10 +91,13 @@ set nowritebackup
 set cmdheight=2
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=10000
+set updatetime=300
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 set signcolumn=yes
+set completeopt-=preview
+set completeopt+=menuone
+set completeopt+=noinsert,noselect
 
 " Essential mapping to me {{
     " map space as leader
@@ -129,6 +135,8 @@ set signcolumn=yes
 
     "Remove all trailing whitespace by pressing F5
     nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
+    nmap <silent> <F3> :so $MYVIMRC<CR>
 " }}
 
 " Fold {{
@@ -311,12 +319,13 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 " }}
 
 
-" NERDTree {{
+" NerdTree {{
     nnoremap <leader>e :NERDTreeToggle<CR>
     nnoremap <leader>ntf :NERDTreeFind<CR>
     let NERDTreeMinimalUI=1 " remove top help line
     let NERDTreeShowHidden=1
     let NERDTreeAutoDeleteBuffer = 1
+    let NERDTreeDirArrows = 1
     autocmd VimEnter * NERDTree | wincmd p
     " autocmd BufEnter * lcd %:p:h
     " Open the existing NERDTree on each new tab.
@@ -337,16 +346,14 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
 " }}
 
 " ReScript {{
-    autocmd FileType rescript nnoremap <silent> <buffer> <localleader>r :RescriptFormat<CR>
-    autocmd FileType rescript nnoremap <silent> <buffer> <localleader>t :RescriptTypeHint<CR>
+    autocmd FileType rescript nnoremap <silent> <buffer> <leader>r :RescriptFormat<CR>
+    autocmd FileType rescript nnoremap <silent> <buffer> <leader>t :RescriptTypeHint<CR>
     " autocmd FileType rescript nnoremap <silent> <buffer> <localleader>b :RescriptBuild<CR>
     autocmd FileType rescript nnoremap <silent> <buffer> gd :RescriptJumpToDefinition<CR>
     " Hooking up the ReScript autocomplete function
     set omnifunc=rescript#Complete
     " When preview is enabled, omnicomplete will display additional
     " information for a selected item
-    set completeopt+=preview
-    " noremap <C-space> <C-x><C-o>
 "}}
 
 
@@ -521,4 +528,32 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
     \   "function": "\uf794",
     \   "variable": "\uf71b",
     \  }
+
+
+    nmap <silent> <leader>vf :Vista finder<CR>
 " }}
+
+" UltiSnips {{
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+    let g:UltiSnipsEditSplit="vertical"
+" }}
+
+" Cursorline color {{
+    " Visual Mode Orange Background, Black Text
+    hi Visual guifg=#000000 guibg=#FD971F
+
+    " Default Colors for CursorLine
+    highlight CursorLine guibg=#3d3d29
+    highlight Cursor guibg=#A6E22E;
+
+    " Change Color when entering Insert Mode
+    autocmd InsertEnter * highlight  CursorLine guibg=#323D3E
+    autocmd InsertEnter * highlight  Cursor guibg=#00AAFF;
+
+    " Revert Color to default when leaving Insert Mode
+    autocmd InsertLeave * highlight  CursorLine guibg=#3E3D32
+    autocmd InsertLeave * highlight  Cursor guibg=#A6E22E;
+
+"" }}
