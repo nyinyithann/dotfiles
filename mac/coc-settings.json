@@ -15,7 +15,7 @@
 
     "rescript": {
       "enable": true,
-      "module": "~/.local/share/nvim/site/pack/jazz/start/vim-rescript/server/out/server.js",
+      "module": "~/.config/nvim/plugged/vim-rescript/server/out/server.js",
       "args": ["--node-ipc"],
       "filetypes": ["rescript"],
       "rootPatterns": ["bsconfig.json"]

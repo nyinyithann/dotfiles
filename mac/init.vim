@@ -98,6 +98,8 @@ set signcolumn=yes
 set completeopt-=preview
 set completeopt+=menuone
 set completeopt+=noinsert,noselect
+set tw=80
+set fo+=t
 
 " Essential mapping to me {{
     " map space as leader
@@ -137,6 +139,13 @@ set completeopt+=noinsert,noselect
     nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
     nmap <silent> <F3> :so $MYVIMRC<CR>
+
+    " select all
+    nnoremap <silent> <C-a> ggVG
+   
+    " By pressing ctrl+r in visual mode, you will be prompted to enter text to replace with. 
+    " Press enter and then confirm each change you agree with y or decline with n.
+    vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " }}
 
 " Fold {{
@@ -145,7 +154,7 @@ set completeopt+=noinsert,noselect
     nmap <leader>z za
 " }}
 
-" Coc Vim {{
+" Coc {{
     " Always show the signcolumn, otherwise it would shift the text each time
     " diagnostics appear/become resolved.
     if has("nvim-0.5.0") || has("patch-8.1.1564")
@@ -327,15 +336,10 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
     let NERDTreeAutoDeleteBuffer = 1
     let NERDTreeDirArrows = 1
     autocmd VimEnter * NERDTree | wincmd p
-    " autocmd BufEnter * lcd %:p:h
-    " Open the existing NERDTree on each new tab.
-    " autocmd BufWinEnter * silent NERDTreeMirror
+    autocmd BufWinEnter * silent NERDTreeMirror     " Open the existing NERDTree on each new tab.
     let g:NERDTreeDirArrowExpandable = '▸'
     let g:NERDTreeDirArrowCollapsible = '▾'
 
-    " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-    " autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | 
-    " \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 " }}
 
 " FZF Vim {{
