@@ -41,7 +41,8 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'Luxed/ayu-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'liuchengxu/vista.vim'
-
+Plug 'karb94/neoscroll.nvim'
+Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 call plug#end()
 
 syntax on                          " Enable syntax highlighting.
@@ -77,7 +78,7 @@ set ignorecase
 set smartcase
 set cursorline
 set splitright
-set nowrap
+set wrap
 let g:autoclose_on = 0
 set wildignore=*.swp,*.bak,*.pyc,*.class,*.egg-info,.git,.svn,.hg,.bzr,.env,node_modules,.sass-cache
 " turn the following on to disable AutoPairs
@@ -98,8 +99,6 @@ set signcolumn=yes
 set completeopt-=preview
 set completeopt+=menuone
 set completeopt+=noinsert,noselect
-set tw=80
-set fo+=t
 
 " Essential mapping to me {{
     " map space as leader
@@ -559,5 +558,5 @@ autocmd FileType json syntax match Comment +\/\/.\+$+
     " Revert Color to default when leaving Insert Mode
     autocmd InsertLeave * highlight  CursorLine guibg=#3E3D32
     autocmd InsertLeave * highlight  Cursor guibg=#A6E22E;
-
 "" }}
+
