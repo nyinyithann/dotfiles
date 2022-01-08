@@ -145,6 +145,10 @@ set completeopt+=noinsert,noselect
     " By pressing ctrl+r in visual mode, you will be prompted to enter text to replace with. 
     " Press enter and then confirm each change you agree with y or decline with n.
     vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+    nnoremap <leader>d "_d " delete without copy
+    xnoremap <leader>d "_d
+    xnoremap <leader>p "_dP " paste something and keep it available
 " }}
 
 " Fold {{

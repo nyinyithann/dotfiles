@@ -62,7 +62,7 @@
     },
     { "name": "rescript", "value": "#d23f3f" }
   ],
-  "svn.enableProposedApi": "none",
+  "jest.autoRun": "false",
   "workbench.sideBar.location": "left",
   "editor.fontLigatures": true,
   "diffEditor.ignoreTrimWhitespace": false,
@@ -73,17 +73,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "reason.diagnostics.tools": [
-    "merlin"
-    //"bsb"
-  ],
-  "reason.path.ocamlmerlin": "/home/nnt/.opam/4.11.1/bin/ocamlmerlin",
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "remote.WSL.debug": true,
   "terminal.integrated.fontWeight": "600",
   "explorer.confirmDragAndDrop": false,
-  "go.formatTool": "goimports",
   "python.languageServer": "Pylance",
   "files.watcherExclude": {
     "**/.bloop": true,
@@ -101,7 +94,6 @@
     "editor.wordBasedSuggestions": false
   },
   "FSharp.useSdkScripts": true,
-  "java.configuration.checkProjectSettingsExclusions": false,
   "[ocaml]": {
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
@@ -118,7 +110,6 @@
   "editor.codeLensFontFamily": "'FiraCode Nerd Font Mono'",
   "editor.codeLensFontSize": 12,
   "editor.mouseWheelZoom": true,
-  "kite.showWelcomeNotificationOnStartup": false,
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -133,7 +124,6 @@
     "*.ipynb": "jupyter-notebook"
   },
   "python.insidersChannel": "daily",
-  "peacock.affectAccentBorders": true,
   "peacock.affectStatusAndTitleBorders": true,
   "prettier.singleQuote": true,
   "[jsonc]": {
@@ -144,7 +134,6 @@
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "csharp.referencesCodeLens.enabled": false,
-  "editor.renderIndentGuides": false,
 
   "editor.formatOnSave": true,
   "liveServer.settings.host": "localhost",
@@ -187,11 +176,33 @@
   "editor.lineHeight": 20,
   "terminal.explorerKind": "external",
   "terminal.integrated.defaultProfile.linux": "zsh",
+  "vim.autoindent": true,
+  "vim.ignorecase": true,
+  "vim.joinspaces": true,
+  "vim.showcmd": true,
   "vim.easymotion": true,
   "vim.incsearch": true,
   "vim.useSystemClipboard": true,
   "vim.useCtrlKeys": true,
   "vim.hlsearch": true,
+  "terminal.integrated.cursorBlinking": true,
+  "editor.accessibilitySupport": "off",
+  "terminal.integrated.lineHeight": 1,
+  "terminal.integrated.fontSize": 12,
+  "workbench.iconTheme": "material-icon-theme",
+  "redhat.telemetry.enabled": true,
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-c>": false,
+    "<C-x>": false,
+    "<C-v>": false,
+    "<C-z>": false,
+    "<C-y>": false,
+    "<C-a>": false,
+    "<C-f>": false
+  },
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "k"],
@@ -201,11 +212,11 @@
   "vim.visualModeKeyBindings": [
     {
       "before": [">"],
-      "after": [">", "g", "v"]
+      "commands": ["editor.action.indentLines"]
     },
     {
       "before": ["<"],
-      "after": ["<", "g", "v"]
+      "commands": ["editor.action.outdentLines"]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -235,29 +246,15 @@
     },
     {
       "before": ["<leader>", "h"],
-      "after": ["_"]
+      "commands": ["workbench.view.explorer"]
     },
     {
-      "before": ["<leader>", "l"],
-      "after": ["$"]
+      "before": [":"],
+      "commands": ["workbench.action.showCommands"]
+    },
+    {
+      "before": ["<C-s>"],
+      "commands": ["workbench.action.files.save"]
     }
-  ],
-  "vim.leader": "<space>",
-  "vim.handleKeys": {
-    "<C-d>": false,
-    "<C-c>": false,
-    "<C-x>": false,
-    "<C-v>": false,
-    "<C-z>": false,
-    "<C-y>": false,
-    "<C-a>": false,
-    "<C-f>": false
-  },
-  "terminal.integrated.cursorBlinking": true,
-  "ocaml-formatter.profile": "janestreet",
-  "editor.accessibilitySupport": "off",
-  "terminal.integrated.lineHeight": 1,
-  "terminal.integrated.fontSize": 12,
-  "workbench.iconTheme": "material-icon-theme",
-  "redhat.telemetry.enabled": true
+  ]
 }
