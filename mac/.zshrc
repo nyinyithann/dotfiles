@@ -192,3 +192,6 @@ if [ -e /Users/jazz/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jazz/.nix
 
 # tmuxinator
 alias mux=tmuxinator
+
+# exa 
+alias ls="exa --icons -l -s=type --no-permissions --no-user"
