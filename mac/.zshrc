@@ -128,12 +128,12 @@ alias ktheme-reset="kitty @set-colors -a -c --reset"
 alias ktheme="cd ~/.config/kitty/kitty-themes && fzf --preview 'head -n 40 {} && kitty @set-colors -a -c {}'; cd -"
 
 # fzf
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULTS_OPS="--extended"
-alias fz=fzf
-alias fzp="fzf --preview 'bat --color=always --style=numbers --line-range=:500   {}'"
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# export FZF_DEFAULTS_OPS="--extended"
+# alias fz=fzf
+# alias fzp="fzf --preview 'bat --color=always --style=numbers --line-range=:500   {}'"
 # alias fzp="fzf --preview 'head -n 40 {}'"
-complete -F _fzf_path_completion -o default -o bashdefault ll
+# complete -F _fzf_path_completion -o default -o bashdefault ll
 
 # opam configuration
 test -r /Users/jazz/.opam/opam-init/init.zsh && . /Users/jazz/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
@@ -171,16 +171,11 @@ alias dfiles="code ~/my/dotfiles/dotfiles.code-workspace"
 # Open Folders
 alias cd-vimplugins="cd ~/.local/share/nvim/site/pack/jazz/start"
 
-# Open Repos
-alias mynotes="nohup /Applications/Joplin.app/Contents/MacOS/Joplin ~/my/mynotes &!"
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 
 source /Users/jazz/.config/broot/launcher/bash/br
 
 # weather 
-alias we="curl http://wttr.in"
 alias weather="curl http://wttr.in"
 
 # elasticsearch
