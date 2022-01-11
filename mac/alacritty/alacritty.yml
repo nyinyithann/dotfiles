@@ -1,0 +1,29 @@
+env:
+  TERM: xterm-256color
+
+window:
+  dimensions:
+    columns: 80
+    lines: 24
+
+  padding:
+    x: 2
+    y: 2
+
+live_config_reload: true
+
+font:
+  normal:
+    family: FiraMono Nerd Font Mono
+    style: Regular
+
+  size: 12.5
+
+cursor:
+  style: Underline
+
+key_bindings:
+  - { key: J, mods: Alt, chars: "\x1bj" }
+  - { key: K, mods: Alt, chars: "\x1bk" }
+  - { key: H, mods: Alt, chars: "\x1bh" }
+  - { key: L, mods: Alt, chars: "\x1bl" }
