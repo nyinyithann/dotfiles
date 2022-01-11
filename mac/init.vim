@@ -26,14 +26,16 @@ call plug#begin(autoload_plug_path)
     Plug 'onsails/lspkind-nvim'
     Plug 'L3MON4D3/LuaSnip'
     Plug 'nvim-lua/popup.nvim'
-    Plug 'nvim-telescope/telescope.nvim'
-    Plug 'kyazdani42/nvim-web-devicons'
     Plug 'nvim-lualine/lualine.nvim'
     Plug 'tpope/vim-fugitive'
     Plug 'tpope/vim-rhubarb'
     Plug 'akinsho/bufferline.nvim'
-    Plug 'kyazdani42/nvim-tree.lua'
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'kyazdani42/nvim-web-devicons'
+    Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'nvim-telescope/telescope.nvim'
+    Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+    Plug 'mhartington/formatter.nvim'
 call plug#end()
 
 " Setting Variables {{
@@ -354,6 +356,11 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
+nvim_lsp.flow.setup {
+  on_attach = on_attach,
+  capabilities = capabilities
+}
+
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
   filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
@@ -402,7 +409,6 @@ nvim_lsp.diagnosticls.setup {
       prettier = {
         command = 'prettier_d_slim',
         rootPatterns = { '.git' },
-        -- requiredFiles: { 'prettier.config.js' },
         args = { '--stdin', '--stdin-filepath', '%filename' }
       }
     },
@@ -470,24 +476,6 @@ prettier.setup({
     "typescriptreact",
     "yaml",
   },
-
-  -- prettier format options (you can use config files too. ex: `.prettierrc`)
-  arrow_parens = "always",
-  bracket_spacing = true,
-  embedded_language_formatting = "auto",
-  end_of_line = "lf",
-  html_whitespace_sensitivity = "css",
-  jsx_bracket_same_line = false,
-  jsx_single_quote = false,
-  print_width = 80,
-  prose_wrap = "preserve",
-  quote_props = "as-needed",
-  semi = true,
-  single_quote = false,
-  tab_width = 2,
-  trailing_comma = "es5",
-  use_tabs = false,
-  vue_indent_script_and_style = false,
 })
 EOF
 "******* end prettier.vim **********************
@@ -607,20 +595,34 @@ EOF
 "*** telescope
 nnoremap <silent> ;f <cmd>Telescope find_files<cr>
 nnoremap <silent> ;g <cmd>Telescope live_grep<cr>
+nnoremap <silent> ;s <cmd>Telescope grep_string<cr>
 nnoremap <silent> ;b <cmd>Telescope buffers<cr>
 nnoremap <silent> ;h <cmd>Telescope help_tags<cr>
 nnoremap <silent> ;t <cmd>Telescope<cr>
 lua << EOF
 local actions = require('telescope.actions')
 require('telescope').setup{
-  defaults = {
-    mappings = {
-      n = {
-        ["q"] = actions.close
-      },
+    defaults = {
+        mappings = {
+          n = {
+            ["q"] = actions.close
+          },
+        },
     },
-  }
-} 
+    extensions = {
+        fzf = {
+          fuzzy = true,                    -- false will only do exact matching
+          override_generic_sorter = true,  -- override the generic sorter
+          override_file_sorter = true,     -- override the file sorter
+          case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+                                           -- the default case_mode is "smart_case"
+        }
+    }
+}
+
+-- To get fzf loaded and working with telescope, you need to call
+-- load_extension, somewhere after setup function:
+require('telescope').load_extension('fzf')
 EOF
 "*** end telescope
 
@@ -876,6 +878,7 @@ require('bufferline').setup {
         sort_by = 'id',
       }
     }
+    require('lspconfig').tailwindcss.setup { }
 EOF
-" test
 "*** end buffer line
+
