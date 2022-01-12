@@ -58,7 +58,7 @@
     },
     {
       "name": "dotfiles",
-     "value": "#686b69"
+      "value": "#686b69"
     },
     { "name": "rescript", "value": "#d23f3f" }
   ],
@@ -191,7 +191,6 @@
   "terminal.integrated.fontSize": 12,
   "workbench.iconTheme": "material-icon-theme",
   "redhat.telemetry.enabled": true,
-  "bracket-pair-colorizer-2.depreciation-notice": false,
   "vim.leader": "<space>",
   "vim.handleKeys": {
     "<C-d>": true,
@@ -256,5 +255,8 @@
       "before": ["<C-s>"],
       "commands": ["workbench.action.files.save"]
     }
-  ]
-} 
+  ],
+  "editor.quickSuggestions": {
+    "strings": true
+  }
+}

@@ -64,11 +64,12 @@ cmp.setup({
             select = true
         }),
     },
-    sources = cmp.config.sources({
-        { name = 'nvim_lsp' },
-    }, {
-        { name = 'buffer' },
-    }),
+    sources = {
+        { name = 'gh_issues' },
+        { name = 'nvim_lsp', priority = 1000 },
+        { name = 'luasnip' },
+        { name = 'buffer', priority = 500 },
+    },
     formatting = {
         format = lspkind.cmp_format({with_text = false, maxwidth = 50})
     }

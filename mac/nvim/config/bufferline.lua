@@ -44,7 +44,7 @@ require('bufferline').setup {
                 return true
             end
         end,
-        offsets = {{filetype = "NvimTree", text = "File Explorer" }},
+        offsets = {{filetype = "NERD_Tree", text = "File Explorer" }},
         show_buffer_icons = true , -- disable filetype icons for buffers
         show_buffer_close_icons = false,
         show_close_icon = false ,

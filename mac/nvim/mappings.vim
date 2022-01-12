@@ -99,8 +99,8 @@ noremap <nowait><leader>l <c-w><c-l>
 if has('nvim')
     highlight! link TermCursor Cursor
     highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
-    tnoremap <Esc> <c-\><c-n>
-    tnoremap <C-v><Esc> <Esc>
+    nnoremap <leader>t :split \| :resize -10 \| bel terminal<CR>
+    tnoremap <Esc> <C-\><C-n>:q!<CR>
     tnoremap <A-h> <c-\><c-n><c-w>h
     tnoremap <A-j> <c-\><c-n><c-w>j
     tnoremap <A-k> <c-\><c-n><c-w>k
@@ -112,20 +112,22 @@ set foldmethod=indent
 autocmd FileType javascript setlocal foldmethod=marker
 nmap <leader>z za
 
-" Theme
-set termguicolors
-let g:gruvbox_contrast_dark = 'hard'
-let g:ayucolor="dark"   " for dark version of theme
-colorscheme ayu
 
 
 " telescope
+nnoremap <silent> ;t <cmd>Telescope<cr>
 nnoremap <silent> ;f <cmd>Telescope find_files<cr>
-nnoremap <silent> ;g <cmd>Telescope live_grep<cr>
+nnoremap <silent> ;l <cmd>Telescope live_grep<cr>
 nnoremap <silent> ;s <cmd>Telescope grep_string<cr>
 nnoremap <silent> ;b <cmd>Telescope buffers<cr>
 nnoremap <silent> ;h <cmd>Telescope help_tags<cr>
-nnoremap <silent> ;t <cmd>Telescope<cr>
+nnoremap <silent> ;ca <cmd>lua require'telescope.builtin'.lsp_code_actions{}<cr>
+nnoremap <silent> ;gd <cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>
+nnoremap <silent> ;gs <cmd>lua require'telescope.builtin'.lsp_document_symbols{}<cr>
+nnoremap <silent> ;gw <cmd>lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
+nnoremap <silent> ;gi <cmd>lua require'telescope.builtin'.lsp_implementations{}<cr>
+nnoremap <silent> ;gl <cmd>Telescope diagnostics bufnr=0<cr>
+nnoremap <silent> <leader>f <cmd>Telescope current_buffer_fuzzy_find<cr>
 
 " NvimTree
 nnoremap <leader>e :NvimTreeToggle<CR>
@@ -133,3 +135,8 @@ nnoremap R :NvimTreeRefresh<CR>
 nnoremap <leader>nf :NvimTreeFindFile<CR>
 " NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
 
+" Tabs
+nmap <silent> <leader>tL :tabnext<cr>
+nmap <silent> <leader>tH :tabprevious<cr>
+nmap <leader>tN :tabnew 
+nmap <silent> <leader>tC :tabclose<cr>

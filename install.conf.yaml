@@ -21,7 +21,7 @@
     ~/.tmux.conf:
       path: mac/tmux/tmux.conf
       force: true
-    ~/Users/jazz/Library/Application Support/code/user/settings.json:
+    ~/Library/Application Support/code/user/settings.json:
       path: mac/vscode/settings.json
       force: true
     ~/.zshrc:
