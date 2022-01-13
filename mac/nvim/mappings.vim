@@ -35,9 +35,6 @@ nmap <leader>bp :bprevious<CR>
 " This replicates the idea of closing a tab
 nmap <leader>bq :bp <BAR> bd #<CR>
 
-" Show all open buffers and their status
-nmap <leader>bl :ls<CR>
-
 " BufOnly
 command! BufOnly silent! execute "%bd|e#|bd#"
 
@@ -72,7 +69,6 @@ nnoremap <leader><Right> :vertical resize +5<CR>
 nnoremap <leader><Left> :vertical resize -5<CR>
 nnoremap <leader><Up> :resize +5<CR>
 nnoremap <leader><Down> :resize -5<CR>
-nnoremap <leader>rp :resize 100<CR>
 
 " autosave 
 let g:auto_save = 0
@@ -107,8 +103,8 @@ autocmd FileType javascript setlocal foldmethod=marker
 nmap <leader>z za
 
 " Tabs
-nmap <silent> <leader>tL :tabnext<cr>
-nmap <silent> <leader>tH :tabprevious<cr>
-nmap <leader>tN :tabnew 
-nmap <silent> <leader>tC :tabclose<cr>
+nmap <silent> <leader>tl :tabnext<cr>
+nmap <silent> <leader>th :tabprevious<cr>
+nmap <leader>tn :tabnew<cr> 
+nmap <silent> <leader>tc :tabclose<cr>
 

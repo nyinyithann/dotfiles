@@ -15,37 +15,37 @@ nmap <silent> gt <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> gl <Plug>(coc-diagnostic-prev)
-nmap <silent> gn <Plug>(coc-diagnostic-next)
+nmap <silent> gl <Plug>(coc-diagnostic-next)
+nmap <silent> gh <Plug>(coc-diagnostic-prev)
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Run the Code Lens action on the current line.
-nmap <leader>ca  <Plug>(coc-codelens-action)
+nmap ;ca  <Plug>(coc-codelens-action)
 
 " Symbol renaming.
-nmap <space>rn <Plug>(coc-rename)
+nmap ;rn <Plug>(coc-rename)
 " Ad `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
+command! -nargs=0 Fmt :call CocAction('format')
 
 " Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fl :call     CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 " Mappings for CoCList
 " Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
+nnoremap <silent><nowait> ;a  :<C-u>CocList diagnostics<cr>
 " Manage extensions.
-nnoremap <silent><nowait> <space>x  :<C-u>CocList extensions<cr>
+nnoremap <silent><nowait> ;x  :<C-u>CocList extensions<cr>
 " Show commands.
-nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
+nnoremap <silent><nowait> ;m  :<C-u>CocList commands<cr>
 " Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
+nnoremap <silent><nowait> ;o  :<C-u>CocList outline<cr>
 " Search workspace symbols.
-nnoremap <silent><nowait> <space>s  :<C-u>CocList -I -N --top symbols<cr>
+nnoremap <silent><nowait> ;s  :<C-u>CocList -I -N --top symbols<cr>
 " Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+nnoremap <silent><nowait> ;l  :<C-u>CocList<CR>
 
 " coc-css scss
 autocmd FileType scss setl iskeyword+=@-@

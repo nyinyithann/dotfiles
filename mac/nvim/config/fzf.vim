@@ -16,5 +16,5 @@ nnoremap <silent> <leader>fcmd :Commands<CR>
 nnoremap <silent> <leader>fkey :Maps<CR>
 nnoremap <silent> <leader>fft :Filetypes<CR>
 nnoremap <silent> <leader>fn :Snippets<CR>
-
-
+nnoremap <silent> <leader>fg :Commits<CR>
+nnoremap <silent> <leader>fgb :BCommits<CR>
