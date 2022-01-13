@@ -51,4 +51,8 @@ let airline#extensions#coc#warning_symbol = 'W:'
 " enable/disable coc status display >
 let g:airline#extensions#coc#show_coc_status = 1
 
-let g:airline_filetype_overrides = { 'nerdtree': [ get(g:, 'NERDTreeStatusline', 'File Explorer'), '' ]}
+let g:airline_filetype_overrides = {
+            \ 'nerdtree': [ get(g:, 'NERDTreeStatusline', 'File Explorer'), '' ],
+            \'fugitive': ['fugitive', '%{airline#util#wrap(airline#extensions#branch#get_head(),80)}'],
+            \ 'vim-plug': [ 'Plugins', '' ]
+            \}

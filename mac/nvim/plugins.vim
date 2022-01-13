@@ -38,3 +38,7 @@ Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'SirVer/ultisnips'
 Plug 'nyinyithann/vim-snippets'
+Plug 'tpope/vim-fugitive'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+Plug 'nanotech/jellybeans.vim'
+Plug 'w0ng/vim-hybrid'
