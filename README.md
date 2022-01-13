@@ -1,35 +1,22 @@
-## My dev env config files on Mac
+## My dotfiles
 
-### Configs
-- ## My dev env config files on Mac
+This repo contains config files for the following dev tools i use daily.
+- [Alacritty](https://github.com/alacritty/alacritty)
+- [Kitty](https://sw.kovidgoyal.net/kitty/)
+- [Tmux](https://github.com/tmux/tmux)
+- [NeoVim](https://neovim.io/)
+- [zsh](https://github.com/ohmyzsh/ohmyzsh)
+- [VSCode](https://code.visualstudio.com/)
+- [git](https://git-scm.com/)
 
-### Configs
-- [NeoVim](./mac/init.vim)
-- [coc.vim](./mac/coc-settings.json)
-- [zshrc](./mac/.zshrc)
-- [zprofile](./mac/.zprofile)
-- [karabiner](./mac/karabiner.json)
-- [kitty](./mac/kitty.conf)
-
-### Shortcuts
-- [shortcuts](./mac/shortcuts.md)
-
-##  My dev env config files on Ubuntu
-
-### Configs
-- [NeoVim](./ubuntu/init.vim)
-- [coc.vim](./ubuntu/coc-settings.json)
-- [VS Code Settings](./ubuntu/vscode_settings.json)
-- [VS Code KeyBindings](./ubuntu/vscode_keybindings.json)
-- [Kitty Terminal](./ubuntu/kitty.conf)
-- [Oh My Z!](./ubuntu/.zshrc)
+### Screenshots
+#### OCaml in NeoVim
+<img src="images/NeoVim_Ocaml.png" alt="ocaml" width="500">
 
 
-### Shortcuts
-- [NeoVim](./ubuntu/vim_keys.md)
-- [VS Code Vim Mode](./ubuntu/vscode_vim_mode.md)
+#### ReScript in NeoVim
+<img src="images/NeoVim_Rescript.png" alt="rescript" width="500">
 
-### Screenshots of My NeoVim
 
-<img src="screenshots/ss1.png" alt="seq logo" width="500">
-<img src="screenshots/ss2.png" alt="seq logo" width="500">
+#### JavaScript in NeoVim
+<img src="images/NeoVim_JavaScript.png" alt="javascript" width="500">
