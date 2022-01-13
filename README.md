@@ -71,7 +71,7 @@ This repo contains config files for the following dev tools i use daily.
 | `<C-space>`        | trigger completion                                                                                                                                                         | coc               |
 | `:Fmt`             | format                                                                                                                                                                     | coc               |
 | `:Fl`              | fold                                                                                                                                                                       | coc               |
-| `:OR`              | organice imports                                                                                                                                                           | coc               |
+| `:OR`              | organize imports                                                                                                                                                           | coc               |
 | `<A- h/k/j/l>`     | move lines                                                                                                                                                                 | vim-move          |
 | `ft`               | toggle float window                                                                                                                                                        | float-term        |
 | `fn`               | new float window                                                                                                                                                           | float-term        |
@@ -80,7 +80,7 @@ This repo contains config files for the following dev tools i use daily.
 | `<A- h/k/j/l>`     | terminal windows navigation                                                                                                                                                | vim (terminal)    |
 |`rd` | jump to definition | rescript|
 |`rf` | format | rescript|
-|`rt` | type hine| rescript|
+|`rt` | type hint| rescript|
 |`rb` | build | rescript|
 ### Screenshots
 
