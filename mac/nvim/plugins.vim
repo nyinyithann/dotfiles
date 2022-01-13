@@ -31,7 +31,10 @@ Plug 'rrethy/vim-illuminate'
 Plug 'machakann/vim-highlightedyank'
 Plug 'Luxed/ayu-vim'
 Plug 'Yggdroot/indentLine'
-Plug 'liuchengxu/vista.vim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 Plug 'jesseleite/vim-sourcery'
+Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'SirVer/ultisnips'
+Plug 'nyinyithann/vim-snippets'

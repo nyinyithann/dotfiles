@@ -3,10 +3,10 @@
       relink: true
       create: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]
 
 - link:
     ~/.config/kitty:
@@ -30,4 +30,6 @@
     ~/.config/nvim:
       path: mac/nvim
       force: true
-
+    ~/.gitconfig:
+      path: mac/git/gitconfig
+      force: true

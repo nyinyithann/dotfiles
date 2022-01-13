@@ -16,5 +16,6 @@ vim.cmd [[
 vim.o.termguicolors = true
 vim.g.gruvbox_contrast_dark = 'hard'
 vim.g.ayucolor="dark"   
-vim.cmd [[colorscheme ayu]]
+vim.g.background="dark"
+vim.cmd [[colorscheme PaperColor]]
 
