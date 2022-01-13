@@ -9,6 +9,7 @@
 [core]
     pager = delta
 	editor = code --wait
+	excludesfile = /Users/jazz/.gitignore_global
 
 [interactive]
     diffFilter = delta --color-only --features=interactive
