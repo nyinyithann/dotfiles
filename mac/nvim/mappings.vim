@@ -1,9 +1,3 @@
-" Delete without yank
-nnoremap <leader>d "_d
-xnoremap <leader>d "_d
-xnoremap <leader>p "_dP
-nnoremap x "_x
-
 " Increment/decrement
 nnoremap + <C-a>
 nnoremap - <C-x>
@@ -59,10 +53,10 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 
 " Cursorline color 
 " Visual Mode Orange Background, Black Text
-hi Visual guifg=#000000 guibg=#FD971F
+hi Visual guifg=#000000 guibg=#323D3E
 
 " Default Colors for CursorLine
-highlight CursorLine guibg=#3d3d29
+highlight CursorLine guibg=#3E3D32
 highlight Cursor guibg=#A6E22E;
 
 " Change Color when entering Insert Mode
@@ -112,31 +106,9 @@ set foldmethod=indent
 autocmd FileType javascript setlocal foldmethod=marker
 nmap <leader>z za
 
-
-
-" telescope
-nnoremap <silent> ;t <cmd>Telescope<cr>
-nnoremap <silent> ;f <cmd>Telescope find_files<cr>
-nnoremap <silent> ;l <cmd>Telescope live_grep<cr>
-nnoremap <silent> ;s <cmd>Telescope grep_string<cr>
-nnoremap <silent> ;b <cmd>Telescope buffers<cr>
-nnoremap <silent> ;h <cmd>Telescope help_tags<cr>
-nnoremap <silent> ;ca <cmd>lua require'telescope.builtin'.lsp_code_actions{}<cr>
-nnoremap <silent> ;gd <cmd>lua require'telescope.builtin'.lsp_definitions{}<cr>
-nnoremap <silent> ;gs <cmd>lua require'telescope.builtin'.lsp_document_symbols{}<cr>
-nnoremap <silent> ;gw <cmd>lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
-nnoremap <silent> ;gi <cmd>lua require'telescope.builtin'.lsp_implementations{}<cr>
-nnoremap <silent> ;gl <cmd>Telescope diagnostics bufnr=0<cr>
-nnoremap <silent> <leader>f <cmd>Telescope current_buffer_fuzzy_find<cr>
-
-" NvimTree
-nnoremap <leader>e :NvimTreeToggle<CR>
-nnoremap R :NvimTreeRefresh<CR>
-nnoremap <leader>nf :NvimTreeFindFile<CR>
-" NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
-
 " Tabs
 nmap <silent> <leader>tL :tabnext<cr>
 nmap <silent> <leader>tH :tabprevious<cr>
 nmap <leader>tN :tabnew 
 nmap <silent> <leader>tC :tabclose<cr>
+

@@ -12,7 +12,6 @@ vim.cmd [[
   augroup end
 ]]
 
-
 -- Theme
 vim.o.termguicolors = true
 vim.g.gruvbox_contrast_dark = 'hard'

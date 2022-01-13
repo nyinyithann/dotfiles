@@ -1,0 +1,37 @@
+{
+  "languageserver": {
+    "ocaml-lsp": {
+      "enable": true,
+      "command": "opam",
+      "args": ["config", "exec", "--", "ocamllsp"],
+      "filetypes": ["ocaml", "reason"]
+    },
+
+    // "ocaml-lsp": {
+    //   "command": "esy",
+    //   "args": ["sh", "-c", "ocamllsp"],
+    //   "filetypes": ["ocaml", "reason"]
+    // },
+
+    "rescript": {
+      "enable": true,
+      "module": "~/.config/nvim/plugged/vim-rescript/server/out/server.js",
+      "args": ["--node-ipc"],
+      "filetypes": ["rescript"],
+      "rootPatterns": ["bsconfig.json"]
+    }
+  },
+  "coc.preferences.formatOnSaveFiletypes": ["*"],
+  "coc.preferences.formatOnType": true,
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•",
+
+  "list.normalMappings": {
+    "<C-c>": "do:exit"
+  },
+  "list.insertMappings": {
+    "<C-c>": "do:exit"
+  }
+}
+

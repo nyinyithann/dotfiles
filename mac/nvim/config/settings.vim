@@ -77,6 +77,4 @@ set t_BE=
 
 set termguicolors " this variable must be enabled for colors to be applied properly
 
-" Time in milliseconds (default 0)
-let g:Illuminate_delay = 50
 
