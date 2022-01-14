@@ -25,12 +25,12 @@ This repo contains config files for the following dev tools i use daily.
 |  `<leader> fbt `   | current buffer tags                                                                                                                                                        | fzf               |
 |  `<leader> fm `    | marks                                                                                                                                                                      | fzf               |
 |  `<leader> fw `    | windows                                                                                                                                                                    | fzf               |
-|  `<leader> fch `   | command history                                                                                                                                                            | fzf               |
-|  `<leader> fsh `   | search history                                                                                                                                                             | fzf               |
+|  `<leader> fhc `   | command history                                                                                                                                                            | fzf               |
+|  `<leader> fhs `   | search history                                                                                                                                                             | fzf               |
 |  `<leader> fcmd`   | commands                                                                                                                                                                   | fzf               |
 |  `<leader> fkey`   | maps                                                                                                                                                                       | fzf               |
 |  `<leader> fft `   | filetypes                                                                                                                                                                  | fzf               |
-|  `<leader> fn `    | snippets                                                                                                                                                                   | fzf               |
+|  `<leader> fs `    | snippets                                                                                                                                                                   | fzf               |
 |  `<leader> fg `    | git commits                                                                                                                                                                | fzf               |
 |  `<leader> fgb `   | git buffer commits                                                                                                                                                         | fzf               |
 | `<leader> e`       | toggle nerdtree                                                                                                                                                            | nerdtree          |
@@ -78,10 +78,11 @@ This repo contains config files for the following dev tools i use daily.
 | `:BufOnly`         | close other buffers except the active one                                                                                                                                  | vim               |
 | `<C-r>`            | By pressing ctrl+r in visual mode, you will be prompted to enter text to replace with.<br>Press enter and then confirm each change you agree with y or decline with n.<br> | vim (Visual Mode) |
 | `<A- h/k/j/l>`     | terminal windows navigation                                                                                                                                                | vim (terminal)    |
-|`rd` | jump to definition | rescript|
-|`rf` | format | rescript|
-|`rt` | type hint| rescript|
-|`rb` | build | rescript|
+| `rd`               | jump to definition                                                                                                                                                         | rescript          |
+| `rf`               | format                                                                                                                                                                     | rescript          |
+| `rt`               | type hint                                                                                                                                                                  | rescript          |
+| `rb`               | build                                                                                                                                                                      | rescript          |
+
 ### Screenshots
 
 #### OCaml in NeoVim
@@ -95,4 +96,3 @@ This repo contains config files for the following dev tools i use daily.
 #### JavaScript in NeoVim
 
 <img src="images/NeoVim_JavaScript.png" alt="javascript" width="500">
-
