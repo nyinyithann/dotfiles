@@ -166,6 +166,10 @@ alias duem="dune exec ./main.exe"
 alias eb="esy build"
 alias nes="npx esy start"
 
+# node react
+alias ys="yarn start"
+alias yb="yarn build"
+
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 alias dfiles="code ~/my/dotfiles/dotfiles.code-workspace"
 
@@ -181,7 +185,6 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 source /Users/jazz/.config/broot/launcher/bash/br
 
 # weather 
-alias we="curl http://wttr.in"
 alias weather="curl http://wttr.in"
 
 # elasticsearch
