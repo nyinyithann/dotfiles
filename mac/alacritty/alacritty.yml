@@ -14,10 +14,14 @@ live_config_reload: true
 
 font:
   normal:
-    family: FiraMono Nerd Font Mono
+    family: FuraMono Nerd Font
     style: Regular
 
   size: 12.5
+
+  offset:
+    x: 0
+    y: 4
 
 cursor:
   style: Underline

@@ -148,8 +148,7 @@ alias vi="nvim"
 alias sy='systemctl'
 alias git='LANG=en_US.UTF-8 git'
 alias github="git config --local user.name 'nyinyithann'; git config --local user.email 'nyinyithann@gmail.com'"
-alias dir="ls -ld */"
-alias dirs="dirs -v"
+alias dirs="ls -ld */ -v"
 alias cls="clear"
 alias copy="pbcopy"
 alias zshconfig="code ~/.zshrc"
@@ -199,3 +198,8 @@ alias mux=tmuxinator
 
 # exa 
 alias sh="exa --icons -l -s=type --no-permissions --no-user"
+
+# nnn
+export NNN_FCOLORS="0000E63100000000000000"
+alias nnn="nnn -e"
+alias dir="nnn -e"

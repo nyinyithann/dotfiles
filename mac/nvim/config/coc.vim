@@ -1,4 +1,4 @@
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-cssmodules', 'coc-diagnostic', 'coc-dot-complete', 'coc-eslint', 'coc-flow', 'coc-fzf-preview', 'coc-html', 'coc-highlight', 'coc-html-css-support', 'coc-json', 'coc-lightbulb', 'coc-markdown-preview-enhanced', 'coc-prettier', 'coc-snippets', 'coc-sql', 'coc-svg', 'coc-toml', 'coc-xml', 'coc-yaml', 'coc-svelte', 'coc-lists']
+let g:coc_global_extensions = ['coc-json',  'coc-cssmodules', 'coc-diagnostic', 'coc-dot-complete',  'coc-flow', 'coc-fzf-preview', 'coc-html', 'coc-html-css-support', 'coc-json',  'coc-markdown-preview-enhanced',  'coc-snippets', 'coc-svg', 'coc-toml', 'coc-xml', 'coc-yaml', 'coc-lists']
 
 " Always show the signcolumn, otherwise it would shift the text each time
 " diagnostics appear/become resolved.
@@ -68,3 +68,4 @@ if has('nvim')
 else
     inoremap <silent><expr> <c-@> coc#refresh()
 endif
+
