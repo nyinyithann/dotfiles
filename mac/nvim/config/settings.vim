@@ -3,6 +3,7 @@ syntax enable
 set title
 set background=dark
 set autoindent                         " Respect indentation when starting a new line.
+set smartindent
 set expandtab                          " Expand tabs to spaces. Essential in Python.
 set tabstop=4                          " Number of spaces tab is counted for.
 set shiftwidth=4                       " Number of spaces to use for autoindent.
@@ -77,4 +78,4 @@ set t_BE=
 
 set termguicolors " this variable must be enabled for colors to be applied properly
 
-
+filetype plugin indent on

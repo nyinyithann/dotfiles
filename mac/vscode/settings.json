@@ -259,5 +259,10 @@
   "editor.quickSuggestions": {
     "strings": true
   },
-  "security.workspace.trust.untrustedFiles": "open"
+  "security.workspace.trust.untrustedFiles": "open",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "svelte.enable-ts-plugin": true,
+  "workbench.startupEditor": "none"
 }
