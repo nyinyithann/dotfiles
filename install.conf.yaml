@@ -26,10 +26,13 @@
       force: true
     ~/.zshrc:
       path: mac/zsh/.zshrc
-      force: trup
+      force: true
     ~/.config/nvim:
       path: mac/nvim
       force: true
     ~/.gitconfig:
       path: mac/git/gitconfig
+      force: true
+    ~/.ideavimrc:
+      path: mac/idea/.ideavimrc
       force: true

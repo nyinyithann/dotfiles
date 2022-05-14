@@ -1,0 +1,86 @@
+let mapleader=" "
+
+""" Plugins  --------------------------------
+set easymotion
+
+""" Cmmon settings -------------------------
+set showmode
+set so=5
+set incsearch
+set nu
+set showmatch
+set hlsearch
+set ignorecase
+set smartcase
+set history=3000000
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+
+map <leader>m <Plug>(easymotion-bd-w)
+inoremap jk <esc> 
+
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+
+
+nnoremap <c-\> :action SplitVertically<CR>
+nnoremap <c--> :action SplitHorizontally<CR>
+nnoremap <c-=> :action Unsplit<CR>
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+
+# sethandler command sets IdeaVim as the handler of the specified shortcut
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <leader>h <c-w>h
+nnoremap <leader>l <c-w>l
+nnoremap <leader>j <c-w>j
+nnoremap <leader>k <c-w>k
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
+nnoremap <Leader>en :action EditSourceInNewWindow<CR>
+nnoremap <Leader>n :action NextWindow<CR>
+nnoremap <Leader>q :action CloseContent<CR>
+nnoremap <Leader>qa :action CloseAllEditors<CR>
+
+nnoremap <Leader>=  :action ReformatCode<CR>
+
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+nnoremap gc :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotToDeclaration<CR>
+nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+
+nnoremap <c-p> :action JumpToLastWindow<CR>
+nnoremap <c-x> :action HideAllWindows<CR>
+
+noremap <leader>ap :action ActivateProjectToolWindow<CR>
+noremap <leader>am  :action ActivateMavenToolWindow<CR>
+noremap <leader>ad  :action ActivateDatabaseToolWindow<CR>
+noremap <leader>at   :action ActivateTODOToolWindow<CR>
+noremap <leader>af :action ActivateFavoritesToolWindow<CR>
+noremap <leader>ag :action ActivateVersionControlToolWindow<CR>
+noremap <leader>as :action ActivateServicesToolWindow<CR>
+noremap <leader>ab :action ViewBreakpoints<CR>
+noremap <leader>ar :action ActivateRestServicesToolWindow<CR>
+nnoremap <leader>wd :action ActivateDebugToolWindow<CR>
+nnoremap <leader>wr :action ActivateRunToolWindow<CR>
+nnoremap <leader>wh :action HideActiveWindow<CR>
+nnoremap <leader>mm :action MaximizeToolWindow<CR>
+noremap <leader>ha :action HideAllWindows<CR>
+noremap <leader>si :action SelectInProjectView<CR>
+noremap <leader>eb :action EditBreakpoint<CR>
+
