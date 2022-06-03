@@ -90,7 +90,7 @@ if has('nvim')
     highlight! link TermCursor Cursor
     highlight! TermCursorNC guibg=red guifg=white ctermbg=1 ctermfg=15
     nnoremap <leader>t :split \| :resize -10 \| bel terminal<CR>
-    tnoremap <Esc> <C-\><C-n>:q!<CR>
+    " tnoremap <Esc> <C-\><C-n>:q!<CR>
     tnoremap <A-h> <c-\><c-n><c-w>h
     tnoremap <A-j> <c-\><c-n><c-w>j
     tnoremap <A-k> <c-\><c-n><c-w>k

@@ -2,6 +2,7 @@ let mapleader=" "
 
 """ Plugins  --------------------------------
 set easymotion
+set commentary
 
 """ Cmmon settings -------------------------
 set showmode
@@ -56,7 +57,7 @@ nnoremap <leader>zo :action ExpandAllRegions<CR>
 
 nnoremap ge :action GotoNextError<CR>
 nnoremap gE :action GotoPreviousError<CR>
-nnoremap gc :action GotoClass<CR>
+nnoremap gtc :action GotoClass<CR>
 nnoremap gi :action GotoImplementation<CR>
 nnoremap gd :action GotToDeclaration<CR>
 nnoremap gp :action GotToSuperMethod<CR>
@@ -84,3 +85,4 @@ noremap <leader>ha :action HideAllWindows<CR>
 noremap <leader>si :action SelectInProjectView<CR>
 noremap <leader>eb :action EditBreakpoint<CR>
 
+nnoremap gc :action CommentByLineComment<CR>

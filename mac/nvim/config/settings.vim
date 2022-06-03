@@ -79,3 +79,5 @@ set t_BE=
 set termguicolors " this variable must be enabled for colors to be applied properly
 
 filetype plugin indent on
+
+set rtp^="/Users/jazz/.opam/default/share/ocp-indent/vim"
