@@ -36,3 +36,9 @@
     ~/.ideavimrc:
       path: mac/idea/.ideavimrc
       force: true
+    ~/.ocamlinit:
+      path: mac/ocaml/.ocamlinit
+      force: true
+    ~/.utoprc:
+      path: mac/ocaml/.utoprc
+      force: true
