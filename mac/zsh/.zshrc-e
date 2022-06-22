@@ -199,12 +199,7 @@ alias mux=tmuxinator
 # exa 
 alias sh="exa --icons -l -s=type --no-permissions --no-user"
 
-# love2d (Lua game engine)
-alias love="/Applications/love.app/Contents/MacOS/love"
-
 # nnn
 export NNN_FCOLORS="0000E63100000000000000"
 alias nnn="nnn -e"
 alias dir="nnn -e"
-
-[ -f "/Users/jazz/.ghcup/env" ] && source "/Users/jazz/.ghcup/env" # ghcup-env
