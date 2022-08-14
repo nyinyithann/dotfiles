@@ -1,4 +1,28 @@
 {
+  "editor.fontLigatures": true,
+  "material-icon-theme.showUpdateMessage": false,
+  "python.languageServer": "Pylance",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.startupEditor": "none",
+  "sync.gist": "c2b1fc61834b73cd0cb1d4e1903664e1",
+  "terminal.integrated.lineHeight": 1,
+  "peacock.affectStatusAndTitleBorders": true,
+  "vim.incsearch": true,
+  "less.validate": false,
+  "csharp.referencesCodeLens.enabled": false,
+  "explorer.confirmDragAndDrop": false,
+  "css.validate": false,
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "material-icon-theme.activeIconPack": "react_redux",
+  "vim.useCtrlKeys": true,
+  "editor.formatOnPaste": true,
+  "editor.suggestSelection": "first",
+  "material-icon-theme.files.associations": {},
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
   "peacock.favoriteColors": [
     {
       "name": "Angular Red",
@@ -60,209 +84,191 @@
       "name": "dotfiles",
       "value": "#686b69"
     },
-    { "name": "rescript", "value": "#d23f3f" }
+    {
+      "name": "rescript",
+      "value": "#d23f3f"
+    }
   ],
-  "jest.autoRun": "false",
-  "workbench.sideBar.location": "left",
-  "editor.fontLigatures": true,
-  "diffEditor.ignoreTrimWhitespace": false,
-  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono','CaskaydiaCove Nerd Font','MesloLGS NF', 'Cascadia Mono PL'",
-  "sync.gist": "c2b1fc61834b73cd0cb1d4e1903664e1",
-  "files.autoSave": "afterDelay",
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
-  },
-  "editor.suggestSelection": "first",
-  "remote.WSL.debug": true,
-  "terminal.integrated.fontWeight": "600",
-  "explorer.confirmDragAndDrop": false,
-  "python.languageServer": "Pylance",
-  "files.watcherExclude": {
-    "**/.bloop": true,
-    "**/.metals": true,
-    "**/.ammonite": true
-  },
-  "[dart]": {
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [80],
-    "editor.selectionHighlight": false,
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false
-  },
-  "FSharp.useSdkScripts": true,
-  "[ocaml]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true,
-    "editor.defaultFormatter": "ocamllabs.ocaml-platform",
-    "editor.formatOnSave": true
-  },
-  "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "liveServer.settings.donotShowInfoMsg": true,
-  "explorer.confirmDelete": false,
-  "terminal.integrated.cursorStyle": "underline",
-
   "editor.codeLensFontFamily": "'FiraCode Nerd Font Mono'",
-  "editor.codeLensFontSize": 12,
-  "editor.mouseWheelZoom": true,
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[fsharp]": {
-    "editor.defaultFormatter": "Ionide.Ionide-fsharp"
-  },
-  "[css]": {
-    "editor.defaultFormatter": "Wscats.qf"
-  },
-  "editor.minimap.enabled": false,
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter-notebook"
-  },
-  "python.insidersChannel": "daily",
-  "peacock.affectStatusAndTitleBorders": true,
-  "prettier.singleQuote": true,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+  "editor.fontWeight": "300",
+  "vim.visualModeKeyBindings": [
+    {
+      "commands": ["editor.action.indentLines"],
+      "before": [">"]
+    },
+    {
+      "commands": ["editor.action.outdentLines"],
+      "before": ["<"]
+    }
+  ],
   "prettier.jsxBracketSameLine": true,
   "[javascriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
-  "csharp.referencesCodeLens.enabled": false,
-
-  "editor.formatOnSave": true,
-  "liveServer.settings.host": "localhost",
-  "liveServer.settings.port": 5010,
   "liveServer.settings.proxy": {
     "enable": true,
     "baseUri": "/fetch",
     "proxyUri": "http://localhost:5000/api"
   },
-  "editor.formatOnPaste": true,
-  "editor.fontFamily": "'FiraMono Nerd Font', 'YaHei Consolas Hybrid', 'Ubuntu Mono', 'Noto Mono', 'DejaVu Sans Mono'",
-  "editor.fontWeight": "300",
-
-  "material-icon-theme.saturation": 1,
-  "oneDarkPro.italic": false,
-  "material-icon-theme.folders.color": "#42a5f5",
-  "material-icon-theme.activeIconPack": "react_redux",
-  "emmet.excludeLanguages": ["markdown"],
-
-  "emmet.includeLanguages": {
-    "javascript": "javascriptreact"
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "debug.console.fontSize": 146,
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true,
-    "source.organizeImports": true
-  },
-  "eslint.validate": ["javascript"],
-  "material-icon-theme.opacity": 0.7,
-  "material-icon-theme.showUpdateMessage": false,
-  "material-icon-theme.files.associations": {},
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "scss.lint.unknownAtRules": "ignore",
-  "css.validate": false,
-  "less.validate": false,
-  "scss.validate": false,
-  "editor.lineHeight": 20,
-  "terminal.explorerKind": "external",
-  "terminal.integrated.defaultProfile.linux": "zsh",
-  "vim.autoindent": true,
-  "vim.ignorecase": true,
-  "vim.joinspaces": true,
-  "vim.showcmd": true,
-  "vim.easymotion": true,
-  "vim.incsearch": true,
-  "vim.useSystemClipboard": true,
-  "vim.useCtrlKeys": true,
-  "vim.hlsearch": true,
-  "terminal.integrated.cursorBlinking": true,
-  "editor.accessibilitySupport": "off",
-  "terminal.integrated.lineHeight": 1,
-  "terminal.integrated.fontSize": 12,
-  "workbench.iconTheme": "material-icon-theme",
-  "redhat.telemetry.enabled": true,
-  "vim.leader": "<space>",
-  "vim.handleKeys": {
-    "<C-d>": true,
-    "<C-c>": false,
-    "<C-x>": false,
-    "<C-v>": false,
-    "<C-z>": false,
-    "<C-y>": false,
-    "<C-a>": false,
-    "<C-f>": false
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
   },
-  "vim.insertModeKeyBindings": [
-    {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
-    }
-  ],
-  "vim.visualModeKeyBindings": [
-    {
-      "before": [">"],
-      "commands": ["editor.action.indentLines"]
-    },
-    {
-      "before": ["<"],
-      "commands": ["editor.action.outdentLines"]
-    }
-  ],
-  "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": ["<leader>", "d"],
-      "after": ["d", "d"]
-    },
-    {
-      "before": ["<C-n>"],
-      "commands": [":nohl"]
-    },
-    {
-      "before": ["<tab>"],
-      "commands": ["workbench.action.nextEditor"]
-    },
-    {
-      "before": ["<S-tab>"],
-      "commands": ["workbench.action.previousEditor"]
-    },
-    {
-      "before": ["<leader>", "e"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
-    },
-    {
-      "before": ["<leader>", "f"],
-      "commands": ["revealInExplorer"]
-    },
-    {
-      "before": ["<leader>", "h"],
-      "commands": ["workbench.view.explorer"]
-    },
-    {
-      "before": [":"],
-      "commands": ["workbench.action.showCommands"]
-    },
-    {
-      "before": ["<C-s>"],
-      "commands": ["workbench.action.files.save"]
-    }
-  ],
+  "python.insidersChannel": "daily",
+  "editor.codeLensFontSize": 12,
+  "vim.joinspaces": true,
+  "[fsharp]": {
+    "editor.defaultFormatter": "Ionide.Ionide-fsharp"
+  },
+  "vim.useSystemClipboard": true,
+  "terminal.integrated.fontSize": 12,
+  "files.autoSave": "afterDelay",
+  "liveServer.settings.port": 5010,
+  "workbench.iconTheme": "material-icon-theme",
+  "vim.showcmd": true,
+  "material-icon-theme.saturation": 1,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.fontFamily": "'FiraMono Nerd Font', 'YaHei Consolas Hybrid', 'Ubuntu Mono', 'Noto Mono', 'DejaVu Sans Mono'",
+  "[css]": {
+    "editor.defaultFormatter": "Wscats.qf"
+  },
+  "material-icon-theme.folders.color": "#42a5f5",
+  "editor.accessibilitySupport": "off",
+  "jest.autoRun": "false",
+  "oneDarkPro.italic": false,
+  "editor.mouseWheelZoom": true,
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter-notebook"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "editor.quickSuggestions": {
     "strings": true
   },
-  "security.workspace.trust.untrustedFiles": "open",
-  "[typescript]": {
+  "emmet.excludeLanguages": ["markdown"],
+  "files.watcherExclude": {
+    "**/.ammonite": true,
+    "**/.bloop": true,
+    "**/.metals": true
+  },
+  "[ocaml]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "ocamllabs.ocaml-platform",
+    "editor.formatOnSave": true,
+    "editor.insertSpaces": true
+  },
+  "liveServer.settings.host": "localhost",
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "vim.hlsearch": true,
+  "material-icon-theme.opacity": 0.69999999999999996,
+  "eslint.validate": ["javascript"],
+  "terminal.explorerKind": "external",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "terminal.integrated.cursorStyle": "underline",
+  "redhat.telemetry.enabled": true,
+  "workbench.sideBar.location": "left",
+  "FSharp.useSdkScripts": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": true,
+    "source.fixAll": true
+  },
+  "terminal.integrated.fontWeight": "600",
+  "debug.console.fontSize": 146,
+  "explorer.confirmDelete": false,
+  "remote.WSL.debug": true,
+  "terminal.integrated.cursorBlinking": true,
+  "vim.handleKeys": {
+    "<C-f>": false,
+    "<C-a>": false,
+    "<C-v>": false,
+    "<C-d>": true,
+    "<C-y>": false,
+    "<C-z>": false,
+    "<C-c>": false,
+    "<C-x>": false
+  },
   "svelte.enable-ts-plugin": true,
-  "workbench.startupEditor": "none"
+  "vim.autoindent": true,
+  "vim.ignorecase": true,
+  "scss.lint.unknownAtRules": "ignore",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "after": ["d", "d"],
+      "before": ["<leader>", "d"]
+    },
+    {
+      "commands": [":nohl"],
+      "before": ["<C-n>"]
+    },
+    {
+      "commands": ["workbench.action.nextEditor"],
+      "before": ["<tab>"]
+    },
+    {
+      "commands": ["workbench.action.previousEditor"],
+      "before": ["<S-tab>"]
+    },
+    {
+      "commands": ["workbench.action.toggleSidebarVisibility"],
+      "before": ["<leader>", "e"]
+    },
+    {
+      "commands": ["revealInExplorer"],
+      "before": ["<leader>", "f"]
+    },
+    {
+      "commands": ["workbench.view.explorer"],
+      "before": ["<leader>", "h"]
+    },
+    {
+      "commands": ["workbench.action.showCommands"],
+      "before": [":"]
+    },
+    {
+      "commands": ["workbench.action.files.save"],
+      "before": ["<C-s>"]
+    }
+  ],
+  "[dart]": {
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false,
+    "editor.selectionHighlight": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80]
+  },
+  "prettier.singleQuote": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "after": ["<Esc>"],
+      "before": ["j", "k"]
+    }
+  ],
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono','CaskaydiaCove Nerd Font','MesloLGS NF', 'Cascadia Mono PL'",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "scss.validate": false,
+  "editor.lineHeight": 24,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "workbench.colorTheme": "Ambiance [beta]",
+  "editor.fontSize": 13,
+  "editor.cursorBlinking": "solid",
+  "editor.cursorStyle": "underline"
 }

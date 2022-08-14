@@ -108,3 +108,5 @@ nmap <silent> <leader>th :tabprevious<cr>
 nmap <leader>tn :tabnew<cr> 
 nmap <silent> <leader>tc :tabclose<cr>
 
+" coc
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<CR>"

@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 #  /Users/jazz/.oh-my-zsh/custom/plugins
 
 . /Users/jazz/.oh-my-zsh/custom/plugins/z/z.sh
@@ -191,7 +193,6 @@ alias elastic="/usr/local/Cellar/elasticsearch-full/7.15.1/bin/elasticsearch"
 alias kibana="/usr/local/Cellar/kibana-full/7.15.1/bin/kibana"
 alias elastic_config="cd /usr/local/etc/elasticsearch"
 alias logstash="/usr/local/Cellar/logstash/7.13.4/bin/logstash"
-if [ -e /Users/jazz/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/jazz/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
 
 # tmuxinator
 alias mux=tmuxinator
@@ -207,4 +208,10 @@ export NNN_FCOLORS="0000E63100000000000000"
 alias nnn="nnn -e"
 alias dir="nnn -e"
 
+# sqlite
+alias sql3="/Users/jazz/sqlite/sqlite3"
+
 [ -f "/Users/jazz/.ghcup/env" ] && source "/Users/jazz/.ghcup/env" # ghcup-env
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
