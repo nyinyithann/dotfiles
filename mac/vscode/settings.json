@@ -267,7 +267,7 @@
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
-  "workbench.colorTheme": "Ambiance [beta]",
+  "workbench.colorTheme": "Nightfox",
   "editor.fontSize": 13,
   "editor.cursorBlinking": "solid",
   "editor.cursorStyle": "underline"
