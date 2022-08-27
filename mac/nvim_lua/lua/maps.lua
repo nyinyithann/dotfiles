@@ -1,11 +1,14 @@
 local keymap = vim.keymap
 
 --*********** editing Text **********--
--- select all
-keymap.set("n", "<C-a>", "ggVG")
+-- delete text with 'x' without changing the internal register
+vim.keymap.set({'n', 'x'}, 'x', '"_x')
 
--- save with ctrl + s
-keymap.set("n", "<C-s>", ":update<CR>")
+-- select all
+keymap.set("n", "<C-a>", ":keepjumps normal! ggVG<cr>")
+
+-- save with ctrl + s  test
+keymap.set("n", "<C-s>", "<Cmd>write<CR>")
 keymap.set("v", "<C-s>", "<C-c>:update<CR>")
 keymap.set("i", "<C-s>", "<C-o>:update<CR>")
 
@@ -14,11 +17,15 @@ keymap.set("i", "<C-s>", "<C-o>:update<CR>")
 keymap.set("v", "<C-r>", "hy:%s/<C-r>h//gc<left><left><left>")
 
 -- insert a new line without leaving normal mode
-keymap.set("n", "<leader>no", "o<Esc>0\"_D")
-keymap.set("n", "<leader>nO", "O<Esc>0\"_D")
+keymap.set("n", "<leader>no", "o<Esc>3\"_D")
+keymap.set("n", "<leader>nO", "O<Esc>3\"_D")
 
 -- indent all
-keymap.set("n", "<C-]>", "gg=G<Cr>")
+keymap.set("n", "<C-]>", ":keepjumps normal! gg=G<Cr>")
+
+-- move text up and down
+keymap.set("n", "<A-j>", "<Esc>:m .+1<CR>==")
+keymap.set("n", "<A-k>", "<Esc>:m .-2<CR>==")
 
 --*********** buffer **********--
 -- a new buffer
@@ -39,10 +46,14 @@ keymap.set("n", ",h", ":split<cr>")
 keymap.set("n", ",v", ":vsplit<cr>")
 
 -- resize windows
-keymap.set("n", "<leader><Right>", ":vertical resize +5<CR>")
-keymap.set("n", "<leader><Left>", ":vertical resize -5<CR>")
-keymap.set("n", "<leader><Up>", ":resize +5<CR>")
-keymap.set("n", "<leader><Down>", ":resize -5<CR>")
+keymap.set("n", "<leader><Right>", ":vertical resize +8<CR>")
+keymap.set("n", "<leader><Left>", ":vertical resize -2<CR>")
+keymap.set("n", "<leader><Up>", ":resize +8<CR>")
+keymap.set("n", "<leader><Down>", ":resize -2<CR>")
+
+-- navigate buffers
+keymap.set("n", "<S-l>", ":bnext<CR>")
+keymap.set("n", "<S-h>", ":bprevious<CR>")
 
 --*********** misc **********--
 -- go into normal mode by pressing jk instead of escape key 
@@ -50,3 +61,4 @@ keymap.set("i", "jk", "<esc>")
 
 -- reload config without closing and reopening nvim
 keymap.set("n", "<C-s><C-o>", ":so%<CR>")
+

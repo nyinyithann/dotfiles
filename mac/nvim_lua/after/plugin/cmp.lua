@@ -32,21 +32,23 @@ local cmp_kinds = {
 }
 
 local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
 cmp.setup({
     snippet = {
-      expand = function(args)
-        luasnip.lsp_expand(args.body)
-      end,
+        expand = function(args)
+            luasnip.lsp_expand(args.body)
+        end,
     },
     window = {
         completion = {
             winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
         },
-        documentation = cmp.config.window.bordered(),
+        documentation = {
+            border = { "λ", "─", "λ", "│", "╯", "─", "╰", "│" },
+        },
     },
     mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.scroll_docs(-4),
@@ -81,6 +83,10 @@ cmp.setup({
         { name = "nvim_lsp" },
         { 
             name = "buffer", 
+            name = "nvim_lsp_signature_help",
+            name = "path",
+            name = "luasnip",
+            name = "nvim_lua",
             option = { 
                 get_bufnrs = function()
                     local bufs = {}
@@ -99,10 +105,19 @@ cmp.setup({
             vim_item.menu = ({
                 buffer = "🅱",
                 nvim_lsp = "𝕷",
+                luasnip = "㊊"
             })[entry.source.name]
             return vim_item
         end,
     }
-}) 
+})
 
-vim.opt.completeopt = { "menuone", "menu", "noselect" }
+-- ':', '?' doesn't work due to plugin's bugs?
+for _, cmd_type in ipairs({':', '/', '?', '@'}) do
+    cmp.setup.cmdline(cmd_type, {
+        sources = {
+            { name = 'cmdline_history' },
+        },
+    })
+end
+

@@ -6,18 +6,18 @@
 
 profile:                  dark
 identifier.foreground:    none
-module.foreground:        x-cyan1
+module.foreground:        x-palegreen
 comment.foreground:       x-chocolate1
 doc.foreground:           x-light-salmon
 constant.foreground:      x-aquamarine
-keyword.foreground:       x-purple
-symbol.foreground:        x-blue
+keyword.foreground:       x-cyan1
+symbol.foreground:        x-cyan1
 string.foreground:        x-light-salmon
 char.foreground:          x-light-salmon
 quotation.foreground:     x-purple
-error.foreground:         pink
+error.foreground:         red
 directive.foreground:     x-lightsteelblue
 parenthesis.background:   blue
 
 ! uncomment the next line to disable autoload files
-! autoload: false:
+! autoload: false

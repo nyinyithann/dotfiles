@@ -30,6 +30,9 @@
     # ~/.config/nvim:
     #   path: mac/nvim
     #   force: true
+    ~/.config/nvim:
+        path: mac/nvim_lua
+        force: true
     ~/.gitconfig:
       path: mac/git/gitconfig
       force: true

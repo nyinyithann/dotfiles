@@ -37,7 +37,17 @@ tree.setup({
     filters = {
         -- hide .git folder
         custom = { "^\\.git$" }
-    }
+    },
+    diagnostics = {
+        enable = true,
+        show_on_dirs = true,
+        icons = {
+            error = " ", 
+            warning = " ", 
+            info = " ",
+            hint = " " 
+        },
+    },
 })
 
 local opts = { noremap = true, silent = true }

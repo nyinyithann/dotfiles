@@ -4,7 +4,7 @@ UTop.set_auto_run_lwt true;;
 
 (* ## added by OPAM user-setup for ocamltop / base ## 3ec62baf6f9c219ae06d9814069da862 ## you can edit, but keep this line *)
 (* ## end of OPAM user-setup addition for ocamltop / base ## keep this line *)
-#require "core.top";;
-#require "ppx_jane";;
-open Base;;
-open Stdio;;
+(* #require "core.top";; *)
+(* #require "ppx_jane";; *)
+(* open Base;; *)
+(* open Stdio;; *)

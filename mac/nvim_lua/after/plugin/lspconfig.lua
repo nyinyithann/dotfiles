@@ -76,7 +76,7 @@ local on_attach = function(client, bufnr)
         cmd = "dune utop"
     end
 
-    vim.keymap.set("n", "<C-Enter>", function()
+    vim.keymap.set("n", "<C-r>", function()
         run_program(root_dir, cmd)
     end, bufopts)
 end
@@ -155,7 +155,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 )
 
 vim.cmd [[ 
-" make hover window"s background transparent
-highlight! link FloatBorder Normal 
-highlight! link NormalFloat Normal 
+    " make hover window"s background transparent
+    highlight! link FloatBorder Normal 
+    highlight! link NormalFloat Normal 
 ]]

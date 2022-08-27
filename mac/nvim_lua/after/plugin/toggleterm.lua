@@ -14,9 +14,7 @@ toggleterm.setup({
         end
     end,
     float_opts = {
-        -- border = 'single' | 'double' | 'shadow' | 'curved' 
         border = "single",
-        -- like `size`, width and height can be a number or function which is passed the current terminal
         width = function (term)
             if term.direction == "horizontal" then 
                 return 20

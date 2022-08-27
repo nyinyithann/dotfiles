@@ -1,3 +1,5 @@
-require("base")
+require("options")
 require("maps")
+require("autocommands")
+require("colorscheme")
 require("plugins")

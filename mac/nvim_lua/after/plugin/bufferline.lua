@@ -20,8 +20,8 @@ bufferline.setup({
                     return vim.fn.getcwd()
                 end,
                 highlight = "Directory",
-                text_align = "center",
-                padding = 4
+                text_align = "left",
+                padding = 1
             }
         }
     },
