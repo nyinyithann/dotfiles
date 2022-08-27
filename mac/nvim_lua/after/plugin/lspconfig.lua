@@ -4,7 +4,7 @@ if (not status) then return end
 local ocamllsp = "ocamllsp"
 local rustlsp = "rust_analyzer"
 
-local run_program = function (root_dir, cmd) 
+local run_program = function(root_dir, cmd)
     local ok, term = pcall(require, "toggleterm.terminal")
     if not ok then
         vim.schedule(function()
@@ -38,7 +38,7 @@ end
 
 local on_attach = function(client, bufnr)
     vim.opt.signcolumn = "yes:1"
-    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
     vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
@@ -68,7 +68,7 @@ local on_attach = function(client, bufnr)
         })
     end
 
-    local root_dir = vim.lsp.buf.list_workspace_folders()[1]  
+    local root_dir = vim.lsp.buf.list_workspace_folders()[1]
     local cmd = ""
     if client.name == rustlsp then
         cmd = "cargo run"
@@ -85,7 +85,7 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(
     vim.lsp.protocol.make_client_capabilities()
 )
 
-lsp.ocamllsp.setup ({
+lsp.ocamllsp.setup({
     name = ocamllsp,
     cmd = { "ocamllsp" },
     filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
@@ -94,10 +94,10 @@ lsp.ocamllsp.setup ({
     capabilities = capabilities
 })
 
-lsp.rust_analyzer.setup ({
+lsp.rust_analyzer.setup({
     name = rustlsp,
     cmd = { "rust-analyzer" },
-    filetypes = {"rust"},
+    filetypes = { "rust" },
     root_dir = lsp.util.root_pattern("Cargo.toml", "rust-project.json", ".git"),
     on_attach = on_attach,
     capabilities = capabilities,
@@ -108,13 +108,45 @@ lsp.rust_analyzer.setup ({
     }
 })
 
+lsp.sumneko_lua.setup({
+    name = "sumneko_lua",
+    cmd = { "lua-language-server" },
+    filetypes = { "lua" },
+    log_level = 2,
+    root_dir = lsp.util.root_pattern(".luarc.json", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", ".git"),
+    single_file_support = true,
+    settings = {
+        Lua = {
+            runtime = {
+                -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
+            },
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = { 'vim' },
+            },
+            workspace = {
+                -- Make the server aware of Neovim runtime files
+                library = vim.api.nvim_get_runtime_file("", true),
+            },
+            -- Do not send telemetry data containing a randomized but unique identifier
+            telemetry = {
+                enable = false,
+            },
+        },
+    }
+})
+
+vim.cmd [[ autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 100) ]]
+
 -- Diagnostic symbols in the sign column (gutter)
-local signs = { 
-    Error = " ", 
-    Warn = " ", 
+local signs = {
+    Error = " ",
+    Warn = " ",
     Info = " ",
-    Hint = " " 
-} 
+    Hint = " "
+}
+
 for type, icon in pairs(signs) do
     local hl = "DiagnosticSign" .. type
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
@@ -138,20 +170,20 @@ vim.diagnostic.config({
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
-        underline = false,
-        update_in_insert = false,
-        virtual_text = { spacing = 4, prefix = "●" },
-        severity_sort = true,
-    })
+    underline = false,
+    update_in_insert = false,
+    virtual_text = { spacing = 4, prefix = "●" },
+    severity_sort = true,
+})
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
     vim.lsp.handlers.hover,
-    {border = "rounded"}
+    { border = "rounded" }
 )
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     vim.lsp.handlers.signature_help,
-    {border = "rounded"}
+    { border = "rounded" }
 )
 
 vim.cmd [[ 

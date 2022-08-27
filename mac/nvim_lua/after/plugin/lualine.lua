@@ -24,7 +24,7 @@ local filetype = {
     icons_enabled = true
 }
 
-local filename =             {
+local filename = {
     "filename",
     file_status = true,
     path = 0
@@ -42,14 +42,14 @@ local location = {
     padding = 0,
 }
 
-local diagnostic =             { 
-    "diagnostics", 
-    sources = { "nvim_diagnostic" }, 
-    symbols = { 
-        error = " ", 
-        warn = " ", 
+local diagnostic = {
+    "diagnostics",
+    sources = { "nvim_diagnostic" },
+    symbols = {
+        error = " ",
+        warn = " ",
         info = " ",
-        hint = " " 
+        hint = " "
     },
     always_visible = false
 }
@@ -58,8 +58,8 @@ lualine.setup {
     options = {
         icons_enabled = true,
         theme = "auto",
-        component_separators = { left = "", right = "🪕"},
-        section_separators = { left = "", right = ""},
+        component_separators = { left = "", right = "🪕" },
+        section_separators = { left = "", right = "" },
         disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -76,7 +76,7 @@ lualine.setup {
     sections = {
         lualine_a = { branch, diff },
         lualine_b = { mode },
-        lualine_c = { },
+        lualine_c = {},
         lualine_x = { diagnostic, "encoding", filetype },
         lualine_y = { "progress" },
         lualine_z = { location }

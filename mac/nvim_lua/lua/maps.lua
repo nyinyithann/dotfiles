@@ -2,7 +2,7 @@ local keymap = vim.keymap
 
 --*********** editing Text **********--
 -- delete text with 'x' without changing the internal register
-vim.keymap.set({'n', 'x'}, 'x', '"_x')
+keymap.set({'n', 'x'}, 'x', '"_x')
 
 -- select all
 keymap.set("n", "<C-a>", ":keepjumps normal! ggVG<cr>")
