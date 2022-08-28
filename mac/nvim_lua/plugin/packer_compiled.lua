@@ -90,6 +90,11 @@ _G.packer_plugins = {
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/better-escape.nvim",
     url = "https://github.com/max397574/better-escape.nvim"
   },
+  catppuccin = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/cmp-buffer",
@@ -190,6 +195,11 @@ _G.packer_plugins = {
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-dap",
     url = "https://github.com/mfussenegger/nvim-dap"
   },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -229,6 +239,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["rust-tools.nvim"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
+    url = "https://github.com/simrat39/rust-tools.nvim"
   },
   ["symbols-outline.nvim"] = {
     loaded = true,

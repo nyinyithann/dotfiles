@@ -42,7 +42,7 @@ set.fillchars.eob = " " -- hiding ~ that indicates filler lines
 set.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds) default is 1000
 set.undofile = true -- enable persistent undo
 set.updatetime = 300 -- faster completion (4000ms default)
-set.signcolumn = "yes" -- always show the sign column,
+set.signcolumn = "yes:1" -- always show the sign column,
 
 vim.cmd "set whichwrap+=<,>,[,],h,l" -- wrap text at both left and right
 vim.cmd [[set iskeyword+=-]] -- ask vim to treat '-' like a regular word character that should be skipped over by things like w or b

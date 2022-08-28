@@ -17,7 +17,7 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/local/Cellar/llvm/14.0.6_1/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/jazz/.oh-my-zsh"
 

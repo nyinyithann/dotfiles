@@ -2,7 +2,6 @@ local status, lsp = pcall(require, "lspconfig")
 if (not status) then return end
 
 local ocamllsp = "ocamllsp"
-local rustlsp = "rust_analyzer"
 
 local run_program = function(root_dir, cmd)
     local ok, term = pcall(require, "toggleterm.terminal")
@@ -37,21 +36,20 @@ local run_program = function(root_dir, cmd)
 end
 
 local on_attach = function(client, bufnr)
-    vim.opt.signcolumn = "yes:1"
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+    vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, bufopts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
     vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
-    vim.keymap.set("n", "<space>wl", function()
+    vim.keymap.set("n", "<space>x", function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts)
     vim.keymap.set("n", "<space>td", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
-    vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set("n", "<space>a", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
     vim.keymap.set("n", "<space>do", vim.diagnostic.open_float, bufopts)
@@ -60,16 +58,13 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<space>dl", vim.diagnostic.setloclist, bufopts)
 
     local root_dir = vim.lsp.buf.list_workspace_folders()[1]
-    local cmd = ""
-    if client.name == rustlsp then
-        cmd = "cargo run"
-    elseif client.name == ocamllsp then
-        cmd = "dune utop"
+    if client.name == ocamllsp then
+        vim.keymap.set("n", "<C-\\>", function()
+            vim.api.nvim_command("silent! write")
+            run_program(root_dir, "dune utop")
+        end, bufopts)
     end
 
-    vim.keymap.set("n", "<C-\\>", function()
-        run_program(root_dir, cmd)
-    end, bufopts)
 end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(
@@ -83,20 +78,6 @@ lsp.ocamllsp.setup({
     root_dir = lsp.util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace"),
     on_attach = on_attach,
     capabilities = capabilities
-})
-
-lsp.rust_analyzer.setup({
-    name = rustlsp,
-    cmd = { "rust-analyzer" },
-    filetypes = { "rust" },
-    root_dir = lsp.util.root_pattern("Cargo.toml", "rust-project.json", ".git"),
-    on_attach = on_attach,
-    capabilities = capabilities,
-    ["rust-analyzer"] = {
-        checkOnSave = {
-            command = "clippy"
-        }
-    }
 })
 
 lsp.sumneko_lua.setup({
@@ -126,7 +107,9 @@ lsp.sumneko_lua.setup({
                 enable = false,
             },
         },
-    }
+    },
+    on_attach = on_attach,
+    capabilities = capabilities
 })
 
 
@@ -178,8 +161,8 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 )
 
 vim.cmd [[ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync() ]]
-vim.cmd [[ 
+vim.cmd [[
     " make hover window"s background transparent
-    highlight! link FloatBorder Normal 
-    highlight! link NormalFloat Normal 
+    highlight! link FloatBorder Normal
+    highlight! link NormalFloat Normal
 ]]

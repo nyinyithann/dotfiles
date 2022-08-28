@@ -53,8 +53,10 @@ packer.startup(function(use)
     use { "neovim/nvim-lspconfig", tag = "v0.1.3" }
 
     -- dap
+    use "simrat39/rust-tools.nvim"
+    -- use "nyinyithann/rust-tools.nvim"
     use { 'mfussenegger/nvim-dap' }
-    use { 'nvim-telescope/telescope-dap.nvim' }
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 
     -- nightfox color scheme
     use "EdenEast/nightfox.nvim"
@@ -67,6 +69,7 @@ packer.startup(function(use)
     use "adisen99/codeschool.nvim"
     use "folke/lsp-colors.nvim"
     use "https://gitlab.com/yorickpeterse/vim-paper.git"
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- autocompletion
     use "hrsh7th/nvim-cmp"
@@ -119,6 +122,8 @@ packer.startup(function(use)
     use "dhruvmanila/telescope-bookmarks.nvim"
     use "LinArcX/telescope-command-palette.nvim"
     use "nvim-telescope/telescope-file-browser.nvim"
+    use "nvim-telescope/telescope-dap.nvim"
+
 
     -- highlight
     use "RRethy/vim-illuminate"
