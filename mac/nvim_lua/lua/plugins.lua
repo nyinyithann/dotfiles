@@ -50,14 +50,18 @@ packer.startup(function(use)
     }
 
     -- lsp config
-    use  { "neovim/nvim-lspconfig", tag = "v0.1.3" }
+    use { "neovim/nvim-lspconfig", tag = "v0.1.3" }
+
+    -- dap
+    use { 'mfussenegger/nvim-dap' }
+    use { 'nvim-telescope/telescope-dap.nvim' }
 
     -- nightfox color scheme
     use "EdenEast/nightfox.nvim"
     use "sainnhe/gruvbox-material"
     use "folke/tokyonight.nvim"
     use "rktjmp/lush.nvim"
-    use "ellisonleao/gruvbox.nvim" 
+    use "ellisonleao/gruvbox.nvim"
     use "savq/melange"
     use "meliora-theme/neovim"
     use "adisen99/codeschool.nvim"
@@ -71,15 +75,13 @@ packer.startup(function(use)
     use "hrsh7th/cmp-nvim-lsp-signature-help"
     use "hrsh7th/cmp-path"
     use "hrsh7th/cmp-nvim-lua"
-    use "hrsh7th/cmp-cmdline"
-    use "dmitmel/cmp-cmdline-history"
     use "saadparwaiz1/cmp_luasnip"
 
     -- snippet
     use "L3MON4D3/LuaSnip"
 
     -- symbol
-    use "simrat39/symbols-outline.nvim" 
+    use "simrat39/symbols-outline.nvim"
 
     -- statusbar
     use {
@@ -90,7 +92,7 @@ packer.startup(function(use)
     -- bufferline
     use { "akinsho/nvim-bufferline.lua", tag = "v2.7.0" }
 
-    -- commenting 
+    -- commenting
     use {
         'numToStr/Comment.nvim',
         config = function()
@@ -105,14 +107,14 @@ packer.startup(function(use)
     }
 
     -- terminal
-    use {"akinsho/toggleterm.nvim", tag = "v2.*" }
+    use { "akinsho/toggleterm.nvim", tag = "v2.*" }
 
     -- telescope
-    use { 
+    use {
         "nvim-telescope/telescope.nvim", tag = '0.1.0',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
     }
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use "xiyaowong/telescope-emoji.nvim"
     use "dhruvmanila/telescope-bookmarks.nvim"
     use "LinArcX/telescope-command-palette.nvim"
@@ -121,7 +123,7 @@ packer.startup(function(use)
     -- highlight
     use "RRethy/vim-illuminate"
 
-    -- indentation guides 
+    -- indentation guides
     use "lukas-reineke/indent-blankline.nvim"
 
     -- window navigation
@@ -129,6 +131,12 @@ packer.startup(function(use)
 
     -- autopairs
     use "windwp/nvim-autopairs"
+
+    -- luapad
+    use { 'rafcamlet/nvim-luapad', requires = "antoinemadec/FixCursorHold.nvim" }
+
+    -- better escape
+    use "max397574/better-escape.nvim"
 
     -- autosave
     -- use({
@@ -144,4 +152,3 @@ packer.startup(function(use)
         require("packer").sync()
     end
 end)
-

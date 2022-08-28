@@ -2,17 +2,17 @@ local keymap = vim.keymap
 
 --*********** editing Text **********--
 -- delete text with 'x' without changing the internal register
-keymap.set({'n', 'x'}, 'x', '"_x')
+keymap.set({ 'n', 'x' }, 'x', '"_x')
 
 -- select all
 keymap.set("n", "<C-a>", ":keepjumps normal! ggVG<cr>")
 
 -- save with ctrl + s  test
-keymap.set("n", "<C-s>", "<Cmd>write<CR>")
+keymap.set("n", "<C-s>", "<C-c>:update<CR>")
 keymap.set("v", "<C-s>", "<C-c>:update<CR>")
 keymap.set("i", "<C-s>", "<C-o>:update<CR>")
 
--- By pressing ctrl+r in visual mode, you will be prompted to enter text to replace with. 
+-- By pressing ctrl+r in visual mode, you will be prompted to enter text to replace with.
 -- Press enter and then confirm each change you agree with y or decline with n.
 keymap.set("v", "<C-r>", "hy:%s/<C-r>h//gc<left><left><left>")
 
@@ -56,9 +56,11 @@ keymap.set("n", "<S-l>", ":bnext<CR>")
 keymap.set("n", "<S-h>", ":bprevious<CR>")
 
 --*********** misc **********--
--- go into normal mode by pressing jk instead of escape key 
+-- go into normal mode by pressing jk instead of escape key
 keymap.set("i", "jk", "<esc>")
 
 -- reload config without closing and reopening nvim
 keymap.set("n", "<C-s><C-o>", ":so%<CR>")
 
+-- remove all trailing whitespace by pressing F5
+keymap.set("n", "<C-c><C-c>", [[:let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>]])

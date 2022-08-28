@@ -75,25 +75,25 @@ _G.packer_plugins = {
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/Comment.nvim",
     url = "https://github.com/numToStr/Comment.nvim"
   },
+  ["FixCursorHold.nvim"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim",
+    url = "https://github.com/antoinemadec/FixCursorHold.nvim"
+  },
   LuaSnip = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["better-escape.nvim"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/better-escape.nvim",
+    url = "https://github.com/max397574/better-escape.nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/cmp-buffer",
     url = "https://github.com/hrsh7th/cmp-buffer"
-  },
-  ["cmp-cmdline"] = {
-    loaded = true,
-    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/cmp-cmdline",
-    url = "https://github.com/hrsh7th/cmp-cmdline"
-  },
-  ["cmp-cmdline-history"] = {
-    loaded = true,
-    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/cmp-cmdline-history",
-    url = "https://github.com/dmitmel/cmp-cmdline-history"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
@@ -185,10 +185,20 @@ _G.packer_plugins = {
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
   },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-luapad"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-luapad",
+    url = "https://github.com/rafcamlet/nvim-luapad"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -234,6 +244,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/telescope-command-palette.nvim",
     url = "https://github.com/LinArcX/telescope-command-palette.nvim"
+  },
+  ["telescope-dap.nvim"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/telescope-dap.nvim",
+    url = "https://github.com/nvim-telescope/telescope-dap.nvim"
   },
   ["telescope-emoji.nvim"] = {
     loaded = true,

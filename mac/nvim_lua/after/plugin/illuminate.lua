@@ -10,7 +10,8 @@ illuminate.configure({
     },
     -- delay: delay in milliseconds
     delay = 50,
+    modes_allowlist = { "n", "v" },
+    under_cursor = false,
 })
-
 
 vim.keymap.set("n", ",it", "<Cmd>IlluminateToggle<CR>", {})

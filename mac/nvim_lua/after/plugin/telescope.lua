@@ -88,10 +88,10 @@ telescope.setup {
     },
     extensions = {
         fzf = {
-            fuzzy = true,                    -- false will only do exact matching
-            override_generic_sorter = true,  -- override the generic sorter
-            override_file_sorter = true,     -- override the file sorter
-            case_mode = "smart_case",        -- or "ignore_case" or "respect_case"
+            fuzzy = true, -- false will only do exact matching
+            override_generic_sorter = true, -- override the generic sorter
+            override_file_sorter = true, -- override the file sorter
+            case_mode = "smart_case", -- or "ignore_case" or "respect_case"
             -- the default case_mode is "smart_case"
         },
         emoji = {
@@ -130,7 +130,7 @@ telescope.setup {
             debug = false,
         },
         command_palette = {
-            {"LSP Pickers",
+            { "LSP Pickers",
                 { "lsp incoming calls", ":lua require(\"telescope.builtin\").lsp_incoming_calls()" },
                 { "diagnostics", ":lua require(\"telescope.builtin\").diagnostics()" },
                 { "lsp outgoing calls", ":lua require(\"telescope.builtin\").lsp_outgoing_calls()" },
@@ -143,7 +143,7 @@ telescope.setup {
                 { "lsp type definitions", ":lua require(\"telescope.builtin\").lsp_type_definitions()" },
                 { "lsp definitions", ":lua require(\"telescope.builtin\").lsp_definitions()" },
             },
-            {"Telescope",
+            { "Telescope",
                 { "jumps", ":lua require(\"telescope.builtin\").jumplist()" },
                 { "commands", ":lua require(\"telescope.builtin\").commands()" },
                 { "command history", ":lua require(\"telescope.builtin\").command_history()" },
@@ -171,18 +171,18 @@ telescope.setup {
                 { "reloader", ":lua require(\"telescope.builtin\").reloader()" },
                 { "symbols", ":lua require(\"telescope.builtin\").symbols()" },
             },
-            {"git", 
+            { "git",
                 { "git commits", ":lua require(\"telescope.builtin\").git_commits()" },
                 { "git branches", ":lua require(\"telescope.builtin\").git_branches()" },
                 { "git status", ":lua require(\"telescope.builtin\").git_status()" },
                 { "git stash", ":lua require(\"telescope.builtin\").git_stash()" },
             },
-            {"Misc",
+            { "Misc",
                 { "paste mode", ":set paste!" },
                 { "cursor line", ":set cursorline!" },
                 { "cursor column", ":set cursorcolumn!" },
                 { "spell checker", ":set spell!" },
-                { "relative number", ":set relativenumber!"},
+                { "relative number", ":set relativenumber!" },
                 { "search highlighting (F12)", ":set hlsearch!" },
                 { "reload vimrc", ":source $MYVIMRC" },
                 { "check health", ":checkhealth" },
@@ -231,4 +231,3 @@ vim.keymap.set("n", "<leader>fe", "<Cmd>Telescope emoji<CR>", opts)
 vim.keymap.set("n", "<leader>fm", "<Cmd>Telescope bookmarks<CR>", opts)
 vim.keymap.set("n", "<leader>fc", "<Cmd>Telescope command_palette<CR>", opts)
 vim.keymap.set("n", "<leader>fx", "<Cmd>Telescope file_browser<CR>", opts)
-

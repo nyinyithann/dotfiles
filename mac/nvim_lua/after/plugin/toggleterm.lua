@@ -6,19 +6,19 @@ toggleterm.setup({
     insert_mappings = true,
     terminal_mappings = true,
     direction = "horizontal",
-    size = function (term)
-        if term.direction == "horizontal" then 
+    size = function(term)
+        if term.direction == "horizontal" then
             return 15
-        elseif term.direction == "vertical" then 
+        elseif term.direction == "vertical" then
             return vim.o.columns * 0.4
         end
     end,
     float_opts = {
         border = "single",
-        width = function (term)
-            if term.direction == "horizontal" then 
+        width = function(term)
+            if term.direction == "horizontal" then
                 return 20
-            elseif term.direction == "vertical" then 
+            elseif term.direction == "vertical" then
                 return vim.o.columns * 0.8
             end
         end,
@@ -42,7 +42,7 @@ toggleterm.setup({
 })
 
 function _G.set_terminal_keymaps()
-    local opts = {buffer = 0}
+    local opts = { buffer = 0 }
     vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
     vim.keymap.set('t', '<leader>h', [[<Cmd>wincmd h<CR>]], opts)
     vim.keymap.set('t', '<leader>j', [[<Cmd>wincmd j<CR>]], opts)

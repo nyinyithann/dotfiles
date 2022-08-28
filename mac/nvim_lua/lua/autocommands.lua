@@ -1,8 +1,8 @@
-local augroup = vim.api.nvim_create_augroup("user_cmds", {clear = true})
+local augroup = vim.api.nvim_create_augroup("user_cmds", { clear = true })
 
 -- press q to close help or man window
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = {"help", "man", "qf", "lspinfo"},
+    pattern = { "help", "man", "qf", "lspinfo" },
     group = augroup,
     desc = "Use q to close the window",
     command = "nnoremap <buffer> q <cmd>quit<cr>"
@@ -12,8 +12,8 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("TextYankPost", {
     group = augroup,
     desc = "Highlight on yank",
-    callback = function(event)
-        vim.highlight.on_yank({higroup = "Visual", timeout = 153})
+    callback = function()
+        vim.highlight.on_yank({ higroup = "Visual", timeout = 153 })
     end
 })
 

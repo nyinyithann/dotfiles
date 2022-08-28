@@ -59,15 +59,6 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "gl", vim.diagnostic.goto_next, bufopts)
     vim.keymap.set("n", "<space>dl", vim.diagnostic.setloclist, bufopts)
 
-    -- format on save
-    if client.server_capabilities.documentformattingprovider then
-        vim.api.nvim_create_autocmd("BufWritePre", {
-            group = vim.api.nvim_create_augroup("Format", { clear = true }),
-            buffer = bufnr,
-            callback = function() vim.lsp.buf.formatting_seq_sync() end
-        })
-    end
-
     local root_dir = vim.lsp.buf.list_workspace_folders()[1]
     local cmd = ""
     if client.name == rustlsp then
@@ -76,7 +67,7 @@ local on_attach = function(client, bufnr)
         cmd = "dune utop"
     end
 
-    vim.keymap.set("n", "<C-r>", function()
+    vim.keymap.set("n", "<C-\\>", function()
         run_program(root_dir, cmd)
     end, bufopts)
 end
@@ -127,7 +118,8 @@ lsp.sumneko_lua.setup({
             },
             workspace = {
                 -- Make the server aware of Neovim runtime files
-                library = vim.api.nvim_get_runtime_file("", true),
+                -- library = vim.api.nvim_get_runtime_file("", true),
+                library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true }
             },
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {
@@ -137,7 +129,6 @@ lsp.sumneko_lua.setup({
     }
 })
 
-vim.cmd [[ autocmd BufWritePre *.lua lua vim.lsp.buf.formatting_sync(nil, 100) ]]
 
 -- Diagnostic symbols in the sign column (gutter)
 local signs = {
@@ -186,6 +177,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     { border = "rounded" }
 )
 
+vim.cmd [[ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync() ]]
 vim.cmd [[ 
     " make hover window"s background transparent
     highlight! link FloatBorder Normal 
