@@ -10,7 +10,19 @@ ts.setup {
         enable = true,
         disable = {},
     },
-    ensure_installed = { "ocaml", "lua", "rust" },
+    ensure_installed = {
+        "ocaml",
+        "rust",
+        "lua",
+        "c",
+        "tsx",
+        "javascript",
+        "toml",
+        "json",
+        "yaml",
+        "css",
+        "html"
+    },
     sync_install = true,
     autotag = {
         enable = true,
@@ -24,3 +36,6 @@ ts.setup {
         enable = true,
     }
 }
+
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.tsx.filetype_to_parsername = { "javascript", "typescript.tsx" }

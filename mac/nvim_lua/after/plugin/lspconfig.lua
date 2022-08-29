@@ -35,9 +35,9 @@ local on_attach = function(client, bufnr)
     end
 end
 
-local capabilities = require("cmp_nvim_lsp").update_capabilities(
-    vim.lsp.protocol.make_client_capabilities()
-)
+local c = vim.lsp.protocol.make_client_capabilities()
+c.textDocument.completion.completionItem.snippetSupport = true
+local capabilities = require("cmp_nvim_lsp").update_capabilities(c)
 
 lsp.ocamllsp.setup({
     name = utilities.OCAML_LSP_NAME,
@@ -48,8 +48,49 @@ lsp.ocamllsp.setup({
     capabilities = capabilities
 })
 
+lsp.tsserver.setup {
+    name = utilities.TS_LSP_NAME,
+    cmd = { "typescript-language-server", "--stdio" },
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    init_options = { hostInfo = "neovim" },
+    root_dir = lsp.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git"),
+    on_attach = on_attach,
+    capabilities = capabilities
+}
+
+lsp.jsonls.setup {
+    name = utilities.JSON_LSP_NAME,
+    cmd = { "vscode-json-language-server", "--stdio" },
+    filetypes = { "json", "jsonc" },
+    init_options = { provideFormatter = true },
+    root_dir = lsp.util.find_git_ancestor;
+    single_file_support = true,
+    capabilities = capabilities
+}
+
+lsp.html.setup {
+    name = utilities.HTML_LSP_NAME,
+    cmd = { "vscode-html-language-server", "--stdio" },
+    filetypes = { "html" },
+    init_options = {
+        configurationSection = { "html", "css", "javascript" },
+        embeddedLanguages = {
+            css = true,
+            javascript = true
+        },
+        provideFormatter = true
+    },
+    capabilities = capabilities,
+}
+
+lsp.tailwindcss.setup({
+    name = utilities.TAILWIND_LSP_NAME,
+    cmd = { "tailwindcss-language-server", "--stdio" },
+    capabilities = c,
+})
+
 lsp.sumneko_lua.setup({
-    name = "sumneko_lua",
+    name = utilities.LUA_LSP_NAME,
     cmd = { "lua-language-server" },
     filetypes = { "lua" },
     log_level = 2,

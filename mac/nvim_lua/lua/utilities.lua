@@ -1,12 +1,22 @@
 local M = {}
 
 local ocamllsp = "ocamllsp"
+local lualsp = "sumneko_lua"
+local tslsp = "tsserver"
+local jsonls = "jsonls"
+local html = "html"
+local tailwindlsp = "tailwindcss"
 local general_name = "general"
 
 local State = { current_lsp_name = "" }
 
 M.OCAML_LSP_NAME = (function() return ocamllsp end)()
 M.GENERAL_NAME = (function() return general_name end)()
+M.LUA_LSP_NAME = (function() return lualsp end)()
+M.TS_LSP_NAME = (function() return tslsp end)()
+M.JSON_LSP_NAME = (function() return jsonls end)()
+M.HTML_LSP_NAME = (function() return html end)()
+M.TAILWIND_LSP_NAME = (function() return tailwindlsp end)()
 
 M.get_current_lsp_name = function()
     return State.current_lsp_name
