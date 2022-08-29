@@ -54,12 +54,19 @@ local diagnostic = {
     always_visible = false
 }
 
+local progress = {
+    "progress",
+    fmt = function(str)
+        return str .. " / " .. vim.api.nvim_buf_line_count(0)
+    end
+}
+
 lualine.setup {
     options = {
         icons_enabled = true,
         theme = "auto",
-        component_separators = { left = "", right = "🪕" },
-        section_separators = { left = "", right = "" },
+        component_separators = { left = "|", right = "🪕" },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = {
             statusline = {},
             winbar = {},
@@ -78,7 +85,7 @@ lualine.setup {
         lualine_b = { mode },
         lualine_c = {},
         lualine_x = { diagnostic, "encoding", filetype },
-        lualine_y = { "progress" },
+        lualine_y = { progress },
         lualine_z = { location }
     },
     inactive_sections = {

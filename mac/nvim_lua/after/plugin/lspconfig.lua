@@ -1,41 +1,10 @@
 local status, lsp = pcall(require, "lspconfig")
 if (not status) then return end
 
-local ocamllsp = "ocamllsp"
-
-local run_program = function(root_dir, cmd)
-    local ok, term = pcall(require, "toggleterm.terminal")
-    if not ok then
-        vim.schedule(function()
-            vim.notify("toggleterm not found.", vim.log.levels.error)
-        end)
-        return
-    end
-
-    term.Terminal:new({
-        dir = root_dir,
-        cmd = cmd,
-        direction = "horizontal",
-        hidden = true,
-        close_on_exit = false,
-        on_open = function(t)
-            vim.api.nvim_feedkeys(
-                vim.api.nvim_replace_termcodes([[<C-\><C-n>]], true, true, true),
-                "",
-                true
-            )
-            vim.api.nvim_buf_set_keymap(
-                t.bufnr,
-                "n",
-                "q",
-                "<cmd>close<cr>",
-                { noremap = true, silent = true }
-            )
-        end,
-    }):toggle()
-end
+local utilities = require("utilities");
 
 local on_attach = function(client, bufnr)
+    utilities.set_current_lsp_name(client.name)
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
@@ -58,13 +27,12 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<space>dl", vim.diagnostic.setloclist, bufopts)
 
     local root_dir = vim.lsp.buf.list_workspace_folders()[1]
-    if client.name == ocamllsp then
+    if client.name == utilities.OCAML_LSP_NAME then
         vim.keymap.set("n", "<C-\\>", function()
             vim.api.nvim_command("silent! write")
-            run_program(root_dir, "dune utop")
+            utilities.run_dune_utop(root_dir, "dune utop")
         end, bufopts)
     end
-
 end
 
 local capabilities = require("cmp_nvim_lsp").update_capabilities(
@@ -72,8 +40,8 @@ local capabilities = require("cmp_nvim_lsp").update_capabilities(
 )
 
 lsp.ocamllsp.setup({
-    name = ocamllsp,
-    cmd = { "ocamllsp" },
+    name = utilities.OCAML_LSP_NAME,
+    cmd = { utilities.OCAML_LSP_NAME },
     filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
     root_dir = lsp.util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace"),
     on_attach = on_attach,

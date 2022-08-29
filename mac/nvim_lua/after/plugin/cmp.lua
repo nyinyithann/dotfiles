@@ -2,34 +2,7 @@ local status, cmp = pcall(require, "cmp")
 if (not status) then return end
 
 local luasnip = require("luasnip")
-
-local cmp_kinds = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "ﴯ",
-    Interface = "",
-    Module = "",
-    Property = "ﰠ",
-    Unit = "",
-    Value = "λ",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "",
-    Event = "",
-    Operator = "",
-    TypeParameter = ""
-}
+local utilities = require("utilities")
 
 local has_words_before = function()
     local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -47,7 +20,7 @@ cmp.setup({
             winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
         },
         documentation = {
-            border = { "╭", "─", "λ", "│", "╯", "─", "╰", "│" },
+            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
         },
     },
     mapping = cmp.mapping.preset.insert({
@@ -100,10 +73,10 @@ cmp.setup({
     formatting = {
         fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
-            vim_item.kind = cmp_kinds[vim_item.kind] or ""
+            vim_item.kind = utilities.get_cmp_kinds()[vim_item.kind] or ""
             vim_item.menu = ({
                 buffer = "🅱",
-                nvim_lsp = "𝕷",
+                nvim_lsp = utilities.get_lsp_symbol(),
                 luasnip = "㊊"
             })[entry.source.name]
             return vim_item
