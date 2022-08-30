@@ -121,7 +121,6 @@ lsp.sumneko_lua.setup({
     capabilities = capabilities
 })
 
-
 -- Diagnostic symbols in the sign column (gutter)
 local signs = {
     Error = " ",

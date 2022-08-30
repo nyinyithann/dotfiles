@@ -143,6 +143,8 @@ packer.startup(function(use)
     -- better escape
     use "max397574/better-escape.nvim"
 
+    use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+
     -- autosave
     -- use({
     --     "Pocco81/auto-save.nvim",
