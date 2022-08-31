@@ -54,20 +54,19 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { { name = "buffer" },
-            { name = "nvim_lsp_signature_help" },
-            { name = "path" },
-            { name = "luasnip" },
-            { name = "nvim_lua" },
-            option = {
-                get_bufnrs = function()
-                    local bufs = {}
-                    for _, win in ipairs(vim.api.nvim_list_wins()) do
-                        bufs[vim.api.nvim_win_get_buf(win)] = true
-                    end
-                    return vim.tbl_keys(bufs)
+        { name = "luasnip" },
+        { name = "buffer" },
+        { name = "nvim_lsp_signature_help" },
+        { name = "path" },
+        { name = "nvim_lua" },
+        option = {
+            get_bufnrs = function()
+                local bufs = {}
+                for _, win in ipairs(vim.api.nvim_list_wins()) do
+                    bufs[vim.api.nvim_win_get_buf(win)] = true
                 end
-            }
+                return vim.tbl_keys(bufs)
+            end
         }
     }),
     formatting = {

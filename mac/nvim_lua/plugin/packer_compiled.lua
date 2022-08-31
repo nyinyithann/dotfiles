@@ -130,6 +130,11 @@ _G.packer_plugins = {
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/codeschool.nvim",
     url = "https://github.com/adisen99/codeschool.nvim"
   },
+  ["friendly-snippets"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/friendly-snippets",
+    url = "https://github.com/rafamadriz/friendly-snippets"
+  },
   ["gruvbox-material"] = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/gruvbox-material",
@@ -289,6 +294,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["tmux.nvim"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/tmux.nvim",
+    url = "https://github.com/aserowy/tmux.nvim"
   },
   ["toggleterm.nvim"] = {
     loaded = true,

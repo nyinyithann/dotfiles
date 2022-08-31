@@ -5,6 +5,9 @@ nls.setup({
     sources = {
         nls.builtins.formatting.prettierd,
         nls.builtins.formatting.trim_whitespace,
-        nls.builtins.diagnostics.eslint_d,
-    }
+        nls.builtins.diagnostics.eslint_d.with({
+            diagnostics_format = '[eslint] #{m}\n(#{c})'
+        }),
+        nls.builtins.diagnostics.zsh,
+    },
 })

@@ -23,7 +23,7 @@ vim.cmd([[
   augroup end
 ]])
 
--- Use a protected call so we don't error out on first use
+-- Use a protected call so we don"t error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
     print("Packer is not installed")
@@ -55,7 +55,7 @@ packer.startup(function(use)
     -- dap
     use "simrat39/rust-tools.nvim"
     -- use "nyinyithann/rust-tools.nvim"
-    use { 'mfussenegger/nvim-dap' }
+    use { "mfussenegger/nvim-dap" }
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 
     -- nightfox color scheme
@@ -79,6 +79,7 @@ packer.startup(function(use)
     use "hrsh7th/cmp-path"
     use "hrsh7th/cmp-nvim-lua"
     use "saadparwaiz1/cmp_luasnip"
+    use "rafamadriz/friendly-snippets"
 
     -- snippet
     use "L3MON4D3/LuaSnip"
@@ -97,9 +98,9 @@ packer.startup(function(use)
 
     -- commenting
     use {
-        'numToStr/Comment.nvim',
+        "numToStr/Comment.nvim",
         config = function()
-            require('Comment').setup()
+            require("Comment").setup()
         end
     }
 
@@ -114,16 +115,15 @@ packer.startup(function(use)
 
     -- telescope
     use {
-        "nvim-telescope/telescope.nvim", tag = '0.1.0',
-        requires = { { 'nvim-lua/plenary.nvim' } }
+        "nvim-telescope/telescope.nvim", tag = "0.1.0",
+        requires = { { "nvim-lua/plenary.nvim" } }
     }
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
     use "xiyaowong/telescope-emoji.nvim"
     use "dhruvmanila/telescope-bookmarks.nvim"
     use "LinArcX/telescope-command-palette.nvim"
     use "nvim-telescope/telescope-file-browser.nvim"
     use "nvim-telescope/telescope-dap.nvim"
-
 
     -- highlight
     use "RRethy/vim-illuminate"
@@ -138,12 +138,15 @@ packer.startup(function(use)
     use "windwp/nvim-autopairs"
 
     -- luapad
-    use { 'rafcamlet/nvim-luapad', requires = "antoinemadec/FixCursorHold.nvim" }
+    use { "rafcamlet/nvim-luapad", requires = "antoinemadec/FixCursorHold.nvim" }
 
     -- better escape
     use "max397574/better-escape.nvim"
 
-    use 'jose-elias-alvarez/null-ls.nvim' -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+    use "jose-elias-alvarez/null-ls.nvim" -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+
+    -- tmux integration
+    use "aserowy/tmux.nvim"
 
     -- autosave
     -- use({

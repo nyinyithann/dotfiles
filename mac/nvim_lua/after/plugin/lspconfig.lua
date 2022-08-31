@@ -33,6 +33,18 @@ local on_attach = function(client, bufnr)
             utilities.run_dune_utop(root_dir, "dune utop")
         end, bufopts)
     end
+
+    if client.name == utilities.TS_LSP_NAME then
+        client.resolved_capabilities.document_formatting = false
+    end
+
+    if client.server_capabilities.documentFormattingProvider then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = vim.api.nvim_create_augroup("Format", { clear = true }),
+            buffer = bufnr,
+            callback = function() vim.lsp.buf.formatting_seq_sync() end
+        })
+    end
 end
 
 local c = vim.lsp.protocol.make_client_capabilities()
@@ -168,7 +180,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     { border = "rounded" }
 )
 
-vim.cmd [[ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync() ]]
+-- vim.cmd [[ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync() ]]
 vim.cmd [[
     " make hover window"s background transparent
     highlight! link FloatBorder Normal

@@ -3,14 +3,34 @@ env:
 
 window:
   dimensions:
-    columns: 80
-    lines: 24
+    columns: 0
+    lines: 0
 
   padding:
-    x: 2
-    y: 2
+    x: 0
+    y: 0
+
+    # Spread additional padding evenly around the terminal content.
+  dynamic_padding: true
+
+  dynamic_title: false
+
+  # Window decorations
+  # Setting this to false will result in window without borders and title bar.
+  decorations: full
 
 live_config_reload: true
+
+draw_bold_text_with_bright_colors: false
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 10000
+
+  # Number of lines the viewport will move for every line scrolled when
+  # scrollback is enabled (history > 0).
+  multiplier: 3
 
 font:
   normal:
@@ -21,7 +41,7 @@ font:
 
   offset:
     x: 0
-    y: 4
+    y: 0
 
 cursor:
   style: Underline
