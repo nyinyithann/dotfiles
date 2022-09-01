@@ -39,7 +39,7 @@ set.expandtab = true -- expand <Tab> to spaces in Insert mode
 
 set.clipboard:prepend { "unnamedplus" } -- to put selected text on the clipboard
 set.fillchars.eob = " " -- hiding ~ that indicates filler lines
-set.timeoutlen = 1000 -- time to wait for a mapped sequence to complete (in milliseconds) default is 1000
+set.timeoutlen = 600 -- time to wait for a mapped sequence to complete (in milliseconds) default is 1000
 set.undofile = true -- enable persistent undo
 set.updatetime = 300 -- faster completion (4000ms default)
 set.signcolumn = "yes:1" -- always show the sign column,

@@ -148,6 +148,15 @@ packer.startup(function(use)
     -- tmux integration
     use "aserowy/tmux.nvim"
 
+    -- markdown
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    -- git
+    use "lewis6991/gitsigns.nvim"
+
     -- autosave
     -- use({
     --     "Pocco81/auto-save.nvim",

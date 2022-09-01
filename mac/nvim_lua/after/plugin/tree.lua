@@ -29,7 +29,7 @@ tree.setup({
         icons = {
             glyphs = {
                 git = {
-                    unstaged = "﹡"
+                    unstaged = "⊛"
                 }
             }
         }
