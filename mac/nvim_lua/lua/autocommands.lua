@@ -13,7 +13,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     group = augroup,
     desc = "Highlight on yank",
     callback = function()
-        vim.highlight.on_yank({ higroup = "Visual", timeout = 153 })
+        vim.highlight.on_yank({ higroup = "Visual", timeout = 150 })
     end
 })
 
@@ -21,6 +21,6 @@ vim.cmd [[
  " equalalize split views
  augroup _auto_resize
     autocmd!
-    autocmd VimResized * tabdo wincmd = 
+    autocmd VimResized * tabdo wincmd =
   augroup end
 ]]

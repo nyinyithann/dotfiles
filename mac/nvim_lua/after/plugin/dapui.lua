@@ -4,19 +4,6 @@ if not status_ok then
 end
 dapui.setup({
     icons = { expanded = "▾", collapsed = "▸" },
-
-    -- lspconfig = {
-    --     cmd = { "lua-language-server" },
-    --     on_attach = function(c, b)
-    --     end,
-    --     settings = {
-    --         Lua = {
-    --             hint = {
-    --                 enable = true,
-    --             },
-    --         },
-    --     },
-    -- },
     mappings = {
         -- Use a table to apply multiple mappings
         expand = { "<CR>", "<2-LeftMouse>" },
