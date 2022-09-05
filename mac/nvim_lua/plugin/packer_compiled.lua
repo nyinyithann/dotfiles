@@ -329,6 +329,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/vim-paper.git",
     url = "https://gitlab.com/yorickpeterse/vim-paper"
+  },
+  ["vim-rescript"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/vim-rescript",
+    url = "https://github.com/rescript-lang/vim-rescript"
   }
 }
 

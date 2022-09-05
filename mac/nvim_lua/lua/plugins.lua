@@ -157,6 +157,9 @@ packer.startup(function(use)
     -- git
     use "lewis6991/gitsigns.nvim"
 
+    -- rescript
+    use "rescript-lang/vim-rescript"
+
     -- autosave
     -- use({
     --     "Pocco81/auto-save.nvim",

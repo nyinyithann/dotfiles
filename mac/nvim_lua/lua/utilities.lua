@@ -1,12 +1,15 @@
 local M = {}
 
 local ocamllsp = "ocamllsp"
+local rescriptlsp = "rescriptls"
 local lualsp = "sumneko_lua"
 local tslsp = "tsserver"
 local jsonls = "jsonls"
 local html = "html"
 local tailwindlsp = "tailwindcss"
 local general_name = "general"
+local cssls = "cssls"
+local cssmodulels = "cssmodules_ls"
 
 local State = { current_lsp_name = "" }
 
@@ -17,6 +20,9 @@ M.TS_LSP_NAME = (function() return tslsp end)()
 M.JSON_LSP_NAME = (function() return jsonls end)()
 M.HTML_LSP_NAME = (function() return html end)()
 M.TAILWIND_LSP_NAME = (function() return tailwindlsp end)()
+M.RESCRIPT_LSP_NAME = (function() return rescriptlsp end)()
+M.CSSLS = (function() return cssls end)()
+M.CSS_MODULE_LS = (function() return cssmodulels end)()
 
 M.get_current_lsp_name = function()
     return State.current_lsp_name
@@ -107,6 +113,20 @@ M.get_cmp_kinds = function()
         },
 
         [M.OCAML_LSP_NAME] = {
+            Method = "ﬦ",
+            Function = "ﬦ",
+            Constructor = "ﬦ",
+            Field = "ﬦ",
+            Variable = "ﬦ",
+            Class = "ﴯ",
+            Interface = "",
+            Module = "",
+            Property = "ﬦ",
+            Value = "ﬦ",
+            Enum = "ﬦ",
+        },
+
+        [M.RESCRIPT_LSP_NAME] = {
             Method = "ﬦ",
             Function = "ﬦ",
             Constructor = "ﬦ",

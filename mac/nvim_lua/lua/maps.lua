@@ -72,3 +72,5 @@ keymap("v", ">", ">gv")
 
 -- Cancel search highlighting with ESC
 keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>")
+
+keymap("i", "<C-space>", "<C-x><C-o>")

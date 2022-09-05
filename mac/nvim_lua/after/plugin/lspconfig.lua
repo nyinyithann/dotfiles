@@ -5,20 +5,24 @@ local utilities = require("utilities");
 
 local on_attach = function(client, bufnr)
     utilities.set_current_lsp_name(client.name)
+
+    -- enable completion triggered by <ctr-space>
+    vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
     vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-    vim.keymap.set("n", "<leader>k", vim.lsp.buf.hover, bufopts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
     vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set("n", "gk", vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set("n", "<space>td", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
     vim.keymap.set("n", "<space>x", function()
         print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
     end, bufopts)
-    vim.keymap.set("n", "<space>td", vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
-    vim.keymap.set("n", "<space>a", vim.lsp.buf.code_action, bufopts)
+    vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
     vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
     vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, bufopts)
     vim.keymap.set("n", "<space>do", vim.diagnostic.open_float, bufopts)
@@ -45,10 +49,40 @@ local on_attach = function(client, bufnr)
             callback = function() vim.lsp.buf.formatting_seq_sync() end
         })
     end
+
+    if client.name == utilities.RESCRIPT_LSP_NAME then
+        local opts = { noremap = true, silent = true }
+        vim.keymap.set("n", "<leader>rd", "<Cmd>RescriptJumpToDefinition<CR>", opts)
+        vim.keymap.set("n", "<leader>rf", "<Cmd>RescriptFormat<CR>", opts)
+        vim.keymap.set("n", "<leader>rt", "<Cmd>RescriptTypeHint<CR>", opts)
+        vim.keymap.set("n", "<leader>rb", "<Cmd>RescriptBuild<CR>", opts)
+        vim.api.nvim_buf_set_option(bufnr, "omnifunc", "rescript#Complete")
+    end
+
+    if client.resolved_capabilities.code_lens then
+        local codelens = vim.api.nvim_create_augroup(
+            'LSPCodeLens',
+            { clear = true }
+        )
+        vim.api.nvim_create_autocmd({ 'BufEnter', 'InsertLeave', 'CursorHold' }, {
+            group = codelens,
+            callback = function()
+                vim.lsp.codelens.refresh()
+            end,
+            buffer = bufnr,
+        })
+    end
 end
 
 local c = vim.lsp.protocol.make_client_capabilities()
 c.textDocument.completion.completionItem.snippetSupport = true
+c.textDocument.completion.completionItem.resolveSupport = {
+    properties = {
+        'documentation',
+        'detail',
+        'additionalTextEdits',
+    },
+}
 local capabilities = require("cmp_nvim_lsp").update_capabilities(c)
 
 lsp.ocamllsp.setup({
@@ -77,6 +111,7 @@ lsp.jsonls.setup {
     init_options = { provideFormatter = true },
     root_dir = lsp.util.find_git_ancestor;
     single_file_support = true,
+    on_attach = on_attach,
     capabilities = capabilities
 }
 
@@ -92,8 +127,39 @@ lsp.html.setup {
         },
         provideFormatter = true
     },
+    on_attach = on_attach,
     capabilities = capabilities,
 }
+
+lsp.cssls.setup({
+    name = utilities.CSSLS,
+    cmd = { "vscode-css-language-server", "--stdio" },
+    filetypes = { "css", "scss", "less", "styl" },
+    root_dir = lsp.util.root_pattern("package.json", ".git"),
+    settings = {
+        css = {
+            validate = true
+        },
+        less = {
+            validate = true
+        },
+        scss = {
+            validate = true
+        },
+    },
+    single_file_support = true;
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
+
+lsp.cssmodules_ls.setup({
+    name = utilities.CSS_MODULE_LS,
+    cmd = { "cssmodules-language-server" },
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    root_dir = lsp.util.root_pattern("package.json"),
+    on_attach = on_attach,
+    capabilities = capabilities,
+})
 
 lsp.tailwindcss.setup({
     name = utilities.TAILWIND_LSP_NAME,
@@ -129,6 +195,20 @@ lsp.sumneko_lua.setup({
             },
         },
     },
+    on_attach = on_attach,
+    capabilities = capabilities
+})
+
+lsp.rescriptls.setup({
+    name = utilities.RESCRIPT_LSP_NAME,
+    cmd = {
+        "node",
+        "/Users/jazz/ghq/github.com/rescript-lang/vim-rescript/server/out/server.js",
+        "--stdio"
+    },
+    filetypes = { "rescript" },
+    root_dir = lsp.util.root_pattern("bsconfig.json"),
+    settings = {},
     on_attach = on_attach,
     capabilities = capabilities
 })
