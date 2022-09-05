@@ -17,8 +17,8 @@ keymap("i", "<C-s>", "<C-o>:update<CR>")
 keymap("v", "<C-r>", "hy:%s/<C-r>h//gc<left><left><left>")
 
 -- insert a new line without leaving normal mode
-keymap("n", "<leader>no", "o<Esc>3\"_D")
-keymap("n", "<leader>nO", "O<Esc>3\"_D")
+keymap("n", "<space>no", "o<Esc>3\"_D")
+keymap("n", "<space>nO", "O<Esc>3\"_D")
 
 -- indent all
 keymap("n", "<C-]>", ":keepjumps normal! gg=G<Cr>")
@@ -29,17 +29,17 @@ keymap("n", "mk", "<Esc>:m .-2<CR>==")
 
 --*********** buffer **********--
 -- a new buffer
-keymap("n", "<leader>new", ":new<cr>")
+keymap("n", "<space>new", ":new<cr>")
 
 -- close the current buffer and move to the previous one
-keymap("n", "<leader>bq", ":bp <bar> bd #<cr>")
+keymap("n", "<space>bq", ":bp <bar> bd #<cr>")
 
 --*********** windows **********--
 -- navigate windows
-keymap("n", "<leader>h", "<c-w><c-h>")
-keymap("n", "<leader>j", "<c-w><c-j>")
-keymap("n", "<leader>k", "<c-w><c-k>")
-keymap("n", "<leader>l", "<c-w><c-l>")
+keymap("n", "<space>h", "<c-w><c-h>")
+keymap("n", "<space>j", "<c-w><c-j>")
+keymap("n", "<space>k", "<c-w><c-k>")
+keymap("n", "<space>l", "<c-w><c-l>")
 
 -- split windows
 keymap("n", ",h", ":split<cr>")

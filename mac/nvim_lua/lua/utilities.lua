@@ -10,6 +10,7 @@ local tailwindlsp = "tailwindcss"
 local general_name = "general"
 local cssls = "cssls"
 local cssmodulels = "cssmodules_ls"
+local rustls = "rust_analyzer"
 
 local State = { current_lsp_name = "" }
 
@@ -23,6 +24,7 @@ M.TAILWIND_LSP_NAME = (function() return tailwindlsp end)()
 M.RESCRIPT_LSP_NAME = (function() return rescriptlsp end)()
 M.CSSLS = (function() return cssls end)()
 M.CSS_MODULE_LS = (function() return cssmodulels end)()
+M.RUST_LS = (function() return rustls end)()
 
 M.get_current_lsp_name = function()
     return State.current_lsp_name
@@ -150,6 +152,10 @@ end
 M.get_lsp_symbol = function()
     if M.get_current_lsp_name() == M.OCAML_LSP_NAME then
         return "🐫"
+    elseif M.get_current_lsp_name() == M.RESCRIPT_LSP_NAME then
+        return "🔺"
+    elseif M.get_current_lsp_name() == M.RUST_LS then
+        return "🦀"
     else return "𝕷"
     end
 
