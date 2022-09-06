@@ -1,4 +1,5 @@
 require("options")
+require("disable")
 require("maps")
 require("autocommands")
 require("colorscheme")

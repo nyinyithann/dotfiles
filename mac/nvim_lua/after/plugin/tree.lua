@@ -51,5 +51,5 @@ tree.setup({
 })
 
 local opts = { noremap = true, silent = true }
-vim.keymap.set("n", "<leader>te", "<Cmd>NvimTreeToggle<CR>", opts)
-vim.keymap.set("n", "<leader>tf", "<Cmd>NvimTreeFocus<CR>", opts)
+vim.keymap.set("n", "<space>te", "<Cmd>NvimTreeToggle<CR>", opts)
+vim.keymap.set("n", "<space>tf", "<Cmd>NvimTreeFocus<CR>", opts)

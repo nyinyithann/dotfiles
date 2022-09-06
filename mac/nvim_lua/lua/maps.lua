@@ -1,5 +1,6 @@
 local keymap = vim.keymap.set
 
+keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
 --*********** editing Text **********--
 -- delete text with 'x' without changing the internal register
 keymap({ 'n', 'x' }, 'x', '"_x')
@@ -29,7 +30,7 @@ keymap("n", "mk", "<Esc>:m .-2<CR>==")
 
 --*********** buffer **********--
 -- a new buffer
-keymap("n", "<space>new", ":new<cr>")
+keymap("n", "<leader>new", ":new<cr>")
 
 -- close the current buffer and move to the previous one
 keymap("n", "<space>bq", ":bp <bar> bd #<cr>")
@@ -73,4 +74,5 @@ keymap("v", ">", ">gv")
 -- Cancel search highlighting with ESC
 keymap("n", "<ESC>", ":nohlsearch<Bar>:echo<CR>")
 
+-- Open autocomplete popup 
 keymap("i", "<C-space>", "<C-x><C-o>")
