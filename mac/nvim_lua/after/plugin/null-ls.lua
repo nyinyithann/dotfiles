@@ -8,6 +8,5 @@ nls.setup({
         nls.builtins.diagnostics.eslint_d.with({
             diagnostics_format = '[eslint] #{m}\n(#{c})'
         }),
-        nls.builtins.diagnostics.zsh,
     },
 })
