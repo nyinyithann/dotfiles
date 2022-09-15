@@ -270,5 +270,6 @@
   "workbench.colorTheme": "Dark Mode MDN",
   "editor.fontSize": 13,
   "editor.cursorBlinking": "solid",
-  "editor.cursorStyle": "underline"
+  "editor.cursorStyle": "underline",
+  "Lua.telemetry.enable": true
 }
