@@ -27,5 +27,4 @@ vim.g.loaded_vimballPlugin = 1
 vim.g.loaded_2html_plugin = 1
 vim.g.loaded_logipat = 1
 vim.g.loaded_rrhelper = 1
-vim.g.loaded_matchparen = 1
 vim.g.loaded_spec = 1

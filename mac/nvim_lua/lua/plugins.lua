@@ -160,6 +160,11 @@ packer.startup(function(use)
     -- rescript
     use "rescript-lang/vim-rescript"
 
+    -- hop
+    use {
+        'phaazon/hop.nvim',
+        branch = 'v2'
+    }
     -- autosave
     -- use({
     --     "Pocco81/auto-save.nvim",
