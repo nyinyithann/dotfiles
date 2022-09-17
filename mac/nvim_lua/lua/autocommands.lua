@@ -23,4 +23,9 @@ vim.cmd [[
     autocmd!
     autocmd VimResized * tabdo wincmd =
   augroup end
+
+  autocmd! BufRead,BufNewFile *.els setfiletype json
+  
+  " if elasticsearch file, turn off diagnostics
+  autocmd! BufReadPost,BufNewFile *.es :lua require 'toggle_lsp_diagnostics'.turn_off_buffer_diagnostics()
 ]]

@@ -165,6 +165,8 @@ packer.startup(function(use)
         'phaazon/hop.nvim',
         branch = 'v2'
     }
+
+    use { "nyinyithann/toggle-lsp-diagnostics.nvim" }
     -- autosave
     -- use({
     --     "Pocco81/auto-save.nvim",

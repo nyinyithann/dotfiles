@@ -320,6 +320,11 @@ _G.packer_plugins = {
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/tmux.nvim",
     url = "https://github.com/aserowy/tmux.nvim"
   },
+  ["toggle-lsp-diagnostics.nvim"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/toggle-lsp-diagnostics.nvim",
+    url = "https://github.com/nyinyithann/toggle-lsp-diagnostics.nvim"
+  },
   ["toggleterm.nvim"] = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",

@@ -8,4 +8,4 @@ hop.setup({
 
 vim.api.nvim_set_keymap("n", "<space>m", "<cmd>HopWord<cr>", {})
 vim.api.nvim_set_keymap("n", "<space>v", "<cmd>HopVertical<cr>", {})
-vim.api.nvim_set_keymap("n", "<space>l", "<cmd>HopLine<cr>", {})
+vim.api.nvim_set_keymap("n", "<space>n", "<cmd>HopLine<cr>", {})
