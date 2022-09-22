@@ -23,6 +23,9 @@ cmp.setup({
             border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
         },
     },
+     completion = {
+      autocomplete = false
+    },
     mapping = cmp.mapping.preset.insert({
         ["<C-k>"] = cmp.mapping.scroll_docs(-4),
         ["<C-j>"] = cmp.mapping.scroll_docs(4),
@@ -82,3 +85,5 @@ cmp.setup({
         end,
     }
 })
+
+vim.keymap.set({"n", "i"}, "<C-space>", "<Cmd>lua require('cmp').complete()<CR>", {})

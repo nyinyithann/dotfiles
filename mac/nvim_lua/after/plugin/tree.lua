@@ -36,7 +36,7 @@ tree.setup({
     },
     filters = {
         -- hide .git folder
-        custom = { "^\\.git$" }
+        custom = { "^\\.git$", "^\\.DS_Store" }
     },
     diagnostics = {
         enable = true,

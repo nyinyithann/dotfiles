@@ -138,7 +138,10 @@ lsp.cssls.setup({
     root_dir = lsp.util.root_pattern("package.json", ".git"),
     settings = {
         css = {
-            validate = true
+            validate = true,
+            lint = {
+                unknownAtRules = "ignore",
+            },
         },
         less = {
             validate = true
