@@ -24,6 +24,9 @@ export ZSH="/Users/jazz/.oh-my-zsh"
 # dotnet
 export PATH="$PATH:/Users/jazz/.dotnet/tools"
 
+# luavim
+export PATH="$PATH:/Users/jazz/.local/bin"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
