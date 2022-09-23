@@ -260,6 +260,11 @@ _G.packer_plugins = {
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-window.git",
     url = "https://gitlab.com/yorickpeterse/nvim-window"
   },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/packer.nvim",

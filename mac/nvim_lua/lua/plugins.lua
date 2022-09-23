@@ -70,6 +70,7 @@ packer.startup(function(use)
     use "folke/lsp-colors.nvim"
     use "https://gitlab.com/yorickpeterse/vim-paper.git"
     use { "catppuccin/nvim", as = "catppuccin" }
+    use 'navarasu/onedark.nvim'
 
     -- autocompletion
     use "hrsh7th/nvim-cmp"
