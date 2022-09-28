@@ -260,6 +260,11 @@ _G.packer_plugins = {
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-window.git",
     url = "https://gitlab.com/yorickpeterse/nvim-window"
   },
+  ["ofirkai.nvim"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/ofirkai.nvim",
+    url = "https://github.com/ofirgall/ofirkai.nvim"
+  },
   ["onedark.nvim"] = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/onedark.nvim",
@@ -279,6 +284,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/rust-tools.nvim",
     url = "https://github.com/simrat39/rust-tools.nvim"
+  },
+  sonokai = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/sonokai",
+    url = "https://github.com/sainnhe/sonokai"
   },
   ["symbols-outline.nvim"] = {
     loaded = true,
@@ -344,6 +354,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/vim-illuminate",
     url = "https://github.com/RRethy/vim-illuminate"
+  },
+  ["vim-nightfly-guicolors"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
+    url = "https://github.com/bluz71/vim-nightfly-guicolors"
   },
   ["vim-paper.git"] = {
     loaded = true,

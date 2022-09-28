@@ -58,7 +58,7 @@ packer.startup(function(use)
     use { "mfussenegger/nvim-dap" }
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
 
-    -- nightfox color scheme
+    -- colorscheme
     use "EdenEast/nightfox.nvim"
     use "sainnhe/gruvbox-material"
     use "folke/tokyonight.nvim"
@@ -71,6 +71,9 @@ packer.startup(function(use)
     use "https://gitlab.com/yorickpeterse/vim-paper.git"
     use { "catppuccin/nvim", as = "catppuccin" }
     use 'navarasu/onedark.nvim'
+    use 'ofirgall/ofirkai.nvim'
+    use 'bluz71/vim-nightfly-guicolors'
+    use "sainnhe/sonokai"
 
     -- autocompletion
     use "hrsh7th/nvim-cmp"

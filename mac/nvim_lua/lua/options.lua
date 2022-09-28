@@ -49,3 +49,7 @@ vim.cmd [[set iskeyword+=-]] -- ask vim to treat '-' like a regular word charact
 
 set.completeopt = { "menuone", "menu", "noselect", "preview" } -- mainly for cmp plugin
 set.pumblend = 0
+
+set.swapfile = false
+set.cursorline = true
+set.autoread = true

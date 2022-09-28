@@ -17,6 +17,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     end
 })
 
+vim.api.nvim_create_autocmd({ "BufEnter", "CursorHold", "CursorHoldI", "FocusGained" }, {
+    command = "if mode() != 'c' | checktime | endif",
+    pattern = { "*" },
+})
+
 vim.cmd [[
  " equalalize split views
  augroup _auto_resize
@@ -26,7 +31,7 @@ vim.cmd [[
 
   autocmd! BufRead,BufNewFile *.els setfiletype json
   autocmd! BufRead,BufNewFile *.swcrc setfiletype json
-  
+
   " if elasticsearch file, turn off diagnostics
   autocmd! BufReadPost,BufNewFile *.es :lua require 'toggle_lsp_diagnostics'.turn_off_buffer_diagnostics()
 ]]
