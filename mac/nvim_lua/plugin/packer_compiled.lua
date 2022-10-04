@@ -190,6 +190,11 @@ _G.packer_plugins = {
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/melange",
     url = "https://github.com/savq/melange"
   },
+  ["neoscroll.nvim"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/neoscroll.nvim",
+    url = "https://github.com/karb94/neoscroll.nvim"
+  },
   neovim = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/neovim",
@@ -249,6 +254,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-autotag"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",
+    url = "https://github.com/windwp/nvim-ts-autotag"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -349,6 +359,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
+  },
+  ["trouble.nvim"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/trouble.nvim",
+    url = "https://github.com/folke/trouble.nvim"
   },
   ["vim-illuminate"] = {
     loaded = true,

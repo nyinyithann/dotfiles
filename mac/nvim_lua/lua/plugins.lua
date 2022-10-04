@@ -171,6 +171,12 @@ packer.startup(function(use)
     }
 
     use { "nyinyithann/toggle-lsp-diagnostics.nvim" }
+
+    use "karb94/neoscroll.nvim"
+
+    use "folke/trouble.nvim"
+
+    use "windwp/nvim-ts-autotag"
     -- autosave
     -- use({
     --     "Pocco81/auto-save.nvim",
