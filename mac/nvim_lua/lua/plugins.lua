@@ -147,7 +147,8 @@ packer.startup(function(use)
     -- better escape
     use "max397574/better-escape.nvim"
 
-    use "jose-elias-alvarez/null-ls.nvim" -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+    -- Use Neovim as a language server to inject LSP diagnostics, code actions, and more via Lua
+    use { "jose-elias-alvarez/null-ls.nvim" }
 
     -- tmux integration
     use "aserowy/tmux.nvim"
