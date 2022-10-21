@@ -1,7 +1,7 @@
 local status, coffee = pcall(require, "catppuccin")
 if (not status) then return end
 
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 coffee.setup({
     integration = {
         nvimtree = {

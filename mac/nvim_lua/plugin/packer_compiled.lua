@@ -255,6 +255,11 @@ _G.packer_plugins = {
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-rescript"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-treesitter-rescript",
+    url = "https://github.com/nkrkv/nvim-treesitter-rescript"
+  },
   ["nvim-ts-autotag"] = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-ts-autotag",

@@ -211,7 +211,8 @@ lsp.rescriptls.setup({
     },
     filetypes = { "rescript" },
     root_dir = lsp.util.root_pattern("bsconfig.json"),
-    settings = {},
+    settings = {
+    },
     on_attach = on_attach,
     capabilities = capabilities
 })

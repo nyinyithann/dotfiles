@@ -16,6 +16,7 @@ tree.setup({
     open_on_setup = true,
     view = {
         adaptive_size = false,
+        auto_resize = false,
         mappings = {
             list = {
                 { key = "u", action = "dir_up" },
@@ -26,11 +27,13 @@ tree.setup({
         }
     },
     renderer = {
-        highlight_opened_files = "all",
+        highlight_opened_files = "alj",
         icons = {
             glyphs = {
+                default = "",
+                symlink = "",
                 git = {
-                    unstaged = "⊛"
+                    unstaged = "",
                 }
             }
         }
