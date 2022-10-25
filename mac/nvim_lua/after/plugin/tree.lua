@@ -16,7 +16,6 @@ tree.setup({
     open_on_setup = true,
     view = {
         adaptive_size = false,
-        auto_resize = false,
         mappings = {
             list = {
                 { key = "u", action = "dir_up" },

@@ -167,7 +167,14 @@ lsp.cssmodules_ls.setup({
 lsp.tailwindcss.setup({
     name = utilities.TAILWIND_LSP_NAME,
     cmd = { "tailwindcss-language-server", "--stdio" },
-    capabilities = c,
+    -- capabilities = c,
+    capabilities = capabilities,
+    filetypes = { "aspnetcorerazor", "astro", "astro-markdown", "blade", "django-html", "edge", "eelixir", "ejs", "erb",
+        "eruby", "gohtml", "haml", "handlebars", "hbs", "html", "html-eex", "heex", "jade", "leaf", "liquid", "markdown",
+        "mdx", "mustache", "njk", "nunjucks", "php", "razor", "slim", "twig", "css", "less", "postcss", "sass", "scss",
+        "stylus", "sugarss", "javascript", "javascriptreact", "reason", "rescript", "rescriptreact", "typescript",
+        "typescriptreact",
+        "vue", "svelte" }
 })
 
 lsp.sumneko_lua.setup({
