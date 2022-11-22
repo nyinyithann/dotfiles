@@ -29,7 +29,7 @@ export PATH="$PATH:/Users/jazz/.local/bin"
 
 
 # nvim
-export PATH="$PATH:/Users/jazz/nvim/bin"
+# export PATH="$PATH:/Users/jazz/nvim/bin"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,

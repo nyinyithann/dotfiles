@@ -43,12 +43,16 @@ packer.startup(function(use)
     -- packer can manage itself!
     use "wbthomason/packer.nvim"
 
-    use "kyazdani42/nvim-web-devicons"
     -- nvim-tree file explorer
-    use "kyazdani42/nvim-tree.lua"
+    use({
+        "kyazdani42/nvim-tree.lua",
+        requires = {
+            "kyazdani42/nvim-web-devicons", -- optional, for file icons
+        },
+    })
 
     -- lsp config
-    use { "neovim/nvim-lspconfig", tag = "v0.1.3" }
+    use { "neovim/nvim-lspconfig" }
 
     -- dap
     use "simrat39/rust-tools.nvim"
@@ -96,7 +100,7 @@ packer.startup(function(use)
     }
 
     -- bufferline
-    use { "akinsho/nvim-bufferline.lua", tag = "v2.7.0" }
+    use { "akinsho/nvim-bufferline.lua" }
 
     -- commenting
     use {
@@ -113,11 +117,11 @@ packer.startup(function(use)
     }
 
     -- terminal
-    use { "akinsho/toggleterm.nvim", tag = "v2.*" }
+    use { "akinsho/toggleterm.nvim" }
 
     -- telescope
     use {
-        "nvim-telescope/telescope.nvim", tag = "0.1.0",
+        "nvim-telescope/telescope.nvim",
         requires = { { "nvim-lua/plenary.nvim" } }
     }
     use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
@@ -177,13 +181,6 @@ packer.startup(function(use)
     use "folke/trouble.nvim"
 
     use "windwp/nvim-ts-autotag"
-    -- autosave
-    -- use({
-    --     "Pocco81/auto-save.nvim",
-    --     config = function()
-    --         require("auto-save").setup {}
-    --     end,
-    -- })
 
     -- Automatically run packer.clean() followed by packer.update() after cloning packer.nvim
     -- Put this at the end after all plugins

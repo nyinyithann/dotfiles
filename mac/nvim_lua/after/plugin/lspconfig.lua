@@ -39,7 +39,7 @@ local on_attach = function(client, bufnr)
     end
 
     if client.name == utilities.TS_LSP_NAME then
-        client.resolved_capabilities.document_formatting = false
+        client.server_capabilities.document_formatting = false
     end
 
     if client.server_capabilities.documentFormattingProvider then
@@ -59,7 +59,7 @@ local on_attach = function(client, bufnr)
         vim.api.nvim_buf_set_option(bufnr, "omnifunc", "rescript#Complete")
     end
 
-    if client.resolved_capabilities.code_lens then
+    if client.server_capabilities.code_lens then
         local codelens = vim.api.nvim_create_augroup(
             'LSPCodeLens',
             { clear = true }
@@ -83,7 +83,7 @@ c.textDocument.completion.completionItem.resolveSupport = {
         'additionalTextEdits',
     },
 }
-local capabilities = require("cmp_nvim_lsp").update_capabilities(c)
+local capabilities = require("cmp_nvim_lsp").default_capabilities(c)
 
 lsp.ocamllsp.setup({
     name = utilities.OCAML_LSP_NAME,
@@ -271,7 +271,6 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     { border = "rounded" }
 )
 
--- vim.cmd [[ autocmd BufWritePre * lua vim.lsp.buf.formatting_sync() ]]
 vim.cmd [[
     " make hover window"s background transparent
     highlight! link FloatBorder Normal
