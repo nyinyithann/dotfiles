@@ -255,6 +255,11 @@ _G.packer_plugins = {
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
+  ["nvim-treesitter-reason"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-treesitter-reason",
+    url = "https://github.com/danielo515/nvim-treesitter-reason"
+  },
   ["nvim-treesitter-rescript"] = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/nvim-treesitter-rescript",
@@ -384,6 +389,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/vim-paper.git",
     url = "https://gitlab.com/yorickpeterse/vim-paper"
+  },
+  ["vim-reason-plus"] = {
+    loaded = true,
+    path = "/Users/jazz/.local/share/nvim/site/pack/packer/start/vim-reason-plus",
+    url = "https://github.com/reasonml-editor/vim-reason-plus"
   },
   ["vim-rescript"] = {
     loaded = true,

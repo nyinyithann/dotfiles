@@ -8,18 +8,30 @@ local codelldb_path = extension_path .. 'adapter/codelldb'
 local liblldb_path = extension_path .. 'lldb/lib/liblldb.dylib'
 
 rt.setup({
+    tools = {
+        on_initialized = function()
+            vim.cmd [[
+            autocmd BufEnter,CursorHold,InsertLeave,BufWritePost *.rs silent! lua vim.lsp.codelens.refresh()
+          ]]
+        end,
+    },
     server = {
         standalone = true,
         on_attach = function(client, bufnr)
             utilities.set_current_lsp_name(client.name)
-            -- Hover actions
             vim.keymap.set("n", "<Leader>k", rt.hover_actions.hover_actions, { buffer = bufnr })
-            -- Code action groups
             vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
+            vim.keymap.set("n", "<space>f", vim.lsp.buf.formatting, { buffer = bufnr })
+            vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, { buffer = bufnr })
         end,
-        ["rust-analyzer"] = {
-            checkOnSave = {
-                command = "clippy"
+        settings = {
+            ["rust-analyzer"] = {
+                lens = {
+                    enable = true,
+                },
+                checkOnSave = {
+                    command = "clippy"
+                }
             }
         }
     },
@@ -28,3 +40,6 @@ rt.setup({
             codelldb_path, liblldb_path)
     },
 })
+
+
+vim.keymap.set("n", "<F5>", "<Cmd>RustRun<CR>")

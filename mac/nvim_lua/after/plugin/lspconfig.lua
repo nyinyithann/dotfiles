@@ -42,6 +42,14 @@ local on_attach = function(client, bufnr)
         client.server_capabilities.document_formatting = false
     end
 
+    if client.name == utilities.RUST_LS then
+        vim.api.nvim_create_autocmd("BufWritePre", {
+            group = vim.api.nvim_create_augroup("Format", { clear = true }),
+            buffer = bufnr,
+            callback = function() vim.lsp.buf.formatting_sync(nil, 1000) end
+        })
+    end
+
     if client.server_capabilities.documentFormattingProvider then
         vim.api.nvim_create_autocmd("BufWritePre", {
             group = vim.api.nvim_create_augroup("Format", { clear = true }),
@@ -87,7 +95,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities(c)
 
 lsp.ocamllsp.setup({
     name = utilities.OCAML_LSP_NAME,
-    cmd = { utilities.OCAML_LSP_NAME },
+    cmd = { 'esy', utilities.OCAML_LSP_NAME, "--fallback-read-dot-merlin" },
     filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
     root_dir = lsp.util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace"),
     on_attach = on_attach,

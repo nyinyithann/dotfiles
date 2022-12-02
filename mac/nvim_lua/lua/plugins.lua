@@ -181,6 +181,9 @@ packer.startup(function(use)
     use "folke/trouble.nvim"
 
     use "windwp/nvim-ts-autotag"
+    use 'danielo515/nvim-treesitter-reason'
+
+    use 'reasonml-editor/vim-reason-plus'
 
     -- Automatically run packer.clean() followed by packer.update() after cloning packer.nvim
     -- Put this at the end after all plugins
