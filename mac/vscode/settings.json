@@ -101,7 +101,6 @@
       "before": ["<"]
     }
   ],
-  "prettier.jsxBracketSameLine": true,
   "[javascriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
   },
@@ -123,9 +122,6 @@
   "python.insidersChannel": "daily",
   "editor.codeLensFontSize": 12,
   "vim.joinspaces": true,
-  "[fsharp]": {
-    "editor.defaultFormatter": "Ionide.Ionide-fsharp"
-  },
   "vim.useSystemClipboard": true,
   "terminal.integrated.fontSize": 12,
   "files.autoSave": "afterDelay",
@@ -177,7 +173,7 @@
   "eslint.validate": ["javascript"],
   "terminal.explorerKind": "external",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.cursorStyle": "line",
   "redhat.telemetry.enabled": true,
   "workbench.sideBar.location": "left",
   "FSharp.useSdkScripts": true,
@@ -240,6 +236,10 @@
     {
       "commands": ["workbench.action.files.save"],
       "before": ["<C-s>"]
+    },
+    {
+      "before": ["K"],
+      "commands": [{ "command": "editor.action.showDefinitionPreviewHover" }]
     }
   ],
   "[dart]": {
@@ -268,7 +268,12 @@
     "FIG_NEW_SESSION": "1"
   },
   "editor.fontSize": 13,
-  "editor.cursorBlinking": "solid",
-  "editor.cursorStyle": "underline",
-  "Lua.telemetry.enable": true
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorStyle": "line",
+  "Lua.telemetry.enable": true,
+
+  "[csharp]": {
+    "editor.formatOnSave": true
+  },
+  "editor.formatOnType": true
 }
