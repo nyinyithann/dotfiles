@@ -275,5 +275,9 @@
   "[csharp]": {
     "editor.formatOnSave": true
   },
-  "editor.formatOnType": true
+  "editor.formatOnType": true,
+  "[sql]": {
+    "editor.defaultFormatter": "ms-ossdata.vscode-postgresql"
+  },
+  "workbench.colorTheme": "Ambiance [beta]"
 }
