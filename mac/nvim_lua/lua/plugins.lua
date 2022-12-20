@@ -185,6 +185,13 @@ packer.startup(function(use)
 
     use 'reasonml-editor/vim-reason-plus'
 
+    use {
+        "ur4ltz/surround.nvim",
+        config = function()
+            require "surround".setup { mappings_style = "sandwich" }
+        end
+    }
+
     -- Automatically run packer.clean() followed by packer.update() after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
