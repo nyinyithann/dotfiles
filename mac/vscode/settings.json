@@ -130,7 +130,7 @@
   "vim.showcmd": true,
   "material-icon-theme.saturation": 1,
   "liveServer.settings.donotShowInfoMsg": true,
-  "editor.fontFamily": "'FiraMono Nerd Font', 'YaHei Consolas Hybrid', 'Ubuntu Mono', 'Noto Mono', 'DejaVu Sans Mono'",
+  "editor.fontFamily": "'FiraMono Nerd Font', 'YaHei Consolas Hybrid','CaskaydiaCove Nerd Font','Ubuntu Mono', 'Noto Mono', 'DejaVu Sans Mono'",
   "[css]": {
     "editor.defaultFormatter": "Wscats.qf"
   },
@@ -238,8 +238,12 @@
       "before": ["<C-s>"]
     },
     {
-      "before": ["K"],
-      "commands": [{ "command": "editor.action.showDefinitionPreviewHover" }]
+      "before": ["<leader>", "k"],
+      "commands": [
+        {
+          "command": "editor.action.showDefinitionPreviewHover"
+        }
+      ]
     }
   ],
   "[dart]": {
@@ -263,7 +267,7 @@
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono','CaskaydiaCove Nerd Font','MesloLGS NF', 'Cascadia Mono PL'",
   "diffEditor.ignoreTrimWhitespace": false,
   "scss.validate": false,
-  "editor.lineHeight": 24,
+  "editor.lineHeight": 18,
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
@@ -271,13 +275,11 @@
   "editor.cursorBlinking": "smooth",
   "editor.cursorStyle": "line",
   "Lua.telemetry.enable": true,
-
   "[csharp]": {
     "editor.formatOnSave": true
   },
   "editor.formatOnType": true,
   "[sql]": {
     "editor.defaultFormatter": "ms-ossdata.vscode-postgresql"
-  },
-  "workbench.colorTheme": "Ambiance [beta]"
+  }
 }
