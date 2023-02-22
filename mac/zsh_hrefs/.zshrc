@@ -121,3 +121,5 @@ eval "$(zoxide init zsh)"
 
 # opam configuration
 [[ ! -r /Users/nyinyithan/.opam/opam-init/init.zsh ]] || source /Users/nyinyithan/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+alias vim=nvim
