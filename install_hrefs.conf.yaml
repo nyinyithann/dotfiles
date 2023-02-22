@@ -1,0 +1,44 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean: ["~"]
+
+- shell:
+    - [git submodule update --init --recursive, Installing submodules]
+
+- link:
+    ~/.config/kitty:
+      path: mac/kitty
+      force: true
+    ~/.config/alacritty:
+      path: mac/alacritty
+      force: true
+    ~/.config/karabiner:
+      path: mac/karabiner
+      force: true
+    ~/.tmux.conf:
+      path: mac/tmux/tmux.conf
+      force: true
+    ~/Library/Application Support/code/user/settings.json:
+      path: mac/vscode/settings.json
+      force: true
+    ~/.zshrc:
+      path: mac/zsh_hrefs/.zshrc
+      force: true
+    ~/.config/nvim:
+        path: mac/nvim_lua
+        force: true
+    ~/.gitconfig:
+      path: mac/git/gitconfig
+      force: true
+    ~/.ideavimrc:
+      path: mac/idea/.ideavimrc
+      force: true
+    ~/.ocamlinit:
+      path: mac/ocaml/.ocamlinit
+      force: true
+    ~/.utoprc:
+      path: mac/ocaml/.utoprc
+      force: true
