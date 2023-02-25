@@ -15,6 +15,13 @@ export NVM_DIR="$HOME/.nvm"
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# No matter how hard it is, or how hard it gets, I'm going to make it -- Les brown ----------------------------------------------------
+# path to monorepo
+export MONOREPO="$HOME/ahrefs_repos/monorepo"
+alias devbox="ssh nspawn"
+# -------------------------------------------------------------------------------------------------------------------------------------
+
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME

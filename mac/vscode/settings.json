@@ -1,23 +1,15 @@
 {
-  "editor.fontLigatures": true,
-  "material-icon-theme.showUpdateMessage": false,
-  "python.languageServer": "Pylance",
+  "editor.fontLigatures": false,
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "workbench.startupEditor": "none",
-  "sync.gist": "c2b1fc61834b73cd0cb1d4e1903664e1",
   "terminal.integrated.lineHeight": 1,
   "peacock.affectStatusAndTitleBorders": true,
-  "vim.incsearch": true,
   "less.validate": false,
-  "csharp.referencesCodeLens.enabled": false,
   "explorer.confirmDragAndDrop": false,
   "css.validate": false,
-  "vim.leader": "<space>",
-  "vim.easymotion": true,
   "material-icon-theme.activeIconPack": "react_redux",
-  "vim.useCtrlKeys": true,
   "editor.formatOnPaste": true,
   "editor.suggestSelection": "first",
   "material-icon-theme.files.associations": {},
@@ -91,23 +83,8 @@
   ],
   "editor.codeLensFontFamily": "'FiraCode Nerd Font Mono'",
   "editor.fontWeight": "300",
-  "vim.visualModeKeyBindings": [
-    {
-      "commands": ["editor.action.indentLines"],
-      "before": [">"]
-    },
-    {
-      "commands": ["editor.action.outdentLines"],
-      "before": ["<"]
-    }
-  ],
   "[javascriptreact]": {
     "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "liveServer.settings.proxy": {
-    "enable": true,
-    "baseUri": "/fetch",
-    "proxyUri": "http://localhost:5000/api"
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -119,25 +96,17 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "python.insidersChannel": "daily",
   "editor.codeLensFontSize": 12,
-  "vim.joinspaces": true,
-  "vim.useSystemClipboard": true,
   "terminal.integrated.fontSize": 12,
   "files.autoSave": "afterDelay",
-  "liveServer.settings.port": 5010,
   "workbench.iconTheme": "material-icon-theme",
-  "vim.showcmd": true,
   "material-icon-theme.saturation": 1,
-  "liveServer.settings.donotShowInfoMsg": true,
-  "editor.fontFamily": "'FiraMono Nerd Font', 'YaHei Consolas Hybrid','CaskaydiaCove Nerd Font','Ubuntu Mono', 'Noto Mono', 'DejaVu Sans Mono'",
+  "editor.fontFamily": "'FuraMono Nerd Font Mono', 'Noto Mono', 'CaskaydiaCove Nerd Font', 'YaHei Consolas Hybrid', 'FiraCode Nerd Font Mono', 'FiraMono Nerd Font', 'DejaVu Sans Mono'",
   "[css]": {
     "editor.defaultFormatter": "Wscats.qf"
   },
   "material-icon-theme.folders.color": "#42a5f5",
   "editor.accessibilitySupport": "off",
-  "jest.autoRun": "false",
-  "oneDarkPro.italic": false,
   "editor.mouseWheelZoom": true,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter-notebook"
@@ -149,18 +118,26 @@
     "strings": true
   },
   "emmet.excludeLanguages": ["markdown"],
-  "files.watcherExclude": {
-    "**/.ammonite": true,
-    "**/.bloop": true,
-    "**/.metals": true
-  },
   "[ocaml]": {
     "editor.tabSize": 2,
     "editor.defaultFormatter": "ocamllabs.ocaml-platform",
     "editor.formatOnSave": true,
     "editor.insertSpaces": true
   },
-  "liveServer.settings.host": "localhost",
+  "ocaml.sandbox": {
+    "kind": "custom",
+    "switch": "${workspaceFolder:monorepo}/frontend",
+    "template": "esy $prog $args --fallback-read-dot-merlin"
+  },
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "\\.re$",
+        "isAsync": true,
+        "cmd": "yarn bsrefmt --in-place -w 120 ${file}"
+      }
+    ]
+  },
   "terminal.integrated.defaultProfile.linux": "zsh",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
@@ -168,15 +145,11 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "vim.hlsearch": true,
   "material-icon-theme.opacity": 0.69999999999999996,
-  "eslint.validate": ["javascript"],
   "terminal.explorerKind": "external",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "terminal.integrated.cursorStyle": "line",
-  "redhat.telemetry.enabled": true,
   "workbench.sideBar.location": "left",
-  "FSharp.useSdkScripts": true,
   "editor.codeActionsOnSave": {
     "source.organizeImports": true,
     "source.fixAll": true
@@ -186,6 +159,75 @@
   "explorer.confirmDelete": false,
   "remote.WSL.debug": true,
   "terminal.integrated.cursorBlinking": true,
+  "scss.lint.unknownAtRules": "ignore",
+  "[dart]": {
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false,
+    "editor.selectionHighlight": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80]
+  },
+  "prettier.singleQuote": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono','CaskaydiaCove Nerd Font','MesloLGS NF', 'Cascadia Mono PL'",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "scss.validate": false,
+  "editor.lineHeight": 20,
+  "terminal.integrated.env.osx": {
+    "FIG_NEW_SESSION": "1"
+  },
+  "editor.fontSize": 13,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorStyle": "line",
+  "[csharp]": {
+    "editor.formatOnSave": true
+  },
+  "editor.formatOnType": true,
+  "[sql]": {
+    "editor.defaultFormatter": "ms-ossdata.vscode-postgresql"
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
+
+  "files.watcherExclude": {
+    "**/_build/**": true,
+    "**/_opam/**": true,
+    "**/esy.lock/**": true,
+    "**/_esy/**": true,
+    "**/lib/bs/**": true,
+    "**/lib/js/**": true,
+    "**/lib/ocaml/**": true,
+    "**/*.bs.js": true,
+    "**/rust/target/**": true,
+    "**/.ammonite": true,
+    "**/.bloop": true,
+    "**/.metals": true
+  },
+
+  "remote.SSH.useLocalServer": false,
+  "remote.SSH.remotePlatform": {
+    "nspawn": "linux"
+  },
+  "[reason]": {
+    "editor.codeLens": false,
+    "editor.autoIndent": "full"
+  },
+
+  // vim
+  "vim.leader": "<space>",
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.useCtrlKeys": true,
+  "vim.showcmd": true,
+  "vim.joinspaces": true,
+  "vim.useSystemClipboard": true,
+  "vim.autoindent": true,
+  "vim.ignorecase": true,
+  "vim.hlsearch": true,
   "vim.handleKeys": {
     "<C-f>": false,
     "<C-a>": false,
@@ -196,10 +238,6 @@
     "<C-c>": false,
     "<C-x>": false
   },
-  "svelte.enable-ts-plugin": true,
-  "vim.autoindent": true,
-  "vim.ignorecase": true,
-  "scss.lint.unknownAtRules": "ignore",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "after": ["d", "d"],
@@ -211,11 +249,15 @@
     },
     {
       "commands": ["workbench.action.nextEditor"],
-      "before": ["<tab>"]
+      "before": ["<gt>"]
     },
     {
       "commands": ["workbench.action.previousEditor"],
-      "before": ["<S-tab>"]
+      "before": ["<gT>"]
+    },
+    {
+      "before": ["leader", "s"],
+      "commands": ["workbench.action.files.save"]
     },
     {
       "commands": ["workbench.action.toggleSidebarVisibility"],
@@ -246,40 +288,20 @@
       ]
     }
   ],
-  "[dart]": {
-    "editor.suggest.snippetsPreventQuickSuggestions": false,
-    "editor.suggestSelection": "first",
-    "editor.tabCompletion": "onlySnippets",
-    "editor.wordBasedSuggestions": false,
-    "editor.selectionHighlight": false,
-    "editor.formatOnSave": true,
-    "editor.formatOnType": true,
-    "editor.rulers": [80]
-  },
-  "prettier.singleQuote": true,
   "vim.insertModeKeyBindings": [
     {
       "after": ["<Esc>"],
       "before": ["j", "k"]
     }
   ],
-  "security.workspace.trust.untrustedFiles": "open",
-  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono','CaskaydiaCove Nerd Font','MesloLGS NF', 'Cascadia Mono PL'",
-  "diffEditor.ignoreTrimWhitespace": false,
-  "scss.validate": false,
-  "editor.lineHeight": 18,
-  "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
-  },
-  "editor.fontSize": 13,
-  "editor.cursorBlinking": "smooth",
-  "editor.cursorStyle": "line",
-  "Lua.telemetry.enable": true,
-  "[csharp]": {
-    "editor.formatOnSave": true
-  },
-  "editor.formatOnType": true,
-  "[sql]": {
-    "editor.defaultFormatter": "ms-ossdata.vscode-postgresql"
-  }
+  "vim.visualModeKeyBindings": [
+    {
+      "commands": ["editor.action.indentLines"],
+      "before": [">"]
+    },
+    {
+      "commands": ["editor.action.outdentLines"],
+      "before": ["<"]
+    }
+  ]
 }

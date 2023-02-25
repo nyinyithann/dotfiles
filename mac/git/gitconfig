@@ -1,8 +1,8 @@
 # This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = Nyi Nyi
-	email = nyinyithann@gmail.com
+	name = nyi nyi than
+	email = nyinyi.than@ahrefs.com
 [init]
 	defaultBranch = main
 
@@ -49,3 +49,11 @@
 	trustExitCode = true
 [merge]
 	tool = diffmerge
+	defaultToUpstream = true
+	log = true
+[branch]
+	autoSetupRebase = always
+[pull]
+	rebase = true
+[push]
+	default = upstream
