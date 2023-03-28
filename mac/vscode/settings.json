@@ -98,8 +98,7 @@
   },
   "editor.codeLensFontSize": 12,
   "terminal.integrated.fontSize": 12,
-  "files.autoSave": "afterDelay",
-  "workbench.iconTheme": "material-icon-theme",
+  "files.autoSave": "off",
   "material-icon-theme.saturation": 1,
   "editor.fontFamily": "'FuraMono Nerd Font Mono', 'Noto Mono', 'CaskaydiaCove Nerd Font', 'YaHei Consolas Hybrid', 'FiraCode Nerd Font Mono', 'FiraMono Nerd Font', 'DejaVu Sans Mono'",
   "[css]": {
@@ -115,8 +114,11 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.quickSuggestions": {
-    "strings": true
+    "other": "on",
+    "comments": "off",
+    "strings": "off"
   },
+  "editor.quickSuggestionsDelay": 10,
   "emmet.excludeLanguages": ["markdown"],
   "[ocaml]": {
     "editor.tabSize": 2,
@@ -125,19 +127,19 @@
     "editor.insertSpaces": true
   },
   "ocaml.sandbox": {
-    "kind": "custom",
-    "switch": "${workspaceFolder:monorepo}/frontend",
-    "template": "esy $prog $args --fallback-read-dot-merlin"
+    "kind": "opam",
+    "switch": "${workspaceFolder:monorepo}"
+    // "template": "esy $prog $args --fallback-read-dot-merlin"
   },
-  "emeraldwalk.runonsave": {
-    "commands": [
-      {
-        "match": "\\.re$",
-        "isAsync": true,
-        "cmd": "yarn bsrefmt --in-place -w 120 ${file}"
-      }
-    ]
-  },
+  // "emeraldwalk.runonsave": {
+  //   "commands": [
+  //     {
+  //       "match": "\\.(re)$",
+  //       "isAsync": true,
+  //       "cmd": "yarn bsrefmt --in-place -w 120 ${file}"
+  //     }
+  //   ]
+  // },
   "terminal.integrated.defaultProfile.linux": "zsh",
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
@@ -175,7 +177,7 @@
   "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono','CaskaydiaCove Nerd Font','MesloLGS NF', 'Cascadia Mono PL'",
   "diffEditor.ignoreTrimWhitespace": false,
   "scss.validate": false,
-  "editor.lineHeight": 20,
+  "editor.lineHeight": 18,
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1"
   },
@@ -185,7 +187,7 @@
   "[csharp]": {
     "editor.formatOnSave": true
   },
-  "editor.formatOnType": true,
+  "editor.formatOnType": false,
   "[sql]": {
     "editor.defaultFormatter": "ms-ossdata.vscode-postgresql"
   },
@@ -214,7 +216,9 @@
   },
   "[reason]": {
     "editor.codeLens": false,
-    "editor.autoIndent": "full"
+    "editor.autoIndent": "full",
+    "editor.autoClosingQuotes": "always",
+    "editor.defaultFormatter": "ocamllabs.ocaml-platform"
   },
 
   // vim
@@ -303,5 +307,9 @@
       "commands": ["editor.action.outdentLines"],
       "before": ["<"]
     }
-  ]
+  ],
+  "redhat.telemetry.enabled": false,
+  "workbench.iconTheme": "vscode-icons",
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.colorTheme": "One Monokai"
 }

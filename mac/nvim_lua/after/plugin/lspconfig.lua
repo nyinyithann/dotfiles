@@ -185,7 +185,7 @@ lsp.tailwindcss.setup({
         "vue", "svelte" }
 })
 
-lsp.sumneko_lua.setup({
+lsp.lua_ls.setup({
     name = utilities.LUA_LSP_NAME,
     cmd = { "lua-language-server" },
     filetypes = { "lua" },

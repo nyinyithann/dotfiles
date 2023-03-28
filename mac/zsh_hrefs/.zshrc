@@ -18,7 +18,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # No matter how hard it is, or how hard it gets, I'm going to make it -- Les brown ----------------------------------------------------
 # path to monorepo
 export MONOREPO="$HOME/ahrefs_repos/monorepo"
-alias devbox="ssh nspawn"
+alias devbox="ssh -o 'StrictHostKeyChecking=no' nspawn"
 # -------------------------------------------------------------------------------------------------------------------------------------
 
 
@@ -130,3 +130,10 @@ eval "$(zoxide init zsh)"
 [[ ! -r /Users/nyinyithan/.opam/opam-init/init.zsh ]] || source /Users/nyinyithan/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 alias vim=nvim
+alias cls=clear
+alias zshconfig="vim ~/.zshrc"
+alias dockhide="defaults write com.apple.dock "autohide" -bool "true" && killall Dock"
+alias dockshow="defaults write com.apple.dock "autohide" -bool "false" && killall Dock"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+

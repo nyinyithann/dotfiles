@@ -5,15 +5,18 @@ local lib = require "nvim-tree.lib"
 
 -- [credit] https://github.com/alex-courtis/arch/blob/c91322f51c41c2ace04614eff3a37f13e5f22a24/config/nvim/lua/nvt.lua
 local function cd_dot_cb(node)
-    tree.change_dir(vim.fn.getcwd(-1))
+    tree.change_dir(vim.fn.getcwd( -1))
     if node.name ~= ".." then
         lib.set_index_and_redraw(node.absolute_path)
     end
 end
 
+-- require("nvim-tree.api").tree.open()
+-- local api = require("nvim-tree.api")
+-- api.tree.open();
+
 tree.setup({
     sort_by = "case_sensitive",
-    open_on_setup = true,
     view = {
         adaptive_size = false,
         mappings = {

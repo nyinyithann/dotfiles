@@ -2,7 +2,7 @@ local M = {}
 
 local ocamllsp = "ocamllsp"
 local rescriptlsp = "rescriptls"
-local lualsp = "sumneko_lua"
+local lualsp = "lua_ls"
 local tslsp = "tsserver"
 local jsonls = "jsonls"
 local html = "html"
