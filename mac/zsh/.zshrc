@@ -1,6 +1,6 @@
 #  /Users/jazz/.oh-my-zsh/custom/plugins
 
-. /Users/jazz/.oh-my-zsh/custom/plugins/z/z.sh
+# . /Users/jazz/.oh-my-zsh/custom/plugins/z/z.sh
 
 
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -101,6 +101,7 @@ plugins=(
 git
 zsh-syntax-highlighting
 zsh-autosuggestions
+z
 )
 
 

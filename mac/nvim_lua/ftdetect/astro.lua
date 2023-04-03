@@ -1,0 +1,1 @@
+/Users/nyinyithan/matrix_repos/dotfiles/mac/nvim_ftdetect/astro.lua

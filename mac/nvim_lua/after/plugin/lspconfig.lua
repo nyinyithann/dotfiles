@@ -33,7 +33,7 @@ local on_attach = function(client, bufnr)
     local root_dir = vim.lsp.buf.list_workspace_folders()[1]
     if client.name == utilities.OCAML_LSP_NAME then
         vim.keymap.set("n", "<C-\\>", function()
-            vim.api.nvim_command("silent! write")
+            vim.cmd("silent! write")
             utilities.run_dune_utop(root_dir, "dune utop")
         end, bufopts)
     end
@@ -117,7 +117,7 @@ lsp.jsonls.setup {
     cmd = { "vscode-json-language-server", "--stdio" },
     filetypes = { "json", "jsonc" },
     init_options = { provideFormatter = true },
-    root_dir = lsp.util.find_git_ancestor;
+    root_dir = lsp.util.find_git_ancestor,
     single_file_support = true,
     on_attach = on_attach,
     capabilities = capabilities
@@ -158,7 +158,7 @@ lsp.cssls.setup({
             validate = true
         },
     },
-    single_file_support = true;
+    single_file_support = true,
     on_attach = on_attach,
     capabilities = capabilities,
 })
@@ -185,6 +185,18 @@ lsp.tailwindcss.setup({
         "vue", "svelte" }
 })
 
+lsp.astro.setup {
+    cmd = { "astro-ls", "--stdio" },
+    filetypes = { "astro" },
+    init_options = {
+        configuration = {},
+        typescript = {
+            serverPath = ""
+        }
+    },
+    root_dir = lsp.util.root_pattern("package.json", "tsconfig.json", "jsconfig.json", ".git")
+}
+
 lsp.lua_ls.setup({
     name = utilities.LUA_LSP_NAME,
     cmd = { "lua-language-server" },
@@ -205,7 +217,7 @@ lsp.lua_ls.setup({
             workspace = {
                 -- Make the server aware of Neovim runtime files
                 -- library = vim.api.nvim_get_runtime_file("", true),
-                library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true, [vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true }
+                library = { [vim.fn.expand('$VIMRUNTIME/lua')] = true,[vim.fn.expand('$VIMRUNTIME/lua/vim/lsp')] = true }
             },
             -- Do not send telemetry data containing a randomized but unique identifier
             telemetry = {
@@ -263,11 +275,11 @@ vim.diagnostic.config({
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     vim.lsp.diagnostic.on_publish_diagnostics, {
-    underline = false,
-    update_in_insert = false,
-    virtual_text = { spacing = 4, prefix = "●" },
-    severity_sort = true,
-})
+        underline = false,
+        update_in_insert = false,
+        virtual_text = { spacing = 4, prefix = "●" },
+        severity_sort = true,
+    })
 
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
     vim.lsp.handlers.hover,

@@ -191,6 +191,12 @@ packer.startup(function(use)
             require "surround".setup { mappings_style = "sandwich" }
         end
     }
+    use { 'wuelnerdotexe/vim-astro' }
+
+    -- WhichKey
+    use {
+        "folke/which-key.nvim"
+    }
 
     -- Automatically run packer.clean() followed by packer.update() after cloning packer.nvim
     -- Put this at the end after all plugins

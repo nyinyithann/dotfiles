@@ -33,6 +33,8 @@
     ~/.config/nvim:
         path: mac/nvim_lua
         force: true
+    ~/.config/nvim/ftdetect/astro.lua:
+        path: mac/nvim_ftdetect/astro.lua
     ~/.gitconfig:
       path: mac/git/gitconfig
       force: true
