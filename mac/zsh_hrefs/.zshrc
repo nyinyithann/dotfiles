@@ -19,6 +19,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # path to monorepo
 export MONOREPO="$HOME/ahrefs_repos/monorepo"
 alias devbox="ssh -o 'StrictHostKeyChecking=no' nspawn"
+alias utop="$HOME/.opam/4.14.1/bin/utop"
 # -------------------------------------------------------------------------------------------------------------------------------------
 
 

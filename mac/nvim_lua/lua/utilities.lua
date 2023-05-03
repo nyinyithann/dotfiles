@@ -98,7 +98,6 @@ M.get_cmp_kinds = function()
             TypeParameter = "",
             Unit = "",
         },
-
         [M.GENERAL_NAME] = {
             Method = "",
             Function = "",
@@ -113,7 +112,6 @@ M.get_cmp_kinds = function()
             Value = "",
             Enum = "",
         },
-
         [M.OCAML_LSP_NAME] = {
             Method = "ﬦ",
             Function = "ﬦ",
@@ -127,7 +125,6 @@ M.get_cmp_kinds = function()
             Value = "ﬦ",
             Enum = "ﬦ",
         },
-
         [M.RESCRIPT_LSP_NAME] = {
             Method = "ﬦ",
             Function = "ﬦ",
@@ -156,9 +153,9 @@ M.get_lsp_symbol = function()
         return "🔺"
     elseif M.get_current_lsp_name() == M.RUST_LS then
         return "🦀"
-    else return "𝕷"
+    else
+        return "𝕷"
     end
-
 end
 
 return M

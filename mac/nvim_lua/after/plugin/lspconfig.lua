@@ -33,7 +33,7 @@ local on_attach = function(client, bufnr)
     local root_dir = vim.lsp.buf.list_workspace_folders()[1]
     if client.name == utilities.OCAML_LSP_NAME then
         vim.keymap.set("n", "<C-\\>", function()
-            vim.cmd("silent! write")
+            -- vim.cmd("silent! write")
             utilities.run_dune_utop(root_dir, "dune utop")
         end, bufopts)
     end

@@ -101,9 +101,9 @@
   "files.autoSave": "off",
   "material-icon-theme.saturation": 1,
   "editor.fontFamily": "'FuraMono Nerd Font Mono', 'Noto Mono', 'CaskaydiaCove Nerd Font', 'YaHei Consolas Hybrid', 'FiraCode Nerd Font Mono', 'FiraMono Nerd Font', 'DejaVu Sans Mono'",
-  "[css]": {
-    "editor.defaultFormatter": "Wscats.qf"
-  },
+  // "[css]": {
+  //   "editor.defaultFormatter": "Wscats.qf"
+  // },
   "material-icon-theme.folders.color": "#42a5f5",
   "editor.accessibilitySupport": "off",
   "editor.mouseWheelZoom": true,
@@ -126,10 +126,21 @@
     "editor.formatOnSave": true,
     "editor.insertSpaces": true
   },
+  "[reason]": {
+    "editor.formatOnSave": true,
+    "editor.codeLens": false,
+    "editor.autoIndent": "full",
+    "editor.autoClosingQuotes": "always",
+    "editor.defaultFormatter": "ocamllabs.ocaml-platform"
+  },
   "ocaml.sandbox": {
     "kind": "opam",
-    "switch": "${workspaceFolder:monorepo}"
+    "switch": "${workspaceFolder:monorepo}/frontend"
     // "template": "esy $prog $args --fallback-read-dot-merlin"
+  },
+  "ocaml.server.extraEnv": {
+    "OCAMLLSP_HOVER_IS_EXTENDED": "true",
+    "REFMT_PRINT_WIDTH": "120"
   },
   // "emeraldwalk.runonsave": {
   //   "commands": [
@@ -213,12 +224,6 @@
   "remote.SSH.useLocalServer": false,
   "remote.SSH.remotePlatform": {
     "nspawn": "linux"
-  },
-  "[reason]": {
-    "editor.codeLens": false,
-    "editor.autoIndent": "full",
-    "editor.autoClosingQuotes": "always",
-    "editor.defaultFormatter": "ocamllabs.ocaml-platform"
   },
 
   // vim
