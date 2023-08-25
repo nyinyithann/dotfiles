@@ -100,7 +100,7 @@ packer.startup(function(use)
     }
 
     -- bufferline
-    use { "akinsho/nvim-bufferline.lua" }
+    use {'akinsho/bufferline.nvim', tag = "*", requires = 'nvim-tree/nvim-web-devicons'}
 
     -- commenting
     use {

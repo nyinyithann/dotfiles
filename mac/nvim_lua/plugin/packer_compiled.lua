@@ -95,6 +95,11 @@ _G.packer_plugins = {
     path = "/Users/nyinyithan/.local/share/nvim/site/pack/packer/start/better-escape.nvim",
     url = "https://github.com/max397574/better-escape.nvim"
   },
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/Users/nyinyithan/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
   catppuccin = {
     loaded = true,
     path = "/Users/nyinyithan/.local/share/nvim/site/pack/packer/start/catppuccin",
@@ -214,11 +219,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/nyinyithan/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
     url = "https://github.com/windwp/nvim-autopairs"
-  },
-  ["nvim-bufferline.lua"] = {
-    loaded = true,
-    path = "/Users/nyinyithan/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua",
-    url = "https://github.com/akinsho/nvim-bufferline.lua"
   },
   ["nvim-cmp"] = {
     loaded = true,

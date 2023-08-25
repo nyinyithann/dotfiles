@@ -19,14 +19,14 @@ tree.setup({
     sort_by = "case_sensitive",
     view = {
         adaptive_size = false,
-        mappings = {
-            list = {
-                { key = "u", action = "dir_up" },
-                { key = ".", action = "cd_dot", action_cb = cd_dot_cb, },
-                { key = "v", action = "vsplit" },
-                { key = "h", action = "split" },
-            },
-        }
+        -- mappings = {
+        --     list = {
+        --         { key = "u", action = "dir_up" },
+        --         { key = ".", action = "cd_dot", action_cb = cd_dot_cb, },
+        --         { key = "v", action = "vsplit" },
+        --         { key = "h", action = "split" },
+        --     },
+        -- }
     },
     renderer = {
         highlight_opened_files = "alj",
