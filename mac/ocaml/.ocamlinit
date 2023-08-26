@@ -8,3 +8,4 @@ UTop.set_auto_run_lwt true;;
 (* #require "ppx_jane";; *)
 (* open Base;; *)
 (* open Stdio;; *)
+Topfind.log:=ignore;;
