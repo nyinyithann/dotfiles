@@ -34,4 +34,7 @@ vim.cmd [[
 
   " if elasticsearch file, turn off diagnostics
   autocmd! BufReadPost,BufNewFile *.es :lua require 'toggle_lsp_diagnostics'.turn_off_buffer_diagnostics()
+
+  " format on save
+  autocmd BufWritePre * lua vim.lsp.buf.format()
 ]]

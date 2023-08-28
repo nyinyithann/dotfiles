@@ -136,6 +136,8 @@ alias zshconfig="vim ~/.zshrc"
 alias dockhide="defaults write com.apple.dock "autohide" -bool "true" && killall Dock"
 alias dockshow="defaults write com.apple.dock "autohide" -bool "false" && killall Dock"
 
+alias pn=pnpm
+
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 

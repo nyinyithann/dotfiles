@@ -17,6 +17,7 @@ ts.setup {
         "c",
         "tsx",
         "javascript",
+        "typescript",
         "toml",
         "json",
         "yaml",
