@@ -21,6 +21,9 @@
     ~/.tmux.conf:
       path: mac/tmux/tmux.conf
       force: true
+    ~/.wezterm.lua:
+      path: mac/wezterm/wezterm.lua
+      force: true
     ~/Library/Application Support/code/user/settings.json:
       path: mac/vscode/settings.json
       force: true
@@ -28,11 +31,11 @@
       path: mac/zsh_hrefs/.zshrc
       force: true
     ~/.config/nvim:
-        path: mac/nvim_lua
-        force: true
+      path: mac/nvim_lua
+      force: true
     ~/.config/nvim/ftdetect/astro.lua:
-        path: mac/nvim_ftdetect/astro.lua
-        force: true
+      path: mac/nvim_ftdetect/astro.lua
+      force: true
     ~/.gitconfig:
       path: mac/git/gitconfig
       force: true
