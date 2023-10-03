@@ -15,6 +15,9 @@
     ~/.config/alacritty:
       path: mac/alacritty
       force: true
+    ~/.wezterm.lua:
+      path: mac/wezterm/wezterm.lua
+      force: true
     ~/.config/karabiner:
       path: mac/karabiner
       force: true
