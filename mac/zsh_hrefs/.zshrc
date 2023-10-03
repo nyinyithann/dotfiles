@@ -9,8 +9,14 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads
 
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/lib/python3.11/site-packages/jupyterlab:$PATH
+export IDEA_LAUNCHER_DEBUG=true
+
+export JAVA_HOME="/usr/local/jdk-20.0.2.jdk/Contents/Home/"
+export GRADLE_HOME="/Users/nyinyithan/.sdkman/candidates/gradle/current"
+
+
+export JETBRAINS_SCRIPTS_HOME="/Users/nyinyithan/Library/Application\ Support/JetBrains/Toolbox/scripts/"
+export PATH="$HOME/bin:$HOME/.local/bin:/usr/local/bin:/opt/homebrew/lib/python3.11/site-packages/jupyterlab:$JAVA_HOME/bin:$GRADLE_HOME/bin:$JETBRAINS_SCRIPTS_HOME:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -129,6 +135,8 @@ eval "$(zoxide init zsh)"
 
 # opam configuration
 [[ ! -r /Users/nyinyithan/.opam/opam-init/init.zsh ]] || source /Users/nyinyithan/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
+
+# launch IntelliJ Community
 
 alias vim=nvim
 alias cls=clear

@@ -96,9 +96,8 @@
     "editor.formatOnSave": true
   },
   "editor.codeLensFontSize": 11,
-  "terminal.integrated.fontSize": 13,
+  "terminal.integrated.fontSize": 12,
   "files.autoSave": "off",
-  // "editor.fontFamily": "'MonoLisa','FuraMono Nerd Font Mono', 'Noto Mono', 'CaskaydiaCove Nerd Font', 'YaHei Consolas Hybrid', 'FiraCode Nerd Font Mono', 'FiraMono Nerd Font', 'DejaVu Sans Mono'",
   "editor.fontFamily": "MonoLisa, 'FuraMono Nerd Font Mono', Lilex",
   "editor.fontLigatures": "'ss02' on",
   "editor.tokenColorCustomizations": {
@@ -193,7 +192,7 @@
   },
   "prettier.singleQuote": true,
   "security.workspace.trust.untrustedFiles": "open",
-  "terminal.integrated.fontFamily": "'FiraCode Nerd Font Mono','CaskaydiaCove Nerd Font','MesloLGS NF', 'Cascadia Mono PL'",
+  "terminal.integrated.fontFamily": "Monolisa ,'FiraCode Nerd Font Mono','CaskaydiaCove Nerd Font','MesloLGS NF', 'Cascadia Mono PL'",
   "diffEditor.ignoreTrimWhitespace": false,
   "scss.validate": false,
   "terminal.integrated.env.osx": {
@@ -298,10 +297,6 @@
       "before": [":"]
     },
     {
-      "commands": ["workbench.action.files.save"],
-      "before": ["<C-s>"]
-    },
-    {
       "before": ["<leader>", "k"],
       "commands": [
         {
@@ -333,10 +328,9 @@
   "polyglot-notebook.defaultNotebookLanguage": "csharp",
   "git.enableSmartCommit": true,
   "workbench.editor.enablePreview": false,
-  "workbench.colorTheme": "Visual Studio Light",
+  "workbench.colorTheme": "GitHub Light",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "vscode-neovim.neovimExecutablePaths.darwin": "/opt/homebrew/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/nyinyithan/.config/nvim/init.lua"
+  "git.mergeEditor": true
 }
