@@ -4,7 +4,7 @@ local wezterm = require 'wezterm'
 -- This table will hold the configuration.
 local config = {
     font = wezterm.font("Monolisa Variable"),
-    font_size = 12,
+    font_size = 14,
 }
 -- config.font = wezterm.font_with_fallback {
 --     'Monolisa Variable',
