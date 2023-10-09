@@ -244,6 +244,15 @@ lsp.rescriptls.setup({
     capabilities = capabilities
 })
 
+lsp.kotlin_language_server.setup({
+    cmd = { "kotlin-language-server" },
+    filetypes = { "kotlin" },
+    name = utilities.KOTLIN_LS,
+    root_dir = lsp.util.root_pattern("settings.gradle", "settings.gradle.kts", "build.gradle", "build.gradle.kts"),
+    on_attach = on_attach,
+    capabilities = capabilities
+})
+
 -- Diagnostic symbols in the sign column (gutter)
 local signs = {
     Error = " ",

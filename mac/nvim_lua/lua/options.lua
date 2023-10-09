@@ -31,8 +31,8 @@ set.confirm = true                                             -- start a dialog
 
 set.autoindent = true                                          -- automatically set the indent of a new line
 set.smartindent = true                                         -- do clever autoindenting
-set.tabstop = 4                                                -- number of spaces a <Tab> in the text stands for
-set.shiftwidth = 4                                             -- number of spaces used for each step of (auto)indent
+set.tabstop = 2                                                -- number of spaces a <Tab> in the text stands for
+set.shiftwidth = 2                                             -- number of spaces used for each step of (auto)indent
 set.backspace = { "indent", "eol", "start" }                   -- specifies what <BS>, CTRL-w, etc. can do in Insert mode
 set.expandtab = true                                           -- expand <Tab> to spaces in Insert mode
 

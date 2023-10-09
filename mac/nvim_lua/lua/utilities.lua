@@ -11,6 +11,7 @@ local general_name = "general"
 local cssls = "cssls"
 local cssmodulels = "cssmodules_ls"
 local rustls = "rust_analyzer"
+local kotlinls = "kotlin-language-server"
 
 local State = { current_lsp_name = "" }
 
@@ -25,6 +26,7 @@ M.RESCRIPT_LSP_NAME = (function() return rescriptlsp end)()
 M.CSSLS = (function() return cssls end)()
 M.CSS_MODULE_LS = (function() return cssmodulels end)()
 M.RUST_LS = (function() return rustls end)()
+M.KOTLIN_LS = (function() return kotlinls end)()
 
 M.get_current_lsp_name = function()
     return State.current_lsp_name
