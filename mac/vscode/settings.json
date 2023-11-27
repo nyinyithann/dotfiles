@@ -332,5 +332,6 @@
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
-  "git.mergeEditor": true
+  "git.mergeEditor": true,
+  "window.commandCenter": false
 }
