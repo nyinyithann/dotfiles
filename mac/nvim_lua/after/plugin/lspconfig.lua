@@ -6,8 +6,15 @@ local utilities = require("utilities");
 local on_attach = function(client, bufnr)
   utilities.set_current_lsp_name(client.name)
 
-  -- enable completion triggered by <ctr-space>
-  vim.api.nvim_buf_set_option(bufnr, "omnifunc", "v:lua.vim.lsp.omnifunc")
+  local codelens = vim.api.nvim_create_augroup(
+    'LSPCodeLens',
+    { clear = true }
+  )
+  vim.api.nvim_create_autocmd({ 'BufEnter', 'InsertLeave', 'CursorHold' }, {
+    group = codelens,
+    callback = vim.lsp.codelens.refresh,
+    buffer = bufnr,
+  })
 
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
@@ -18,9 +25,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set("n", "<space>td", vim.lsp.buf.type_definition, bufopts)
   vim.keymap.set("n", "<space>wa", vim.lsp.buf.add_workspace_folder, bufopts)
   vim.keymap.set("n", "<space>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
-  vim.keymap.set("n", "<space>x", function()
-    print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, bufopts)
   vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, bufopts)
   vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, bufopts)
   vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
@@ -30,13 +34,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set("n", "gl", vim.diagnostic.goto_next, bufopts)
   vim.keymap.set("n", "<space>dl", vim.diagnostic.setloclist, bufopts)
 
-  local root_dir = vim.lsp.buf.list_workspace_folders()[1]
-  if client.name == utilities.OCAML_LSP_NAME then
-    vim.keymap.set("n", "<C-\\>", function()
-      -- vim.cmd("silent! write")
-      utilities.run_dune_utop(root_dir, "dune utop")
-    end, bufopts)
-  end
 
   if client.name == utilities.TS_LSP_NAME then
     client.server_capabilities.document_formatting = false
@@ -66,20 +63,6 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("n", "<leader>rb", "<Cmd>RescriptBuild<CR>", opts)
     vim.api.nvim_buf_set_option(bufnr, "omnifunc", "rescript#Complete")
   end
-
-  if client.server_capabilities.code_lens then
-    local codelens = vim.api.nvim_create_augroup(
-      'LSPCodeLens',
-      { clear = true }
-    )
-    vim.api.nvim_create_autocmd({ 'BufEnter', 'InsertLeave', 'CursorHold' }, {
-      group = codelens,
-      callback = function()
-        vim.lsp.codelens.refresh()
-      end,
-      buffer = bufnr,
-    })
-  end
 end
 
 local c = vim.lsp.protocol.make_client_capabilities()
@@ -93,19 +76,15 @@ c.textDocument.completion.completionItem.resolveSupport = {
 }
 local capabilities = require("cmp_nvim_lsp").default_capabilities(c)
 
-lsp.ocamllsp.setup {
+lsp.ocamllsp.setup({
+  name = "ocamllsp", -- utilities.OCAML_LSP_NAME,
   settings = {
     codelens = { enable = true },
   },
-}
-
-lsp.ocamllsp.setup({
-  name = utilities.OCAML_LSP_NAME,
-  -- cmd = { 'esy', utilities.OCAML_LSP_NAME, "--fallback-read-dot-merlin" },
   filetypes = { "ocaml", "ocaml.menhir", "ocaml.interface", "ocaml.ocamllex", "reason", "dune" },
   root_dir = lsp.util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace"),
+  capabilities = capabilities,
   on_attach = on_attach,
-  capabilities = capabilities
 })
 
 lsp.tsserver.setup {

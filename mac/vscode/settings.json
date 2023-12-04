@@ -95,10 +95,10 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.formatOnSave": true
   },
-  "editor.codeLensFontSize": 11,
+  "editor.codeLensFontSize": 10,
   "terminal.integrated.fontSize": 12,
   "files.autoSave": "off",
-  "editor.fontFamily": "MonoLisa, 'FuraMono Nerd Font Mono', Lilex",
+  "editor.fontFamily": "'FuraMono Nerd Font Mono', MonoLisa, 'FuraMono Nerd Font Mono', Lilex",
   "editor.fontLigatures": "'ss02' on",
   "editor.tokenColorCustomizations": {
     "textMateRules": [
@@ -175,7 +175,7 @@
     "source.fixAll": true
   },
   "terminal.integrated.fontWeight": "600",
-  "debug.console.fontSize": 146,
+  "debug.console.fontSize": 12,
   "explorer.confirmDelete": false,
   "remote.WSL.debug": true,
   "terminal.integrated.cursorBlinking": true,
@@ -328,10 +328,11 @@
   "polyglot-notebook.defaultNotebookLanguage": "csharp",
   "git.enableSmartCommit": true,
   "workbench.editor.enablePreview": false,
-  "workbench.colorTheme": "GitHub Light",
+  "workbench.colorTheme": "One Monokai",
   "extensions.experimental.affinity": {
     "asvetliakov.vscode-neovim": 1
   },
   "git.mergeEditor": true,
-  "window.commandCenter": false
+  "window.commandCenter": false,
+  "window.zoomLevel": -0.5
 }
