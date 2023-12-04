@@ -77,7 +77,7 @@ c.textDocument.completion.completionItem.resolveSupport = {
 local capabilities = require("cmp_nvim_lsp").default_capabilities(c)
 
 lsp.ocamllsp.setup({
-  name = "ocamllsp", -- utilities.OCAML_LSP_NAME,
+  name = utilities.OCAML_LSP_NAME,
   settings = {
     codelens = { enable = true },
   },
